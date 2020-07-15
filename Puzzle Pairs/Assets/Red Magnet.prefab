@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4723899947123850199}
   - component: {fileID: 464592354959259620}
   - component: {fileID: 8832597906154200580}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Red Magnet
   m_TagString: red
   m_Icon: {fileID: 0}
@@ -145,4 +145,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4

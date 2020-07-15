@@ -7,21 +7,24 @@ public class WhiteCubes : MonoBehaviour
     public GameObject player;
     public bool dragging=false;
     public GameObject[] emptySlot;
+    Vector2 position;
+    bool inRange;
+
 
     private void Start()
     {
         BlackBoard._whiteCube = this;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
     }
-
-    private void OnTriggerStay2D(Collider2D col)
+    private void Update()
     {
-        if (col.gameObject.CompareTag("Player"))
+        if ((inRange) && BlackBoard.magnet.canMove)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if ((!dragging)&&(BlackBoard.magnet.canMove))
+                if (!dragging)
                 {
+                    position = transform.position;
                     transform.SetParent(player.transform);
                     dragging = true;
                 }
@@ -29,17 +32,31 @@ public class WhiteCubes : MonoBehaviour
                 {
                     foreach (GameObject slot in emptySlot)
                     {
-                        if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 0.5f&&
+                        if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 0.5f &&
                             Mathf.Abs(transform.position.y - slot.transform.position.y) <= 0.5f)
                         {
-                                transform.position = slot.transform.position;
-                                transform.parent = null;
-                                dragging = false; 
+                            transform.position = slot.transform.position;
+                            transform.parent = null;
+                            dragging = false;
                         }
                     }
-                    
                 }
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            inRange = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+             inRange = false;
         }
     }
 }

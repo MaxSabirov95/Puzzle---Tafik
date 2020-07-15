@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3987517535009543638}
   - component: {fileID: 1877884043240060076}
   - component: {fileID: 8147192972668167358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Blue Magnet
   m_TagString: blue
   m_Icon: {fileID: 0}
@@ -145,4 +145,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4

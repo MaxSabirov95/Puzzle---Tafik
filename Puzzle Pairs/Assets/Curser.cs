@@ -7,12 +7,10 @@ public class Curser : MonoBehaviour
     public float rotation;
     public GameObject[] cubes;
     public WhiteCubes[] whiteCubes;
-    public static int i = 0;
-    public bool canDrag;
 
     private void Start()
     {
-        BlackBoard.curser = this;
+
     }
     void Update()
     {
@@ -23,14 +21,6 @@ public class Curser : MonoBehaviour
         {
             rotation -= 90;
             transform.rotation = Quaternion.Euler(0,0, rotation);
-        }
-
-        foreach (WhiteCubes item in whiteCubes)
-        {
-            if (item.dragging)
-            {
-
-            }
         }
     }
 }
