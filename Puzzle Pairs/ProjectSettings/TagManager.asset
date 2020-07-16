@@ -9,6 +9,7 @@ TagManager:
   - Daimond
   - blue
   - red
+  - whiteCube
   layers:
   - Default
   - TransparentFX

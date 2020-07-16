@@ -8,8 +8,9 @@ public class WhiteCubes : MonoBehaviour
     public bool dragging=false;
     public GameObject[] emptySlot;
     Vector2 position;
-    Quaternion rotation;
+    //Quaternion rotation;
     bool inRange;
+    public bool canBePlaced = false;
 
 
     private void Start()
@@ -19,15 +20,16 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        if ((inRange) && BlackBoard.curser.canMoveCube)
+        if ((inRange) && BlackBoard.curser.howMuchRed==2)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 if (!dragging)
                 {
-                    rotation = transform.rotation;
+                    //rotation = transform.rotation;
                     position = transform.position;
                     transform.SetParent(player.transform);
+                    BlackBoard.curser.whiteCubes.Add(this);
                     dragging = true;
                     BlackBoard.curser.beDraged = true;
                 }
@@ -35,13 +37,18 @@ public class WhiteCubes : MonoBehaviour
                 {
                     foreach (GameObject slot in emptySlot)
                     {
-                        if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 0.5f &&
-                            Mathf.Abs(transform.position.y - slot.transform.position.y) <= 0.5f)
+                        if(BlackBoard.curser.whiteCubes[0].canBePlaced && BlackBoard.curser.whiteCubes[1].canBePlaced)
                         {
-                            transform.position = slot.transform.position;
-                            transform.parent = null;
-                            dragging = false;
-                            BlackBoard.curser.beDraged = false;
+                            if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 0.5f &&
+                            Mathf.Abs(transform.position.y - slot.transform.position.y) <= 0.5f)
+                            {
+                                transform.position = slot.transform.position;
+                                transform.parent = null;
+                                dragging = false;
+                                BlackBoard.curser.beDraged = false;
+                                BlackBoard.curser.whiteCubes.Remove(this);
+                                slot.GetComponent<GridTileCubes>().isFull = true;
+                            }
                         }
                     }
                 }
@@ -49,6 +56,20 @@ public class WhiteCubes : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Empty Slot"))
+        {
+            if (!col.GetComponent<GridTileCubes>().isFull)
+            {
+                canBePlaced = true;
+            }
+            else
+            {
+                canBePlaced = false;
+            }
+        }
+    }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -62,5 +83,10 @@ public class WhiteCubes : MonoBehaviour
         {
              inRange = false;
         }
+
+        //if (col.gameObject.CompareTag("Empty Slot"))
+        //{
+        //    canBePlaced = false;
+        //}
     }
 }
