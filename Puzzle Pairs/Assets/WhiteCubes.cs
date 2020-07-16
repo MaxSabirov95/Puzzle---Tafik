@@ -8,6 +8,7 @@ public class WhiteCubes : MonoBehaviour
     public bool dragging=false;
     public GameObject[] emptySlot;
     Vector2 position;
+    Quaternion rotation;
     bool inRange;
 
 
@@ -18,15 +19,17 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        if ((inRange) && BlackBoard.magnet.canMove)
+        if ((inRange) && BlackBoard.curser.canMoveCube)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 if (!dragging)
                 {
+                    rotation = transform.rotation;
                     position = transform.position;
                     transform.SetParent(player.transform);
                     dragging = true;
+                    BlackBoard.curser.beDraged = true;
                 }
                 else
                 {
@@ -38,6 +41,7 @@ public class WhiteCubes : MonoBehaviour
                             transform.position = slot.transform.position;
                             transform.parent = null;
                             dragging = false;
+                            BlackBoard.curser.beDraged = false;
                         }
                     }
                 }
