@@ -10,10 +10,11 @@ public class Curser : MonoBehaviour
     public bool beDraged;
     public bool red;
     public bool blue;
-    public int howMuchRed = 0;
+    //public int howMuchRed = 0;
 
     private void Start()
     {
+        Cursor.visible = false;
         BlackBoard.curser = this;
     }
     void Update()
@@ -28,45 +29,46 @@ public class Curser : MonoBehaviour
         }
 
 
-        //if (red && blue)
-        //{
-        //    canMoveCube = true;
-        //}
-        //else
-        //{
-        //    canMoveCube = false;
-        //}
+        if (red && blue)
+        {
+            canMoveCube = true;
+        }
+        else
+        {
+            canMoveCube = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        //if (!beDraged)
-        //{
+        if (!beDraged)
+        {
             if (col.gameObject.CompareTag("red"))
             {
-                howMuchRed++;
-                // red = true;
+                //howMuchRed++;
+                red = true;
             }
-       // }
+            if (col.gameObject.CompareTag("blue"))
+            {
+                blue = true;
+            }
+        }
+
         
-        //if (col.gameObject.CompareTag("blue"))
-        //{
-        //    blue = true;
-        //}
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-        //if (!beDraged)
-        //{
+        if (!beDraged)
+        {
             if (col.gameObject.CompareTag("red"))
             {
-                howMuchRed--;
-                //red = false;
+                //howMuchRed--;
+                red = false;
             }
-            //if (col.gameObject.CompareTag("blue"))
-            //{
-            //    blue = false;
-            //}
-        //}
+            if (col.gameObject.CompareTag("blue"))
+            {
+                blue = false;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class WhiteCubes : MonoBehaviour
@@ -11,6 +12,7 @@ public class WhiteCubes : MonoBehaviour
     //Quaternion rotation;
     bool inRange;
     public bool canBePlaced = false;
+    public List<GridTileCubes> greenSlots;
 
 
     private void Start()
@@ -20,11 +22,11 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        if ((inRange) && BlackBoard.curser.howMuchRed==2)
+        if ((inRange) && BlackBoard.curser.canMoveCube && BlackBoard.curser.whiteCubes.Count <= 2)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!dragging)
+                if (!dragging && BlackBoard.curser.whiteCubes.Count <= 1)
                 {
                     //rotation = transform.rotation;
                     position = transform.position;
@@ -37,17 +39,50 @@ public class WhiteCubes : MonoBehaviour
                 {
                     foreach (GameObject slot in emptySlot)
                     {
-                        if(BlackBoard.curser.whiteCubes[0].canBePlaced && BlackBoard.curser.whiteCubes[1].canBePlaced)
+                        if ((BlackBoard.curser.whiteCubes.Count == 2))
                         {
-                            if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 0.5f &&
-                            Mathf.Abs(transform.position.y - slot.transform.position.y) <= 0.5f)
+                            if (BlackBoard.curser.whiteCubes[0].canBePlaced && BlackBoard.curser.whiteCubes[1].canBePlaced)
                             {
-                                transform.position = slot.transform.position;
-                                transform.parent = null;
-                                dragging = false;
-                                BlackBoard.curser.beDraged = false;
-                                BlackBoard.curser.whiteCubes.Remove(this);
-                                slot.GetComponent<GridTileCubes>().isFull = true;
+                                if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
+                                    Mathf.Abs(transform.position.y - slot.transform.position.y) <= 1f)
+                                {
+                                    transform.position = slot.transform.position;
+                                    transform.parent = null;
+                                    dragging = false;
+                                    BlackBoard.curser.beDraged = false;
+                                    BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[1]);
+                                    slot.GetComponent<GridTileCubes>().isFull = true;
+                                    return;
+                                }
+                            }
+                        }
+                        if(BlackBoard.curser.whiteCubes.Count == 1)
+                        {
+                            if (BlackBoard.curser.whiteCubes[0].canBePlaced)
+                            {
+                                if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
+                                    Mathf.Abs(transform.position.y - slot.transform.position.y) <= 1f)
+                                {
+                                    transform.position = slot.transform.position;
+                                    transform.parent = null;
+                                    dragging = false;
+
+                                    BlackBoard.curser.beDraged = false;
+                                    BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[0]);
+                                    slot.GetComponent<GridTileCubes>().isFull = true;
+                                    bool isAllGreenFull = true;
+                                    foreach (GridTileCubes green in greenSlots)
+                                    {
+                                        if (!green.isFull)
+                                        {
+                                            isAllGreenFull = false;
+                                        }
+                                    }
+                                    if (isAllGreenFull)
+                                    {
+                                        Debug.Log("You Won");
+                                    }
+                                }
                             }
                         }
                     }
@@ -83,10 +118,5 @@ public class WhiteCubes : MonoBehaviour
         {
              inRange = false;
         }
-
-        //if (col.gameObject.CompareTag("Empty Slot"))
-        //{
-        //    canBePlaced = false;
-        //}
     }
 }
