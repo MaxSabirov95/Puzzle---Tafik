@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class WhiteCubes : MonoBehaviour
@@ -22,18 +23,17 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        if ((inRange) && BlackBoard.curser.canMoveCube && BlackBoard.curser.whiteCubes.Count <= 2)
+        if ((inRange) &&  BlackBoard.curser.whiteCubes.Count <= 2)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!dragging && BlackBoard.curser.whiteCubes.Count <= 1)
+                if (!dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count <= 1)
                 {
                     //rotation = transform.rotation;
                     position = transform.position;
                     transform.SetParent(player.transform);
                     BlackBoard.curser.whiteCubes.Add(this);
                     dragging = true;
-                    BlackBoard.curser.beDraged = true;
                 }
                 else
                 {
@@ -48,8 +48,7 @@ public class WhiteCubes : MonoBehaviour
                                 {
                                     transform.position = slot.transform.position;
                                     transform.parent = null;
-                                    dragging = false;
-                                    BlackBoard.curser.beDraged = false;
+                                    StartCoroutine(waitToGrab());
                                     BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[1]);
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     return;
@@ -65,9 +64,7 @@ public class WhiteCubes : MonoBehaviour
                                 {
                                     transform.position = slot.transform.position;
                                     transform.parent = null;
-                                    dragging = false;
-
-                                    BlackBoard.curser.beDraged = false;
+                                    StartCoroutine(waitToGrab());
                                     BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[0]);
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     bool isAllGreenFull = true;
@@ -118,5 +115,11 @@ public class WhiteCubes : MonoBehaviour
         {
              inRange = false;
         }
+    }
+
+    IEnumerator waitToGrab()
+    {
+        yield return new WaitForSeconds(0.25f);
+        dragging = false;
     }
 }

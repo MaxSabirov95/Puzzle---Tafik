@@ -7,7 +7,8 @@ public class GridTileCubes : MonoBehaviour
     public enum kindOfCube { green,red};
     public kindOfCube cubeKind;
     public bool isFull;
-    public int i;
+    [SerializeField]
+    private int i;
     public GameObject[] whiteCubes;
 
     private void Start()
@@ -19,7 +20,7 @@ public class GridTileCubes : MonoBehaviour
     {
         foreach (GameObject white in whiteCubes)
         {
-            if((transform.position.x == white.transform.position.x)&&(transform.position.y == white.transform.position.y))
+            if((transform.position.x == white.transform.position.x) && (transform.position.y == white.transform.position.y))
             {
                 isFull = true;
                 break;
@@ -41,30 +42,10 @@ public class GridTileCubes : MonoBehaviour
     {
         if (i >= 1)
         {
-            switch (cubeKind)
+            i--;
+            if (i == 0)
             {
-                case kindOfCube.green:
-                    if (col.CompareTag("whiteCube"))
-                    {
-                        i--;
-                        if (i == 0)
-                        {
-                            isFull = false;
-                        }
-                    }
-                    break;
-                case kindOfCube.red:
-                    if (col.CompareTag("whiteCube"))
-                    {
-                        i--;
-                        if (i == 0)
-                        {
-                            isFull = false;
-                        }
-                    }
-                    break;
-                default:
-                    break;
+                isFull = false;
             }
         }
     }
