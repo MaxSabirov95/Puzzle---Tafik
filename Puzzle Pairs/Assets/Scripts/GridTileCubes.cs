@@ -7,8 +7,10 @@ public class GridTileCubes : MonoBehaviour
     public enum kindOfCube { green,red};
     public kindOfCube cubeKind;
     public bool isFull;
+
     [SerializeField]
     private int i;
+
     public GameObject[] whiteCubes;
 
     private void Start()
@@ -40,12 +42,15 @@ public class GridTileCubes : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (i >= 1)
+        if (col.CompareTag("whiteCube"))
         {
-            i--;
-            if (i == 0)
+            if (i >= 1)
             {
-                isFull = false;
+                i--;
+                if (i == 0)
+                {
+                    isFull = false;
+                }
             }
         }
     }

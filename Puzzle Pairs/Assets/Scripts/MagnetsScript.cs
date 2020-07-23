@@ -88,6 +88,14 @@ public class MagnetsScript : MonoBehaviour
                     {
                         effect.transform.position = transform.position;
                         effect.Play();
+                        BlackBoard.soundsManager.SoundsList(2);
+                    }
+                }
+                else if(collision.CompareTag("red"))
+                {
+                    if (!BlackBoard._whiteCube.dragging)
+                    {
+                        BlackBoard.soundsManager.SoundsList(0);
                     }
                 }
                 break;
