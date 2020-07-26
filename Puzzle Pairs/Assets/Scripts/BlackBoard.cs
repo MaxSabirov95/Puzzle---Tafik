@@ -9,4 +9,5 @@ public class BlackBoard : MonoBehaviour
     public static Curser curser;
     public static GridTileCubes gridTileCubes;
     public static SoundsManager soundsManager;
+    public static ScenesManager scenesManager;
 }

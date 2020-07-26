@@ -27,7 +27,7 @@ public class GridTileCubes : MonoBehaviour
                 isFull = true;
                 break;
             }
-            else
+            if((transform.position.x != white.transform.position.x) || (transform.position.y != white.transform.position.y))
             {
                 isFull = false;
             }

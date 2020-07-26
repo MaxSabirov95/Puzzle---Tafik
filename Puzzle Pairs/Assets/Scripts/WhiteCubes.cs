@@ -73,6 +73,7 @@ public class WhiteCubes : MonoBehaviour
                                     if (isAllGreenFull)
                                     {
                                         Debug.Log("You Won");
+                                        BlackBoard.scenesManager.NextLevel();
                                     }
                                 }
                             }
