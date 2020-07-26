@@ -8,7 +8,7 @@ public class WhiteCubes : MonoBehaviour
     public bool dragging = false;
     public GameObject[] emptySlot;
     bool inRange;
-    public bool canBePlaced = false;
+    bool canBePlaced = false;
     public List<GridTileCubes> greenSlots;
 
     private void Start()
@@ -29,7 +29,7 @@ public class WhiteCubes : MonoBehaviour
                     dragging = true;
                     BlackBoard.soundsManager.SoundsList(4);
                 }
-                else
+                else if(dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count > 0)
                 {
                     foreach (GameObject slot in emptySlot)
                     {
@@ -103,12 +103,29 @@ public class WhiteCubes : MonoBehaviour
         {
             inRange = true;
         }
+
+        if (col.gameObject.CompareTag("Empty Slot"))
+        {
+            if (!col.GetComponent<GridTileCubes>().isFull)
+            {
+                canBePlaced = true;
+            }
+            else
+            {
+                canBePlaced = false;
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
              inRange = false;
+        }
+
+        if (col.gameObject.CompareTag("Empty Slot"))
+        {
+            canBePlaced = false;
         }
     }
 
