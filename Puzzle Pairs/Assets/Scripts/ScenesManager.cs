@@ -5,13 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
+    Scene sceneLoaded;
+    private void Start()
+    {
+        sceneLoaded = SceneManager.GetActiveScene();
+        BlackBoard.scenesManager = this;
+    }
+
     public void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(sceneLoaded.buildIndex);
     }
 
     public void ExitLevel()
     {
         Application.Quit();
+    }
+
+    public void NextLevel()
+    {
+        BlackBoard.magnet.ResetOrNextLevel();
+        SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
 }

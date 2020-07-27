@@ -6,7 +6,6 @@ public class Curser : MonoBehaviour
 {
     public float rotation;
     public List <WhiteCubes> whiteCubes;
-    //public bool canMoveCube;
 
     private void Start()
     {
@@ -21,7 +20,12 @@ public class Curser : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             rotation -= 90;
-            transform.rotation = Quaternion.Euler(0,0, rotation);
+            if (rotation <= -360)
+            {
+                rotation = 0;
+            }
+            transform.rotation = Quaternion.Euler(0, 0, rotation);
+            BlackBoard.soundsManager.SoundsList(3);
         }
     }
 }
