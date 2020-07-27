@@ -18,11 +18,11 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        if ((inRange) && BlackBoard.curser.whiteCubes.Count <= 2)
+        if ((inRange) && (BlackBoard.curser.whiteCubes.Count <= 2))
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count <= 1)
+                if (!dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
                 {
                     transform.SetParent(player.transform);
                     BlackBoard.curser.whiteCubes.Add(this);
@@ -43,7 +43,7 @@ public class WhiteCubes : MonoBehaviour
                                     transform.position = slot.transform.position;
                                     BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[1]);
                                     transform.parent = null;
-                                    dragging = false;
+                                    StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     return;
                                 }

@@ -208,7 +208,6 @@ GameObject:
   - component: {fileID: 73515753}
   - component: {fileID: 73515755}
   - component: {fileID: 73515757}
-  - component: {fileID: 73515756}
   - component: {fileID: 73515758}
   m_Layer: 10
   m_Name: Curser
@@ -295,22 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotation: 0
   whiteCubes: []
---- !u!58 &73515756
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73515752}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
+  howMuchInRange: 0
 --- !u!50 &73515757
 Rigidbody2D:
   serializedVersion: 4
@@ -9098,7 +9082,6 @@ MonoBehaviour:
   player: {fileID: 73515752}
   dragging: 0
   emptySlot: []
-  canBePlaced: 0
   greenSlots:
   - {fileID: 2226599870733818519}
   - {fileID: 185783124}
@@ -9470,7 +9453,6 @@ MonoBehaviour:
   player: {fileID: 73515752}
   dragging: 0
   emptySlot: []
-  canBePlaced: 0
   greenSlots:
   - {fileID: 2226599870733818519}
   - {fileID: 185783124}
@@ -9978,7 +9960,6 @@ MonoBehaviour:
   player: {fileID: 73515752}
   dragging: 0
   emptySlot: []
-  canBePlaced: 0
   greenSlots:
   - {fileID: 2226599870733818519}
   - {fileID: 185783124}
@@ -10086,7 +10067,6 @@ MonoBehaviour:
   player: {fileID: 73515752}
   dragging: 0
   emptySlot: []
-  canBePlaced: 0
   greenSlots:
   - {fileID: 2226599870733818519}
   - {fileID: 185783124}
@@ -10834,7 +10814,6 @@ MonoBehaviour:
   player: {fileID: 73515752}
   dragging: 0
   emptySlot: []
-  canBePlaced: 0
   greenSlots:
   - {fileID: 2226599870733818519}
   - {fileID: 185783124}
