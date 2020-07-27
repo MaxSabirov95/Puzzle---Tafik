@@ -27,10 +27,6 @@ public class GridTileCubes : MonoBehaviour
                 isFull = true;
                 break;
             }
-            if((transform.position.x != white.transform.position.x) || (transform.position.y != white.transform.position.y))
-            {
-                isFull = false;
-            }
         }
     }
     private void OnTriggerEnter2D(Collider2D col)
