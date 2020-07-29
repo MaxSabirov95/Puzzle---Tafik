@@ -129,7 +129,6 @@ public class MagnetsScript : MonoBehaviour
                 }
                 break;
         }
-        
     }
 
     public void ResetOrNextLevel()
