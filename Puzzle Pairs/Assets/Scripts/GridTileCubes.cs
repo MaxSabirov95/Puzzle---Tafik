@@ -20,22 +20,22 @@ public class GridTileCubes : MonoBehaviour
     }
     private void Update()
     {
-        foreach (GameObject white in whiteCubes)
-        {
-            if((transform.position.x == white.transform.position.x) && (transform.position.y == white.transform.position.y))
-            {
-                isFull = true;
-                break;
-            }
-        }
+        //foreach (GameObject white in whiteCubes)
+        //{
+        //    if (((int)transform.position.x != ((int)white.transform.position.x) || ((int)transform.position.y != (int)white.transform.position.y)))
+        //    {
+        //        isFull = false;
+        //    }
+        //}
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))
         {
             i++;
-        }
+        } 
     }
+   
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))
