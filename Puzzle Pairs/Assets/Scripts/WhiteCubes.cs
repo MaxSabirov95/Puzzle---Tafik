@@ -22,14 +22,14 @@ public class WhiteCubes : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
+                if (!dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
                 {
                     transform.SetParent(player.transform);
                     BlackBoard.curser.whiteCubes.Add(this);
                     dragging = true;
                     BlackBoard.soundsManager.SoundsList(4);
                 }
-                else if(dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count > 0)
+                else if(dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count > 0)
                 {
                     foreach (GameObject slot in emptySlot)
                     {
