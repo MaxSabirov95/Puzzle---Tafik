@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    public enum magnetType { red,blue};
-    public enum magnetPosition { up, down,right,left };
+    public enum magnetType { male,female};
+    public enum magnetPosition { up, down,right,left,notMovable };
     public magnetType magnet;
     public magnetPosition position;
 
@@ -16,9 +16,9 @@ public class MagnetsScript : MonoBehaviour
 
     private Vector2 startPosition;
     public float speed;
-    public static int red;
-    public static int blue;
-    public bool redBlue;
+    public static int male;
+    public static int female;
+    public bool maleFemale;
     public ParticleSystem effect;
 
     private bool playerIn;
@@ -32,13 +32,13 @@ public class MagnetsScript : MonoBehaviour
 
     private void Update()
     {
-        if ((red == 1) && (blue == 1))
+        if ((male == 1) && (female == 1))
         {
-            redBlue = true;
+            maleFemale = true;
         }
         else
         {
-            redBlue = false;
+            maleFemale = false;
         }
     }
 
@@ -80,10 +80,10 @@ public class MagnetsScript : MonoBehaviour
 
         switch (magnet)
         {
-            case magnetType.red:
+            case magnetType.male:
                 if (collision.CompareTag("blue"))
                 {
-                    blue++;
+                    female++;
                     if (!BlackBoard._whiteCube.dragging)
                     {
                         effect.transform.position = transform.position;
@@ -99,10 +99,10 @@ public class MagnetsScript : MonoBehaviour
                     }
                 }
                 break;
-            case magnetType.blue:
+            case magnetType.female:
                 if (collision.CompareTag("red"))
                 {
-                    red++;
+                    male++;
                 }
                 break;
         }
@@ -116,16 +116,16 @@ public class MagnetsScript : MonoBehaviour
 
         switch (magnet)
         {
-            case magnetType.red:
+            case magnetType.male:
                 if (collision.CompareTag("blue"))
                 {
-                    blue--;
+                    female--;
                 }
                 break;
-            case magnetType.blue:
+            case magnetType.female:
                 if (collision.CompareTag("red"))
                 {
-                    red--;
+                    male--;
                 }
                 break;
         }
@@ -133,7 +133,7 @@ public class MagnetsScript : MonoBehaviour
 
     public void ResetOrNextLevel()
     {
-        red = 0;
-        blue = 0;
+        male = 0;
+        female = 0;
     }
 }

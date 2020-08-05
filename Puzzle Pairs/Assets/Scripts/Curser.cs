@@ -10,7 +10,6 @@ public class Curser : MonoBehaviour
 
     private void Start()
     {
-        Cursor.visible = false;
         BlackBoard.curser = this;
     }
     void Update()

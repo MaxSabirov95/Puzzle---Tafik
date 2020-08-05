@@ -6,6 +6,8 @@ public class WhiteCubes : MonoBehaviour
 {
     public GameObject player;
     public bool dragging = false;
+    [SerializeField] SpriteRenderer greenLight;
+    [SerializeField] SpriteRenderer redLight;
     public GameObject[] emptySlot;
     bool inRange;
     bool canBePlaced = false;
@@ -18,18 +20,27 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        if ((inRange) && (BlackBoard.curser.whiteCubes.Count <= 2))
+        Lights();
+        if (inRange && BlackBoard.curser.whiteCubes.Count <= 2)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
+                if (!dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
                 {
-                    transform.SetParent(player.transform);
+                    foreach (GameObject slot in emptySlot)
+                    {
+                        if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
+                            Mathf.Abs(transform.position.y - slot.transform.position.y) <= 1f)
+                        {
+                            slot.GetComponent<GridTileCubes>().isFull = false;
+                        }
+                    }
+                        transform.SetParent(player.transform);
                     BlackBoard.curser.whiteCubes.Add(this);
                     dragging = true;
                     BlackBoard.soundsManager.SoundsList(4);
                 }
-                else if(dragging && BlackBoard.magnet.redBlue && BlackBoard.curser.whiteCubes.Count > 0)
+                else if(dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count > 0)
                 {
                     foreach (GameObject slot in emptySlot)
                     {
@@ -134,5 +145,19 @@ public class WhiteCubes : MonoBehaviour
     {
         yield return new WaitForSeconds(0.25f);
         dragging = false;
+    }
+
+    void Lights()
+    {
+        if (BlackBoard.magnet.maleFemale && inRange)
+        {
+            greenLight.enabled = true;
+            redLight.enabled = false;
+        }
+        else
+        {
+            greenLight.enabled = false;
+            redLight.enabled = true;
+        }
     }
 }

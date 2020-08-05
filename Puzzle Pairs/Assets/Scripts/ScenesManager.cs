@@ -27,4 +27,10 @@ public class ScenesManager : MonoBehaviour
         BlackBoard.magnet.ResetOrNextLevel();
         SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
+
+    public void PreviousLevel()
+    {
+        BlackBoard.magnet.ResetOrNextLevel();
+        SceneManager.LoadScene(sceneLoaded.buildIndex - 1);
+    }
 }
