@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class GridTileCubes : MonoBehaviour
 {
-    public enum kindOfCube { green,red};
-    public kindOfCube cubeKind;
     public bool isFull;
 
     [SerializeField]
-    private int i;
+    private int whiteCubesInRange;
 
     public GameObject[] whiteCubes;
 
@@ -18,21 +16,12 @@ public class GridTileCubes : MonoBehaviour
         BlackBoard.gridTileCubes = this;
         whiteCubes = GameObject.FindGameObjectsWithTag("whiteCube");
     }
-    private void Update()
-    {
-        //foreach (GameObject white in whiteCubes)
-        //{
-        //    if (((int)transform.position.x != ((int)white.transform.position.x) || ((int)transform.position.y != (int)white.transform.position.y)))
-        //    {
-        //        isFull = false;
-        //    }
-        //}
-    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))
         {
-            i++;
+            whiteCubesInRange++;
         } 
     }
    
@@ -40,10 +29,10 @@ public class GridTileCubes : MonoBehaviour
     {
         if (col.CompareTag("whiteCube"))
         {
-            if (i >= 1)
+            if (whiteCubesInRange >= 1)
             {
-                i--;
-                if (i == 0)
+                whiteCubesInRange--;
+                if (whiteCubesInRange == 0)
                 {
                     isFull = false;
                 }

@@ -20,7 +20,6 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        //Lights();
         if (inRange && BlackBoard.curser.whiteCubes.Count <= 2)
         {
             if (Input.GetMouseButtonDown(0))
@@ -44,6 +43,8 @@ public class WhiteCubes : MonoBehaviour
                 }
                 else if(dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count > 0)
                 {
+                    greenLight.enabled = false;
+                    redLight.enabled = true;
                     foreach (GameObject slot in emptySlot)
                     {
                         if ((BlackBoard.curser.whiteCubes.Count == 2))
@@ -58,8 +59,6 @@ public class WhiteCubes : MonoBehaviour
                                     transform.parent = null;
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
-                                    greenLight.enabled = false;
-                                    redLight.enabled = true;
                                     return;
                                 }
                             }
@@ -77,8 +76,7 @@ public class WhiteCubes : MonoBehaviour
                                     BlackBoard.soundsManager.SoundsList(1);
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
-                                    greenLight.enabled = false;
-                                    redLight.enabled = true;
+
                                     bool isAllGreenFull = true;
                                     foreach (GridTileCubes green in greenSlots)
                                     {
@@ -101,20 +99,6 @@ public class WhiteCubes : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Empty Slot"))
-        {
-            if (!col.GetComponent<GridTileCubes>().isFull)
-            {
-                canBePlaced = true;
-            }
-            else
-            {
-                canBePlaced = false;
-            }
-        }
-    }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -152,18 +136,4 @@ public class WhiteCubes : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         dragging = false;
     }
-
-    //void Lights()
-    //{
-    //    if (BlackBoard.magnet.maleFemale && inRange)
-    //    {
-    //        greenLight.enabled = true;
-    //        redLight.enabled = false;
-    //    }
-    //    else
-    //    {
-    //        greenLight.enabled = false;
-    //        redLight.enabled = true;
-    //    }
-    //}
 }
