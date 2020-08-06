@@ -20,13 +20,15 @@ public class WhiteCubes : MonoBehaviour
     }
     private void Update()
     {
-        Lights();
+        //Lights();
         if (inRange && BlackBoard.curser.whiteCubes.Count <= 2)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 if (!dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
                 {
+                    greenLight.enabled = true;
+                    redLight.enabled = false;
                     foreach (GameObject slot in emptySlot)
                     {
                         if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
@@ -35,7 +37,7 @@ public class WhiteCubes : MonoBehaviour
                             slot.GetComponent<GridTileCubes>().isFull = false;
                         }
                     }
-                        transform.SetParent(player.transform);
+                    transform.SetParent(player.transform);
                     BlackBoard.curser.whiteCubes.Add(this);
                     dragging = true;
                     BlackBoard.soundsManager.SoundsList(4);
@@ -56,6 +58,8 @@ public class WhiteCubes : MonoBehaviour
                                     transform.parent = null;
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
+                                    greenLight.enabled = false;
+                                    redLight.enabled = true;
                                     return;
                                 }
                             }
@@ -73,6 +77,8 @@ public class WhiteCubes : MonoBehaviour
                                     BlackBoard.soundsManager.SoundsList(1);
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
+                                    greenLight.enabled = false;
+                                    redLight.enabled = true;
                                     bool isAllGreenFull = true;
                                     foreach (GridTileCubes green in greenSlots)
                                     {
@@ -147,17 +153,17 @@ public class WhiteCubes : MonoBehaviour
         dragging = false;
     }
 
-    void Lights()
-    {
-        if (BlackBoard.magnet.maleFemale && inRange)
-        {
-            greenLight.enabled = true;
-            redLight.enabled = false;
-        }
-        else
-        {
-            greenLight.enabled = false;
-            redLight.enabled = true;
-        }
-    }
+    //void Lights()
+    //{
+    //    if (BlackBoard.magnet.maleFemale && inRange)
+    //    {
+    //        greenLight.enabled = true;
+    //        redLight.enabled = false;
+    //    }
+    //    else
+    //    {
+    //        greenLight.enabled = false;
+    //        redLight.enabled = true;
+    //    }
+    //}
 }

@@ -9,6 +9,7 @@ public class MagnetsScript : MonoBehaviour
     public magnetType magnet;
     public magnetPosition position;
 
+
     public GameObject up;
     public GameObject down;
     public GameObject left;
@@ -40,6 +41,7 @@ public class MagnetsScript : MonoBehaviour
         {
             maleFemale = false;
         }
+        
     }
 
     private void FixedUpdate()
