@@ -26,8 +26,6 @@ public class WhiteCubes : MonoBehaviour
             {
                 if (!dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1 && (BlackBoard.curser.howMuchInRange == 2))
                 {
-                    greenLight.enabled = true;
-                    redLight.enabled = false;
                     foreach (GameObject slot in emptySlot)
                     {
                         if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
@@ -43,8 +41,6 @@ public class WhiteCubes : MonoBehaviour
                 }
                 else if(dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count > 0)
                 {
-                    greenLight.enabled = false;
-                    redLight.enabled = true;
                     foreach (GameObject slot in emptySlot)
                     {
                         if ((BlackBoard.curser.whiteCubes.Count == 2))
@@ -117,6 +113,25 @@ public class WhiteCubes : MonoBehaviour
                 canBePlaced = false;
             }
         }
+
+        if (col.gameObject.CompareTag("Female"))
+        {
+            if (BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1)
+            {
+                greenLight.enabled = true;
+                redLight.enabled = false;
+            }
+            else if(BlackBoard.magnet.maleFemale && dragging)
+            {
+                greenLight.enabled = true;
+                redLight.enabled = false;
+            }
+            else
+            {
+                greenLight.enabled = false;
+                redLight.enabled = true;
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
@@ -128,6 +143,12 @@ public class WhiteCubes : MonoBehaviour
         if (col.gameObject.CompareTag("Empty Slot"))
         {
             canBePlaced = false;
+        }
+
+        if (col.gameObject.CompareTag("Female"))
+        {
+            greenLight.enabled = false;
+            redLight.enabled = true;
         }
     }
 

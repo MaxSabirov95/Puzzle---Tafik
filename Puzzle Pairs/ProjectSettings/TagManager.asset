@@ -11,6 +11,9 @@ TagManager:
   - red
   - whiteCube
   - Target Slot
+  - PlayerFirstRadius
+  - Detector
+  - Female
   layers:
   - Default
   - TransparentFX
@@ -24,9 +27,9 @@ TagManager:
   - Cube
   - Player
   - Magnet
-  - 
-  - 
-  - 
+  - Detector
+  - Female
+  - Male
   - 
   - 
   - 

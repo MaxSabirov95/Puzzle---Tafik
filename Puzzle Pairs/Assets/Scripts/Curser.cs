@@ -11,6 +11,7 @@ public class Curser : MonoBehaviour
     private void Start()
     {
         BlackBoard.curser = this;
+        Physics.IgnoreLayerCollision(10, 12);
     }
     void Update()
     {

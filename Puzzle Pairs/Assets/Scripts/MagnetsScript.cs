@@ -22,6 +22,8 @@ public class MagnetsScript : MonoBehaviour
     public bool maleFemale;
     public ParticleSystem effect;
 
+    //public GameObject lightsDetector;
+
     private bool playerIn;
 
     void Start()
@@ -29,11 +31,19 @@ public class MagnetsScript : MonoBehaviour
         startPosition = transform.localPosition;
         BlackBoard.magnet = this;
         Physics.IgnoreLayerCollision(11, 9);
+        Physics.IgnoreLayerCollision(13, 13);
+
+        //if (lightsDetector != null)
+        //{
+        //    lightsDetector.SetActive(false);
+        //}
     }
 
     private void Update()
     {
-        if ((male == 1) && (female == 1))
+        Debug.Log(male);
+        Debug.Log(female);
+        if ((male >= 1) && (female >= 1))
         {
             maleFemale = true;
         }
@@ -41,7 +51,6 @@ public class MagnetsScript : MonoBehaviour
         {
             maleFemale = false;
         }
-        
     }
 
     private void FixedUpdate()
@@ -115,7 +124,6 @@ public class MagnetsScript : MonoBehaviour
         {
             playerIn = false;
         }
-
         switch (magnet)
         {
             case magnetType.male:
