@@ -15,6 +15,8 @@ public class WhiteCubes : MonoBehaviour
 
     private void Start()
     {
+        greenLight.enabled = false;
+        redLight.enabled = true;
         BlackBoard._whiteCube = this;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
     }
