@@ -116,7 +116,7 @@ public class WhiteCubes : MonoBehaviour
             }
         }
 
-        if (col.gameObject.CompareTag("Female"))
+        if (col.gameObject.CompareTag("blue"))
         {
             if (BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1)
             {
@@ -147,7 +147,7 @@ public class WhiteCubes : MonoBehaviour
             canBePlaced = false;
         }
 
-        if (col.gameObject.CompareTag("Female"))
+        if (col.gameObject.CompareTag("blue"))
         {
             greenLight.enabled = false;
             redLight.enabled = true;

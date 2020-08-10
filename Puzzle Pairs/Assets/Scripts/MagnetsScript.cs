@@ -22,21 +22,20 @@ public class MagnetsScript : MonoBehaviour
     public bool maleFemale;
     public ParticleSystem effect;
 
-    //public GameObject lightsDetector;
 
     private bool playerIn;
+
+    //public enum maleSides { right, left };
+    //public maleSides MaleSides;
+    //private Vector2 startRotation;
 
     void Start()
     {
         startPosition = transform.localPosition;
+        //startRotation = transform.eulerAngles;
         BlackBoard.magnet = this;
         Physics.IgnoreLayerCollision(11, 9);
         Physics.IgnoreLayerCollision(13, 13);
-
-        //if (lightsDetector != null)
-        //{
-        //    lightsDetector.SetActive(false);
-        //}
     }
 
     private void Update()
@@ -74,10 +73,20 @@ public class MagnetsScript : MonoBehaviour
                         transform.localPosition = Vector2.MoveTowards(transform.localPosition, left.transform.localPosition, speed);
                         break;
                 }
+
+                //switch (MaleSides)
+                //{
+                //    case maleSides.right:
+                //        transform.localPosition = Vector2.MoveTowards(right.transform.localPosition, right.transform.localPosition, speed);
+                //        break;
+                //    case maleSides.left:
+                //        transform.localPosition = Vector2.MoveTowards(left.transform.localPosition, left.transform.localPosition, speed);
+                //        break;
+                //}
             }
             else
             {
-                transform.localPosition = Vector2.MoveTowards(transform.localPosition, startPosition, speed);
+                transform.localPosition = Vector2.MoveTowards(startPosition, startPosition, speed);
             }
         }
     }
