@@ -49,12 +49,26 @@ public class WhiteCubes : MonoBehaviour
                         {
                             if (BlackBoard.curser.whiteCubes[0].canBePlaced && BlackBoard.curser.whiteCubes[1].canBePlaced)
                             {
-                                if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
-                                    Mathf.Abs(transform.position.y - slot.transform.position.y) <= 1f)
+                                if (Mathf.Abs(BlackBoard.curser.whiteCubes[1].transform.position.x - slot.transform.position.x) <= 1f &&
+                                    Mathf.Abs(BlackBoard.curser.whiteCubes[1].transform.position.y - slot.transform.position.y) <= 1f)
                                 {
-                                    transform.position = slot.transform.position;
+                                    BlackBoard.curser.whiteCubes[1].transform.position = slot.transform.position;
+                                    BlackBoard.curser.whiteCubes[1].transform.parent = null;
+                                    foreach (GridTileCubes green in greenSlots)
+                                    {
+                                        if (BlackBoard.curser.whiteCubes[1].transform.position == green.transform.position)
+                                        {
+                                            BlackBoard.curser.whiteCubes[1].greenLight.enabled = true;
+                                            BlackBoard.curser.whiteCubes[1].redLight.enabled = false;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            BlackBoard.curser.whiteCubes[1].greenLight.enabled = false;
+                                            BlackBoard.curser.whiteCubes[1].redLight.enabled = true;
+                                        }
+                                    }
                                     BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[1]);
-                                    transform.parent = null;
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     return;
@@ -65,12 +79,26 @@ public class WhiteCubes : MonoBehaviour
                         {
                             if (BlackBoard.curser.whiteCubes[0].canBePlaced)
                             {
-                                if (Mathf.Abs(transform.position.x - slot.transform.position.x) <= 1f &&
-                                    Mathf.Abs(transform.position.y - slot.transform.position.y) <= 1f)
+                                if (Mathf.Abs(BlackBoard.curser.whiteCubes[0].transform.position.x - slot.transform.position.x) <= 1f &&
+                                    Mathf.Abs(BlackBoard.curser.whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
                                 {
-                                    transform.position = slot.transform.position;
+                                    BlackBoard.curser.whiteCubes[0].transform.position = slot.transform.position;
+                                    BlackBoard.curser.whiteCubes[0].transform.parent = null;
+                                    foreach (GridTileCubes green in greenSlots)
+                                    {
+                                        if (BlackBoard.curser.whiteCubes[0].transform.position == green.transform.position)
+                                        {
+                                            BlackBoard.curser.whiteCubes[0].greenLight.enabled = true;
+                                            BlackBoard.curser.whiteCubes[0].redLight.enabled = false;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            BlackBoard.curser.whiteCubes[0].greenLight.enabled = false;
+                                            BlackBoard.curser.whiteCubes[0].redLight.enabled = true;
+                                        }
+                                    }
                                     BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[0]);
-                                    transform.parent = null;
                                     BlackBoard.soundsManager.SoundsList(1);
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
@@ -115,25 +143,6 @@ public class WhiteCubes : MonoBehaviour
                 canBePlaced = false;
             }
         }
-
-        if (col.gameObject.CompareTag("blue"))
-        {
-            if (BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count <= 1)
-            {
-                greenLight.enabled = true;
-                redLight.enabled = false;
-            }
-            else if(BlackBoard.magnet.maleFemale && dragging)
-            {
-                greenLight.enabled = true;
-                redLight.enabled = false;
-            }
-            else
-            {
-                greenLight.enabled = false;
-                redLight.enabled = true;
-            }
-        }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
@@ -145,12 +154,6 @@ public class WhiteCubes : MonoBehaviour
         if (col.gameObject.CompareTag("Empty Slot"))
         {
             canBePlaced = false;
-        }
-
-        if (col.gameObject.CompareTag("blue"))
-        {
-            greenLight.enabled = false;
-            redLight.enabled = true;
         }
     }
 

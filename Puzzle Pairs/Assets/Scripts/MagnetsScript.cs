@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
+    [SerializeField] Animator anim;
+
     public enum magnetType { male,female};
     public enum magnetPosition { up, down,right,left,notMovable };
     public magnetType magnet;
@@ -25,12 +28,12 @@ public class MagnetsScript : MonoBehaviour
 
     private bool playerIn;
 
-    //public enum maleSides { right, left };
-    //public maleSides MaleSides;
-    //private Vector2 startRotation;
-
     void Start()
     {
+        if (anim == null)
+        {
+            anim = null;
+        }
         startPosition = transform.localPosition;
         //startRotation = transform.eulerAngles;
         BlackBoard.magnet = this;
@@ -58,6 +61,11 @@ public class MagnetsScript : MonoBehaviour
         {
             if (playerIn)
             {
+                if(anim != null)
+                {
+                    anim.SetBool("isOpen", true);
+                }
+               
                 switch (position)
                 {
                     case magnetPosition.up:
@@ -73,19 +81,14 @@ public class MagnetsScript : MonoBehaviour
                         transform.localPosition = Vector2.MoveTowards(transform.localPosition, left.transform.localPosition, speed);
                         break;
                 }
-
-                //switch (MaleSides)
-                //{
-                //    case maleSides.right:
-                //        transform.localPosition = Vector2.MoveTowards(right.transform.localPosition, right.transform.localPosition, speed);
-                //        break;
-                //    case maleSides.left:
-                //        transform.localPosition = Vector2.MoveTowards(left.transform.localPosition, left.transform.localPosition, speed);
-                //        break;
-                //}
             }
             else
             {
+                if (anim != null)
+                {
+                    anim.SetBool("isOpen", false);
+                }
+                
                 transform.localPosition = Vector2.MoveTowards(startPosition, startPosition, speed);
             }
         }
