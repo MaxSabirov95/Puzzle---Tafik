@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    [SerializeField] Animator anim;
+    [SerializeField] Animator animMale;
+    [SerializeField] Animator animFemale;
 
     public enum magnetType { male,female};
     public enum magnetPosition { up, down,right,left,notMovable };
@@ -30,9 +31,13 @@ public class MagnetsScript : MonoBehaviour
 
     void Start()
     {
-        if (anim == null)
+        if (animMale == null)
         {
-            anim = null;
+            animMale = null;
+        }
+        if (animFemale == null)
+        {
+            animFemale = null;
         }
         startPosition = transform.localPosition;
         //startRotation = transform.eulerAngles;
@@ -61,11 +66,15 @@ public class MagnetsScript : MonoBehaviour
         {
             if (playerIn)
             {
-                if(anim != null)
+                if(animMale != null)
                 {
-                    anim.SetBool("isOpen", true);
+                    animMale.SetBool("isOpen", true);
                 }
-               
+                if (animFemale != null)
+                {
+                    animFemale.SetBool("open", true);
+                }
+
                 switch (position)
                 {
                     case magnetPosition.up:
@@ -84,12 +93,22 @@ public class MagnetsScript : MonoBehaviour
             }
             else
             {
-                if (anim != null)
+                if (animMale != null)
                 {
-                    anim.SetBool("isOpen", false);
+                    animMale.SetBool("isOpen", false);
                 }
-                
+                if (animFemale != null)
+                {
+                    animFemale.SetBool("open", false);
+                }
                 transform.localPosition = Vector2.MoveTowards(startPosition, startPosition, speed);
+            }
+        }
+        else
+        {
+            if (animFemale != null)
+            {
+                animFemale.SetBool("open", false);
             }
         }
     }

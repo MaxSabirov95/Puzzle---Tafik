@@ -102,7 +102,6 @@ public class WhiteCubes : MonoBehaviour
                                     BlackBoard.soundsManager.SoundsList(1);
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
-
                                     bool isAllGreenFull = true;
                                     foreach (GridTileCubes green in greenSlots)
                                     {
