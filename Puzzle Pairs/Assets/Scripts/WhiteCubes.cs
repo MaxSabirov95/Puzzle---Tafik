@@ -12,6 +12,7 @@ public class WhiteCubes : MonoBehaviour
     bool inRange;
     bool canBePlaced = false;
     public List<GridTileCubes> greenSlots;
+    public SpriteRenderer[] imagesLayers;
 
     private void Start()
     {
@@ -19,6 +20,10 @@ public class WhiteCubes : MonoBehaviour
         redLight.enabled = true;
         BlackBoard._whiteCube = this;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
+        for (int i = 0; i < imagesLayers.Length; i++)
+        {
+            imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+        }
     }
     private void Update()
     {
@@ -40,6 +45,12 @@ public class WhiteCubes : MonoBehaviour
                     BlackBoard.curser.whiteCubes.Add(this);
                     dragging = true;
                     BlackBoard.soundsManager.SoundsList(4);
+                    greenLight.enabled = false;
+                    redLight.enabled = true;
+                    for (int i = 0; i < imagesLayers.Length; i++)
+                    {
+                        imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Drag");
+                    }
                 }
                 else if(dragging && BlackBoard.magnet.maleFemale && BlackBoard.curser.whiteCubes.Count > 0)
                 {
@@ -71,6 +82,10 @@ public class WhiteCubes : MonoBehaviour
                                     BlackBoard.curser.whiteCubes.Remove(BlackBoard.curser.whiteCubes[1]);
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
+                                    for (int i = 0; i < imagesLayers.Length; i++)
+                                    {
+                                        imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+                                    }
                                     return;
                                 }
                             }
@@ -102,6 +117,10 @@ public class WhiteCubes : MonoBehaviour
                                     BlackBoard.soundsManager.SoundsList(1);
                                     StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
+                                    for (int i = 0; i < imagesLayers.Length; i++)
+                                    {
+                                        imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+                                    }
                                     bool isAllGreenFull = true;
                                     foreach (GridTileCubes green in greenSlots)
                                     {
