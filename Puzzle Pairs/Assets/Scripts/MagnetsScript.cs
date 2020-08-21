@@ -21,16 +21,18 @@ public class MagnetsScript : MonoBehaviour
 
     private Vector2 startPosition;
     public float speed;
+    float speedTemp;
     public static int male;
     public static int female;
     public bool maleFemale;
     public ParticleSystem effect;
 
 
-    private bool playerIn;
+    [SerializeField] bool playerIn;
 
     void Start()
     {
+        speedTemp = speed;
         if (animMale == null)
         {
             animMale = null;
@@ -118,6 +120,12 @@ public class MagnetsScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIn = true;
+            speed = speedTemp;
+        }
+        else if (collision.CompareTag("M.R"))
+        {
+            playerIn = true;
+            speed /= 100;
         }
 
         switch (magnet)
@@ -151,8 +159,9 @@ public class MagnetsScript : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("B.R"))
         {
+            speed = speedTemp;
             playerIn = false;
         }
         switch (magnet)

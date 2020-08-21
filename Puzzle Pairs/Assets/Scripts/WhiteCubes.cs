@@ -9,7 +9,7 @@ public class WhiteCubes : MonoBehaviour
     [SerializeField] SpriteRenderer greenLight;
     [SerializeField] SpriteRenderer redLight;
     public GameObject[] emptySlot;
-    bool inRange;
+    [SerializeField]  bool inRange;
     bool canBePlaced = false;
     public List<GridTileCubes> greenSlots;
     public SpriteRenderer[] imagesLayers;
