@@ -495,7 +495,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 10
 --- !u!4 &73515754
 Transform:
   m_ObjectHideFlags: 0
@@ -9258,7 +9258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1027934978
 Transform:
   m_ObjectHideFlags: 0
@@ -9288,7 +9288,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 30
+  m_Radius: 15
 --- !u!50 &1027934980
 Rigidbody2D:
   serializedVersion: 4
@@ -11525,7 +11525,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 45
+  m_Radius: 20
 --- !u!50 &1685331997
 Rigidbody2D:
   serializedVersion: 4

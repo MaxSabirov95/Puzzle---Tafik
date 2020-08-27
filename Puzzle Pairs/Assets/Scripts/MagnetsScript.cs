@@ -122,11 +122,11 @@ public class MagnetsScript : MonoBehaviour
             playerIn = true;
             speed = speedTemp;
         }
-        else if (collision.CompareTag("M.R"))
-        {
-            playerIn = true;
-            speed /= 100;
-        }
+        //else if (collision.CompareTag("M.R"))
+        //{
+        //    playerIn = true;
+        //    speed /= 100;
+        //}
 
         switch (magnet)
         {
