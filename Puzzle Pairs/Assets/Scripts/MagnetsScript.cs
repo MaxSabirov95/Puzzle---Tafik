@@ -21,7 +21,7 @@ public class MagnetsScript : MonoBehaviour
 
     private Vector2 startPosition;
     public float speed;
-    float speedTemp;
+    //float speedTemp;
     public static int male;
     public static int female;
     public bool maleFemale;
@@ -32,7 +32,7 @@ public class MagnetsScript : MonoBehaviour
 
     void Start()
     {
-        speedTemp = speed;
+        //speedTemp = speed;
         if (animMale == null)
         {
             animMale = null;
@@ -71,6 +71,7 @@ public class MagnetsScript : MonoBehaviour
                 if(animMale != null)
                 {
                     animMale.SetBool("isOpen", true);
+                    animMale.SetBool("Close", false);
                 }
                 if (animFemale != null)
                 {
@@ -97,17 +98,22 @@ public class MagnetsScript : MonoBehaviour
             {
                 if (animMale != null)
                 {
+                    animMale.SetBool("Close", false);
                     animMale.SetBool("isOpen", false);
                 }
                 if (animFemale != null)
                 {
                     animFemale.SetBool("open", false);
                 }
-                transform.localPosition = Vector2.MoveTowards(startPosition, startPosition, speed);
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, startPosition, speed);
             }
         }
         else
         {
+            if (animMale != null)
+            {
+                animMale.SetBool("Close", true);
+            }
             if (animFemale != null)
             {
                 animFemale.SetBool("open", false);
@@ -120,7 +126,7 @@ public class MagnetsScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIn = true;
-            speed = speedTemp;
+            //speed = speedTemp;
         }
         //else if (collision.CompareTag("M.R"))
         //{
@@ -161,7 +167,7 @@ public class MagnetsScript : MonoBehaviour
     {
         if (collision.CompareTag("B.R"))
         {
-            speed = speedTemp;
+            //speed = speedTemp;
             playerIn = false;
         }
         switch (magnet)
