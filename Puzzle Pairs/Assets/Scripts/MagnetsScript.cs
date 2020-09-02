@@ -33,16 +33,9 @@ public class MagnetsScript : MonoBehaviour
     void Start()
     {
         //speedTemp = speed;
-        if (animMale == null)
-        {
-            animMale = null;
-        }
-        if (animFemale == null)
-        {
-            animFemale = null;
-        }
+
         startPosition = transform.localPosition;
-        //startRotation = transform.eulerAngles;
+
         BlackBoard.magnet = this;
         Physics.IgnoreLayerCollision(11, 9);
         Physics.IgnoreLayerCollision(13, 13);
@@ -50,8 +43,6 @@ public class MagnetsScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(male);
-        Debug.Log(female);
         if ((male >= 1) && (female >= 1))
         {
             maleFemale = true;
@@ -64,7 +55,7 @@ public class MagnetsScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!BlackBoard._whiteCube.dragging)
+        if (!BlackBoard.curser.dragging)
         {
             if (playerIn)
             {
@@ -105,6 +96,7 @@ public class MagnetsScript : MonoBehaviour
                 {
                     animFemale.SetBool("open", false);
                 }
+                //-- put two animations on one anim and give them same paramter names
                 transform.localPosition = Vector2.MoveTowards(transform.localPosition, startPosition, speed);
             }
         }
@@ -140,7 +132,7 @@ public class MagnetsScript : MonoBehaviour
                 if (collision.CompareTag("blue"))
                 {
                     female++;
-                    if (!BlackBoard._whiteCube.dragging)
+                    if (!BlackBoard.curser.dragging)
                     {
                         effect.transform.position = transform.position;
                         effect.Play();
@@ -149,7 +141,7 @@ public class MagnetsScript : MonoBehaviour
                 }
                 else if(collision.CompareTag("red"))
                 {
-                    if (!BlackBoard._whiteCube.dragging)
+                    if (!BlackBoard.curser.dragging)
                     {
                         BlackBoard.soundsManager.SoundsList(0);
                     }
@@ -187,7 +179,7 @@ public class MagnetsScript : MonoBehaviour
         }
     }
 
-    public void ResetOrNextLevel()
+    public void Male_And_Female_Reset()
     {
         male = 0;
         female = 0;

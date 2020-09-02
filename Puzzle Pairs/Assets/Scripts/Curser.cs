@@ -7,11 +7,15 @@ public class Curser : MonoBehaviour
     public float rotation;
     public List <WhiteCubes> whiteCubes;
     public int howMuchInRange;
+    public GameObject[] emptySlot;
+    public GameObject[] cubes;
+    public bool dragging = false;
 
     private void Start()
     {
+        emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         BlackBoard.curser = this;
-        Physics.IgnoreLayerCollision(10, 12);
+        Physics.IgnoreLayerCollision(10, 12);//--check what his mission
     }
     void Update()
     {
@@ -21,25 +25,52 @@ public class Curser : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             rotation -= 90;
-            if (rotation <= -360)
-            {
-                rotation = 0;
-            }
             transform.rotation = Quaternion.Euler(0, 0, rotation);
             BlackBoard.soundsManager.SoundsList(3);
         }
+
+
+
+
+
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            dragging = !dragging;
+            if (dragging)
+            {
+                foreach (WhiteCubes whiteCube in whiteCubes)
+                {
+                    if (whiteCube.inRange)
+                    {
+                        whiteCube.transform.SetParent(transform);
+                        whiteCubes.Add(whiteCube);
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("whiteCube"))
+        if (col.CompareTag("whiteCube"))//--connector boxes
         {
             howMuchInRange++;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.CompareTag("whiteCube"))
+        if (col.CompareTag("whiteCube"))//--connector boxes
         {
             howMuchInRange--;
         }

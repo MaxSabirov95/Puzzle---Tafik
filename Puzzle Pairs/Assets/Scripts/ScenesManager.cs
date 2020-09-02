@@ -24,13 +24,13 @@ public class ScenesManager : MonoBehaviour
 
     public void NextLevel()
     {
-        BlackBoard.magnet.ResetOrNextLevel();
+        BlackBoard.magnet.Male_And_Female_Reset();
         SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
 
     public void PreviousLevel()
     {
-        BlackBoard.magnet.ResetOrNextLevel();
+        BlackBoard.magnet.Male_And_Female_Reset();
         SceneManager.LoadScene(sceneLoaded.buildIndex - 1);
     }
 }
