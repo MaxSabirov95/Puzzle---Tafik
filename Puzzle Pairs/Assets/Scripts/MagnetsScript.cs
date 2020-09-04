@@ -27,6 +27,7 @@ public class MagnetsScript : MonoBehaviour
     public static int female;
     public bool maleFemale;
     public ParticleSystem effect;
+    public GameObject placeEffect;
 
 
     [SerializeField] bool playerIn;
@@ -113,9 +114,12 @@ public class MagnetsScript : MonoBehaviour
                     female++;
                     if (!BlackBoard.curser.dragging)
                     {
-                        effect.transform.position = transform.position;
-                        effect.Play();
-                        BlackBoard.soundsManager.SoundsList(2);
+                        if(placeEffect != null)
+                        {
+                            effect.transform.position = placeEffect.transform.position;
+                            effect.Play();
+                            BlackBoard.soundsManager.SoundsList(2);
+                        }
                     }
                 }
                 else if(collision.CompareTag("red"))
