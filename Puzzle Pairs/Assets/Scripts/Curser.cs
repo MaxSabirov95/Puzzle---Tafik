@@ -18,7 +18,7 @@ public class Curser : MonoBehaviour
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         BlackBoard.curser = this;
-        Physics.IgnoreLayerCollision(10, 12);//--check what his mission
+        //Physics.IgnoreLayerCollision(10, 12);//--check what his mission
     }
     void Update()
     {

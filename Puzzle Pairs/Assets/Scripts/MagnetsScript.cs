@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    [SerializeField] Animator animMale;
-    [SerializeField] Animator animFemale;
+    //[SerializeField] Animator animMale;
+    //[SerializeField] Animator animFemale;
+    [SerializeField] Animator anim;
 
     public enum magnetType { male,female};
     public enum magnetPosition { up, down,right,left,notMovable };
@@ -59,16 +60,8 @@ public class MagnetsScript : MonoBehaviour
         {
             if (playerIn)
             {
-                if(animMale != null)
-                {
-                    animMale.SetBool("isOpen", true);
-                    animMale.SetBool("Close", false);
-                }
-                if (animFemale != null)
-                {
-                    animFemale.SetBool("open", true);
-                }
-
+                anim.SetBool("isOpen", true);
+                anim.SetBool("Close", false);
                 switch (position)
                 {
                     case magnetPosition.up:
@@ -87,29 +80,15 @@ public class MagnetsScript : MonoBehaviour
             }
             else
             {
-                if (animMale != null)
-                {
-                    animMale.SetBool("Close", false);
-                    animMale.SetBool("isOpen", false);
-                }
-                if (animFemale != null)
-                {
-                    animFemale.SetBool("open", false);
-                }
-                //-- put two animations on one anim and give them same paramter names
+                anim.SetBool("Close", false);
+                anim.SetBool("isOpen", false);
                 transform.localPosition = Vector2.MoveTowards(transform.localPosition, startPosition, speed);
             }
         }
         else
         {
-            if (animMale != null)
-            {
-                animMale.SetBool("Close", true);
-            }
-            if (animFemale != null)
-            {
-                animFemale.SetBool("open", false);
-            }
+            anim.SetBool("Close", true);
+            anim.SetBool("isOpen", false);
         }
     }
 

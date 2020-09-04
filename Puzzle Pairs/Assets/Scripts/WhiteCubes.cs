@@ -5,13 +5,10 @@ using UnityEngine;
 public class WhiteCubes : MonoBehaviour
 {
     public GameObject player;
-    // bool dragging = false;
     public SpriteRenderer greenLight;
     public SpriteRenderer redLight;
-    //public GameObject[] emptySlot;
     public bool inRange;
     public bool canBePlaced = false;
-    //public List<GridTileCubes> greenSlots;
     public SpriteRenderer[] imagesLayers;
 
     private void Start()

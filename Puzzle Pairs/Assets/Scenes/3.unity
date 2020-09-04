@@ -993,8 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 0}
-  animFemale: {fileID: 255154219}
+  anim: {fileID: 255154219}
   magnet: 1
   position: 1
   up: {fileID: 5806294907587288581}
@@ -1539,7 +1538,7 @@ GameObject:
   - component: {fileID: 385879795}
   - component: {fileID: 385879794}
   m_Layer: 11
-  m_Name: Red Magnet Down)
+  m_Name: Red Magnet Down
   m_TagString: red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1690,8 +1689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 385879794}
-  animFemale: {fileID: 0}
+  anim: {fileID: 385879794}
   magnet: 0
   position: 1
   up: {fileID: 3800312219773785873}
@@ -1949,8 +1947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 395377616}
-  animFemale: {fileID: 0}
+  anim: {fileID: 395377616}
   magnet: 0
   position: 0
   up: {fileID: 1140512206}
@@ -3072,8 +3069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 0}
-  animFemale: {fileID: 724642669}
+  anim: {fileID: 724642669}
   magnet: 1
   position: 3
   up: {fileID: 5806294907587288581}
@@ -4263,8 +4259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 896988219}
-  animFemale: {fileID: 0}
+  anim: {fileID: 896988219}
   magnet: 0
   position: 0
   up: {fileID: 1827777999}
@@ -4518,7 +4513,7 @@ GameObject:
   - component: {fileID: 1013411288}
   - component: {fileID: 1013411287}
   m_Layer: 11
-  m_Name: Red Magnet Down)
+  m_Name: Red Magnet Down
   m_TagString: red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4669,8 +4664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 1013411287}
-  animFemale: {fileID: 0}
+  anim: {fileID: 1013411287}
   magnet: 0
   position: 1
   up: {fileID: 1140512206}
@@ -9794,8 +9788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 1057568494}
-  animFemale: {fileID: 0}
+  anim: {fileID: 1057568494}
   magnet: 0
   position: 0
   up: {fileID: 1859127446}
@@ -10248,7 +10241,7 @@ GameObject:
   - component: {fileID: 1321995634}
   - component: {fileID: 1321995633}
   m_Layer: 11
-  m_Name: Red Magnet Down)
+  m_Name: Red Magnet Down
   m_TagString: red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10399,8 +10392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 1321995633}
-  animFemale: {fileID: 0}
+  anim: {fileID: 1321995633}
   magnet: 0
   position: 1
   up: {fileID: 1827777999}
@@ -10575,8 +10567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 0}
-  animFemale: {fileID: 1322800075}
+  anim: {fileID: 1322800075}
   magnet: 1
   position: 2
   up: {fileID: 5806294907587288581}
@@ -12172,7 +12163,7 @@ GameObject:
   - component: {fileID: 1709841585}
   - component: {fileID: 1709841584}
   m_Layer: 11
-  m_Name: Red Magnet Down)
+  m_Name: Red Magnet Down
   m_TagString: red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12323,8 +12314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 1709841584}
-  animFemale: {fileID: 0}
+  anim: {fileID: 1709841584}
   magnet: 0
   position: 1
   up: {fileID: 1859127446}
@@ -13842,8 +13832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 0}
-  animFemale: {fileID: 2102531299}
+  anim: {fileID: 2102531299}
   magnet: 1
   position: 0
   up: {fileID: 5806294907587288581}
@@ -13947,8 +13936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2a37db6f7a61d4584a7c8c79b20651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animMale: {fileID: 2832106911447896608}
-  animFemale: {fileID: 0}
+  anim: {fileID: 2832106911447896608}
   magnet: 0
   position: 0
   up: {fileID: 3800312219773785873}
