@@ -12,7 +12,6 @@ public class Curser : MonoBehaviour
     public GameObject[] cubes;
     public bool dragging = false;
     bool moveDone;
-
     private void Start()
     {
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
@@ -42,23 +41,34 @@ public class Curser : MonoBehaviour
                     WhiteCubes white_cube = whiteCube.GetComponent<WhiteCubes>();
                     if (white_cube.inRange)
                     {
-                        whiteCube.transform.SetParent(transform);
                         whiteCubes.Add(white_cube);
-                        white_cube.greenLight.enabled = false;
-                        white_cube.redLight.enabled = true;
-                        for (int i = 0; i < white_cube.imagesLayers.Length; i++)
+                    }
+                }
+                foreach (GameObject whiteCube in cubes)
+                {
+                    WhiteCubes white_cube = whiteCube.GetComponent<WhiteCubes>();
+                    if (white_cube.inRange)
+                    {
+                        if(whiteCubes[0].inRange && whiteCubes[1].inRange)
                         {
-                            white_cube.imagesLayers[i].sortingLayerID = SortingLayer.NameToID("Drag");
-                        }
-                        foreach (GameObject slot in emptySlot)
-                        {
-                            if (Mathf.Abs(whiteCube.transform.position.x - slot.transform.position.x) <= 1f &&
-                                Mathf.Abs(whiteCube.transform.position.y - slot.transform.position.y) <= 1f)
+                            whiteCube.transform.SetParent(transform);
+                            white_cube.greenLight.enabled = false;
+                            white_cube.redLight.enabled = true;
+                            for (int i = 0; i < white_cube.imagesLayers.Length; i++)
                             {
-                                slot.GetComponent<GridTileCubes>().isFull = false;
-                                break;
+                                white_cube.imagesLayers[i].sortingLayerID = SortingLayer.NameToID("Drag");
+                            }
+                            foreach (GameObject slot in emptySlot)
+                            {
+                                if (Mathf.Abs(whiteCube.transform.position.x - slot.transform.position.x) <= 1f &&
+                                    Mathf.Abs(whiteCube.transform.position.y - slot.transform.position.y) <= 1f)
+                                {
+                                    slot.GetComponent<GridTileCubes>().isFull = false;
+                                    break;
+                                }
                             }
                         }
+                        
                     }
                 }
                 dragging = true;
