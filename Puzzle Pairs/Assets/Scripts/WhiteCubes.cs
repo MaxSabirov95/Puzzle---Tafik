@@ -10,6 +10,7 @@ public class WhiteCubes : MonoBehaviour
     public bool inRange;
     public bool canBePlaced = false;
     public SpriteRenderer[] imagesLayers;
+    public List<GridTileCubes> greenSlots;
 
     private void Start()
     {
@@ -18,6 +19,16 @@ public class WhiteCubes : MonoBehaviour
         for (int i = 0; i < imagesLayers.Length; i++)
         {
             imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+        }
+
+        foreach (GridTileCubes green in greenSlots)
+        {
+            if (transform.position == green.transform.position)
+            {
+                greenLight.enabled = true;
+                redLight.enabled = false;
+                break;
+            }
         }
     }
     //private void OnTriggerEnter2D(Collider2D col)
