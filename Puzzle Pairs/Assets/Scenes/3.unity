@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes:
   - {fileID: 0}
@@ -12689,7 +12689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &1670559862
