@@ -4030,6 +4030,7 @@ MonoBehaviour:
   - {fileID: 201359931}
   - {fileID: 491295125}
   - {fileID: 650053625}
+  greenSlots: []
 --- !u!1 &888719184
 GameObject:
   m_ObjectHideFlags: 0
@@ -11855,6 +11856,7 @@ MonoBehaviour:
   - {fileID: 807319077}
   - {fileID: 329333288}
   - {fileID: 1568869592}
+  greenSlots: []
 --- !u!1 &1584581266
 GameObject:
   m_ObjectHideFlags: 0
@@ -12710,6 +12712,7 @@ MonoBehaviour:
   - {fileID: 911985823}
   - {fileID: 416741158}
   - {fileID: 1513621823}
+  greenSlots: []
 --- !u!1 &1758213072
 GameObject:
   m_ObjectHideFlags: 0
@@ -15030,6 +15033,7 @@ MonoBehaviour:
   - {fileID: 1555000350}
   - {fileID: 2011539209}
   - {fileID: 188090858}
+  greenSlots: []
 --- !u!61 &3800312219862286665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15528,6 +15532,7 @@ MonoBehaviour:
   - {fileID: 265756686}
   - {fileID: 1895235236}
   - {fileID: 2051631682}
+  greenSlots: []
 --- !u!50 &5806294907476534938
 Rigidbody2D:
   serializedVersion: 4

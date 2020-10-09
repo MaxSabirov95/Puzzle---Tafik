@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
+    [SerializeField] Text levelNumber;
+
     Scene sceneLoaded;
+    int sceneNumber;
     private void Start()
     {
         sceneLoaded = SceneManager.GetActiveScene();
+        sceneNumber = SceneManager.GetActiveScene().buildIndex;
         BlackBoard.scenesManager = this;
+        levelNumber.text = "Level "+ (sceneNumber + 1);
     }
 
     public void RestartLevel()
