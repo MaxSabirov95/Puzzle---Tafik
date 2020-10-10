@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WhiteCubes : MonoBehaviour
 {
+    public enum KindOfCube { Normal,Flip}
+    public KindOfCube kindOfCube;
+    public bool draging;
     public GameObject player;
     public SpriteRenderer greenLight;
     public SpriteRenderer redLight;
@@ -63,6 +66,18 @@ public class WhiteCubes : MonoBehaviour
         if (col.gameObject.CompareTag("Empty Slot"))
         {
             canBePlaced = false;
+        }
+    }
+    public void CubesActionAfterPlayerAction()
+    {
+        switch (kindOfCube)
+        {
+            case KindOfCube.Flip:
+                if (!draging)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z-90);
+                }
+                break;
         }
     }
 }

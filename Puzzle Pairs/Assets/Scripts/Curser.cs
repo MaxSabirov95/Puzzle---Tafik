@@ -39,30 +39,27 @@ public class Curser : MonoBehaviour
                 BlackBoard.soundsManager.SoundsList(4);
                 foreach (GameObject whiteCube in cubes)
                 {
-                    WhiteCubes white_cube = whiteCube.GetComponent<WhiteCubes>();
-                    if (white_cube.inRange)
+                    if (whiteCube.GetComponent<WhiteCubes>().inRange)
                     {
-                        whiteCubes.Add(white_cube);
-                    }
-                }
-                for (int i = 0; i < whiteCubes.Count; i++)
-                {
-                    if (whiteCubes[i].inRange)
-                    {
-                        whiteCubes[i].transform.SetParent(transform);
-                        whiteCubes[i].greenLight.enabled = false;
-                        whiteCubes[i].redLight.enabled = true;
-                        for (int j = 0; j < whiteCubes[i].imagesLayers.Length; j++)
+                        whiteCubes.Add(whiteCube.GetComponent<WhiteCubes>());
+                        if (whiteCube.GetComponent<WhiteCubes>().inRange)
                         {
-                            whiteCubes[i].imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
-                        }
-                        foreach (GameObject slot in emptySlot)
-                        {
-                            if (Mathf.Abs(whiteCubes[i].transform.position.x - slot.transform.position.x) <= 1f &&
-                                Mathf.Abs(whiteCubes[i].transform.position.y - slot.transform.position.y) <= 1f)
+                            whiteCube.GetComponent<WhiteCubes>().transform.SetParent(transform);
+                            whiteCube.GetComponent<WhiteCubes>().greenLight.enabled = false;
+                            whiteCube.GetComponent<WhiteCubes>().redLight.enabled = true;
+                            whiteCube.GetComponent<WhiteCubes>().draging = true;
+                            for (int j = 0; j < whiteCube.GetComponent<WhiteCubes>().imagesLayers.Length; j++)
                             {
-                                slot.GetComponent<GridTileCubes>().isFull = false;
-                                break;
+                                whiteCube.GetComponent<WhiteCubes>().imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
+                            }
+                            foreach (GameObject slot in emptySlot)
+                            {
+                                if (Mathf.Abs(whiteCube.GetComponent<WhiteCubes>().transform.position.x - slot.transform.position.x) <= 1f &&
+                                    Mathf.Abs(whiteCube.GetComponent<WhiteCubes>().transform.position.y - slot.transform.position.y) <= 1f)
+                                {
+                                    slot.GetComponent<GridTileCubes>().isFull = false;
+                                    break;
+                                }
                             }
                         }
                     }
@@ -75,6 +72,7 @@ public class Curser : MonoBehaviour
                 {
                     for (int j = 0; j < 2; j++)//--check how much cubes left in list
                     {
+                        
                         foreach (GameObject slot in emptySlot)
                         {
                             if (whiteCubes.Count > 0)
@@ -83,7 +81,7 @@ public class Curser : MonoBehaviour
                                     Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
                                 {
                                     whiteCubes[0].transform.position = slot.transform.position;
-
+                                    
                                     for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
                                     {
                                         whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
@@ -96,13 +94,22 @@ public class Curser : MonoBehaviour
                                             whiteCubes[0].redLight.enabled = false;
                                         }
                                     }
+                                    if (whiteCubes.Count == 2)
+                                    {
+                                        foreach (GameObject cube in cubes)
+                                        {
+                                            cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
+                                        }
+                                    }
+                                    whiteCubes[0].draging = false;
                                     whiteCubes[0].transform.parent = null;
                                     whiteCubes.Remove(whiteCubes[0]);
+                                    StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     if (whiteCubes.Count == 0)
                                     {
                                         BlackBoard.soundsManager.SoundsList(1);
-                                        StartCoroutine(waitToGrab());
+
                                         bool isAllGreenFull = true;
                                         foreach (GridTileCubes green in greenSlots)
                                         {
@@ -122,6 +129,7 @@ public class Curser : MonoBehaviour
                         }
                     }
                 }
+                
             }
         }      
     }
