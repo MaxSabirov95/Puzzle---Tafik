@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes:
   - {fileID: 0}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!212 &197075988
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!212 &273946948
@@ -14902,7 +14902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475580238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: -4, z: 0}
+  m_LocalPosition: {x: 8, y: 8, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1670559863}
@@ -15027,7 +15027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487541963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: -4, z: 0}
+  m_LocalPosition: {x: -4, y: 8, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1670559863}
@@ -17485,7 +17485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938928831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -4, z: 0}
+  m_LocalPosition: {x: -4, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 477660816}
@@ -18417,7 +18417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081523205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 2, y: 5, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 295870167}
@@ -18512,7 +18512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes:
   - {fileID: 0}
@@ -18932,7 +18932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!212 &2136004779
@@ -19426,7 +19426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes:
   - {fileID: 0}
@@ -19833,7 +19833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3800312219862286668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: -4, z: 0}
+  m_LocalPosition: {x: 8, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3800312219285678934}
@@ -19983,7 +19983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!4 &5328538891930063624
@@ -20119,7 +20119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5806294907476534940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: -1, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1704082618136903010}
