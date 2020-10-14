@@ -12,8 +12,11 @@ public class Curser : MonoBehaviour
     public List<GridTileCubes> greenSlots;
     public GameObject[] cubes;
     public bool dragging = false;
-    bool canPut;// bool to walls
-    bool moveDone;
+    private bool canPut;// bool to walls
+    private bool moveDone;
+
+    int cubesOnSamePositions;
+
     private void Start()
     {
         canPut = true;
@@ -83,7 +86,12 @@ public class Curser : MonoBehaviour
                                     Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
                                 {
                                     whiteCubes[0].transform.position = slot.transform.position;
+                                    if(whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
+                                    {
+                                        cubesOnSamePositions++;
+                                    }
                                     
+                                    whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
                                     for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
                                     {
                                         whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
@@ -96,11 +104,14 @@ public class Curser : MonoBehaviour
                                             whiteCubes[0].redLight.enabled = false;
                                         }
                                     }
-                                    if (whiteCubes.Count == 2)
+                                    if (whiteCubes.Count == 1)
                                     {
-                                        foreach (GameObject cube in cubes)
+                                        if (cubesOnSamePositions <= 1)
                                         {
-                                            cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
+                                            foreach (GameObject cube in cubes)
+                                            {
+                                                cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
+                                            }
                                         }
                                     }
                                     whiteCubes[0].draging = false;
@@ -111,6 +122,7 @@ public class Curser : MonoBehaviour
                                     {
                                         BlackBoard.soundsManager.SoundsList(1);
                                         StartCoroutine(waitToGrab());
+                                        cubesOnSamePositions = 0;
                                         bool isAllGreenFull = true;
                                         foreach (GridTileCubes green in greenSlots)
                                         {

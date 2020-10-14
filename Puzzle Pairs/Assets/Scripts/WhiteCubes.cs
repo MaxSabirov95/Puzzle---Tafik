@@ -14,9 +14,12 @@ public class WhiteCubes : MonoBehaviour
     public bool canBePlaced = false;
     public SpriteRenderer[] imagesLayers;
     public List<GridTileCubes> greenSlots;
+    [HideInInspector]
+    public Vector3 positionTemp;
 
     private void Start()
     {
+        positionTemp = transform.position;
         BlackBoard._whiteCube = this;
 
         for (int i = 0; i < imagesLayers.Length; i++)
@@ -34,14 +37,7 @@ public class WhiteCubes : MonoBehaviour
             }
         }
     }
-    //private void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    if (col.gameObject.CompareTag("Player"))
-    //    {
-    //        col.GetComponent<Curser>().whiteCubes.Add(this);
-    //    }
 
-    //}
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -60,7 +56,6 @@ public class WhiteCubes : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             inRange = false;
-            //col.GetComponent<Curser>().whiteCubes.Remove(this);
         }
 
         if (col.gameObject.CompareTag("Empty Slot"))
