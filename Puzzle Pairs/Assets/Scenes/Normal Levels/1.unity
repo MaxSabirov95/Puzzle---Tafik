@@ -4013,6 +4013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e6a3c1e3cb80a4ba146e5ea03fabe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kindOfCube: 0
+  draging: 0
   player: {fileID: 73515752}
   greenLight: {fileID: 213627492}
   redLight: {fileID: 558344159}
@@ -11839,6 +11841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e6a3c1e3cb80a4ba146e5ea03fabe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kindOfCube: 0
+  draging: 0
   player: {fileID: 73515752}
   greenLight: {fileID: 115421759}
   redLight: {fileID: 1758213074}
@@ -12695,6 +12699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e6a3c1e3cb80a4ba146e5ea03fabe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kindOfCube: 0
+  draging: 0
   player: {fileID: 73515752}
   greenLight: {fileID: 888719186}
   redLight: {fileID: 1380670514}
@@ -15016,6 +15022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e6a3c1e3cb80a4ba146e5ea03fabe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kindOfCube: 0
+  draging: 0
   player: {fileID: 73515752}
   greenLight: {fileID: 811638484}
   redLight: {fileID: 622194033}
@@ -15511,6 +15519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e6a3c1e3cb80a4ba146e5ea03fabe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kindOfCube: 0
+  draging: 0
   player: {fileID: 73515752}
   greenLight: {fileID: 2071626292}
   redLight: {fileID: 681406753}
@@ -15769,6 +15779,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4372019380743909354, guid: ccb14ec027ee740459bcde3285f738f8,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372019380743909354, guid: ccb14ec027ee740459bcde3285f738f8,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372019380743909354, guid: ccb14ec027ee740459bcde3285f738f8,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372019380743909354, guid: ccb14ec027ee740459bcde3285f738f8,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
     - target: {fileID: 8045055020964800500, guid: ccb14ec027ee740459bcde3285f738f8,
         type: 3}
       propertyPath: m_Name

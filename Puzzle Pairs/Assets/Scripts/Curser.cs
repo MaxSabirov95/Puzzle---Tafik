@@ -12,9 +12,11 @@ public class Curser : MonoBehaviour
     public List<GridTileCubes> greenSlots;
     public GameObject[] cubes;
     public bool dragging = false;
+    bool canPut;// bool to walls
     bool moveDone;
     private void Start()
     {
+        canPut = true;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         BlackBoard.curser = this;
@@ -32,7 +34,7 @@ public class Curser : MonoBehaviour
             BlackBoard.soundsManager.SoundsList(3);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin)
         {
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {
@@ -66,7 +68,7 @@ public class Curser : MonoBehaviour
                 }
                 dragging = true;
             }
-            else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count==2)
+            else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count==2 && canPut)
             {
                 if (whiteCubes[0].canBePlaced && whiteCubes[1].canBePlaced)
                 {
@@ -104,12 +106,11 @@ public class Curser : MonoBehaviour
                                     whiteCubes[0].draging = false;
                                     whiteCubes[0].transform.parent = null;
                                     whiteCubes.Remove(whiteCubes[0]);
-                                    StartCoroutine(waitToGrab());
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     if (whiteCubes.Count == 0)
                                     {
                                         BlackBoard.soundsManager.SoundsList(1);
-
+                                        StartCoroutine(waitToGrab());
                                         bool isAllGreenFull = true;
                                         foreach (GridTileCubes green in greenSlots)
                                         {
@@ -120,8 +121,7 @@ public class Curser : MonoBehaviour
                                         }
                                         if (isAllGreenFull)
                                         {
-                                            Debug.Log("You Won");
-                                            BlackBoard.scenesManager.NextLevel();
+                                            BlackBoard.scenesManager.ifWin=true;
                                         }
                                     }
                                 }
@@ -136,6 +136,7 @@ public class Curser : MonoBehaviour
     IEnumerator waitToGrab()
     {
         yield return new WaitForSeconds(0.25f);
+        BlackBoard.scenesManager.PlayerMoves();
         dragging = false;
     }
     private void OnTriggerEnter2D(Collider2D col)
@@ -144,12 +145,20 @@ public class Curser : MonoBehaviour
         {
             howMuchInRange++;
         }
+        if (col.CompareTag("Wall"))
+        {
+            canPut = false;
+        }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))//--connector boxes
         {
             howMuchInRange--;
+        }
+        if (col.CompareTag("Wall"))
+        {
+            canPut = true;
         }
     }
 }

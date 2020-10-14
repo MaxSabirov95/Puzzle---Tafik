@@ -57,7 +57,7 @@ public class MagnetsScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!BlackBoard.curser.dragging)
+        if (!BlackBoard.curser.dragging && !BlackBoard.scenesManager.ifWin)
         {
             if (playerIn)
             {

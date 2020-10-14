@@ -17,6 +17,7 @@ TagManager:
   - S.R
   - M.R
   - B.R
+  - Wall
   layers:
   - Default
   - TransparentFX
