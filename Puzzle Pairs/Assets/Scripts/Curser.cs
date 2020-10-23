@@ -24,11 +24,13 @@ public class Curser : MonoBehaviour
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         BlackBoard.curser = this;
         //Physics.IgnoreLayerCollision(10, 12);//--check what his mission
+
     }
     void Update()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         transform.position = pos;
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -13f, 13f), Mathf.Clamp(transform.position.y, -6f, 10f), transform.position.z);
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -145,6 +147,7 @@ public class Curser : MonoBehaviour
             }
         }      
     }
+
     IEnumerator waitToGrab()
     {
         yield return new WaitForSeconds(0.25f);
