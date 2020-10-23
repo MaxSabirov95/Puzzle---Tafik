@@ -39,7 +39,7 @@ public class Curser : MonoBehaviour
             BlackBoard.soundsManager.SoundsList(3);
         }
 
-        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin)
+        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && canPut)
         {
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {

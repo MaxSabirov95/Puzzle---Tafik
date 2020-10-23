@@ -60,6 +60,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Flips Level/Flip3.unity
     guid: 48793d9f8c48f0d45845f395a8e315d1
   - enabled: 1
-    path: Assets/Scenes/Wall Levels/Wall1.unity
+    path: Assets/Scenes/Wall Levels/Wall 1.unity
     guid: b0c15155d42569a4585b8b668b1affdc
+  - enabled: 1
+    path: Assets/Scenes/Wall Levels/Wall 2.unity
+    guid: 2299e481ebde02d479f95b5fa46f8410
+  - enabled: 1
+    path: Assets/Scenes/Wall Levels/Wall 3.unity
+    guid: a8739777767657a4d82908fdfc46e1a8
+  - enabled: 1
+    path: Assets/Scenes/Wall Levels/Wall 4.unity
+    guid: 3ab8f1e6d51542346bda0a49d21c68a4
   m_configObjects: {}
