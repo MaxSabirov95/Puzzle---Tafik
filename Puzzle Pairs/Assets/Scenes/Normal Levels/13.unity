@@ -6188,6 +6188,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   - {fileID: 2146938067}
   - {fileID: 1056823702}
+  positionTemp: {x: 0, y: 0, z: 0}
 --- !u!1 &843338451
 GameObject:
   m_ObjectHideFlags: 0
@@ -13385,6 +13386,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   - {fileID: 2146938067}
   - {fileID: 1056823702}
+  positionTemp: {x: 0, y: 0, z: 0}
 --- !u!1 &1230460400
 GameObject:
   m_ObjectHideFlags: 0
@@ -16620,6 +16622,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   - {fileID: 2146938067}
   - {fileID: 1056823702}
+  positionTemp: {x: 0, y: 0, z: 0}
 --- !u!1 &1725169679
 GameObject:
   m_ObjectHideFlags: 0
@@ -17585,6 +17588,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   - {fileID: 2146938067}
   - {fileID: 1056823702}
+  positionTemp: {x: 0, y: 0, z: 0}
 --- !u!1 &1943680303
 GameObject:
   m_ObjectHideFlags: 0
@@ -19778,6 +19782,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   - {fileID: 2146938067}
   - {fileID: 1056823702}
+  positionTemp: {x: 0, y: 0, z: 0}
 --- !u!61 &3800312219862286665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20045,6 +20050,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   - {fileID: 2146938067}
   - {fileID: 1056823702}
+  positionTemp: {x: 0, y: 0, z: 0}
 --- !u!50 &5806294907476534938
 Rigidbody2D:
   serializedVersion: 4

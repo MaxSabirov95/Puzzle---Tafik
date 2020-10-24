@@ -12,14 +12,14 @@ public class Curser : MonoBehaviour
     public List<GridTileCubes> greenSlots;
     public GameObject[] cubes;
     public bool dragging = false;
-    private bool canPut;// bool to walls
+    public bool canPut;// bool to walls
     private bool moveDone;
 
     int cubesOnSamePositions;
 
     private void Start()
     {
-        canPut = true;
+        canPut = false;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         BlackBoard.curser = this;
@@ -73,7 +73,7 @@ public class Curser : MonoBehaviour
                 }
                 dragging = true;
             }
-            else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count==2 && canPut)
+            else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count==2)
             {
                 if (whiteCubes[0].canBePlaced && whiteCubes[1].canBePlaced)
                 {
@@ -160,6 +160,13 @@ public class Curser : MonoBehaviour
         {
             howMuchInRange++;
         }
+        if (col.CompareTag("Wall"))
+        {
+            canPut = false;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D col)
+    {
         if (col.CompareTag("Wall"))
         {
             canPut = false;
