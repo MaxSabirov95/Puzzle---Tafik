@@ -12,14 +12,14 @@ public class Curser : MonoBehaviour
     public List<GridTileCubes> greenSlots;
     public GameObject[] cubes;
     public bool dragging = false;
-    public bool canPut;// bool to walls
+    public bool ifWall;// bool to walls
     private bool moveDone;
 
     int cubesOnSamePositions;
 
     private void Start()
     {
-        canPut = false;
+        ifWall = false;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         BlackBoard.curser = this;
@@ -39,7 +39,7 @@ public class Curser : MonoBehaviour
             BlackBoard.soundsManager.SoundsList(3);
         }
 
-        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && canPut)
+        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && !ifWall)
         {
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {
@@ -162,14 +162,14 @@ public class Curser : MonoBehaviour
         }
         if (col.CompareTag("Wall"))
         {
-            canPut = false;
+            ifWall = true;
         }
     }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Wall"))
         {
-            canPut = false;
+            ifWall = true;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
@@ -180,7 +180,7 @@ public class Curser : MonoBehaviour
         }
         if (col.CompareTag("Wall"))
         {
-            canPut = true;
+            ifWall = false;
         }
     }
 }
