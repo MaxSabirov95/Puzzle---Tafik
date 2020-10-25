@@ -744,6 +744,7 @@ MonoBehaviour:
   - {fileID: 631876646}
   cubes: []
   dragging: 0
+  ifWall: 0
 --- !u!50 &73515757
 Rigidbody2D:
   serializedVersion: 4
@@ -3201,7 +3202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 1
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 113804562}
   redLight: {fileID: 319443323}
   inRange: 0
@@ -6340,7 +6340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!212 &910127903
@@ -11980,7 +11980,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 1
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 842243655}
   redLight: {fileID: 1335281568}
   inRange: 0
@@ -12637,7 +12636,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 1310148882}
   redLight: {fileID: 1304927049}
   inRange: 0
@@ -14979,7 +14977,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 1
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 1107449415}
   redLight: {fileID: 11179732}
   inRange: 0
@@ -15400,7 +15397,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 2135758418}
   redLight: {fileID: 2065094416}
   inRange: 0
@@ -15985,7 +15981,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 1
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 784974352}
   redLight: {fileID: 1648808146}
   inRange: 0
@@ -17206,7 +17201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 206074340}
   redLight: {fileID: 586804709}
   inRange: 0
@@ -19269,7 +19263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 2071626292}
   redLight: {fileID: 681406753}
   inRange: 0

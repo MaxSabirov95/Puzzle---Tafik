@@ -23,8 +23,6 @@ public class Curser : MonoBehaviour
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         BlackBoard.curser = this;
-        //Physics.IgnoreLayerCollision(10, 12);//--check what his mission
-
     }
     void Update()
     {
@@ -32,7 +30,7 @@ public class Curser : MonoBehaviour
         transform.position = pos;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -13f, 13f), Mathf.Clamp(transform.position.y, -6f, 10f), transform.position.z);
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)&&dragging)
         {
             rotation -= 90;
             transform.rotation = Quaternion.Euler(0, 0, rotation);
@@ -49,29 +47,30 @@ public class Curser : MonoBehaviour
                     if (whiteCube.GetComponent<WhiteCubes>().inRange)
                     {
                         whiteCubes.Add(whiteCube.GetComponent<WhiteCubes>());
-                        if (whiteCube.GetComponent<WhiteCubes>().inRange)
+                        whiteCube.GetComponent<WhiteCubes>().transform.SetParent(transform);
+                        whiteCube.GetComponent<WhiteCubes>().greenLight.enabled = false;
+                        whiteCube.GetComponent<WhiteCubes>().redLight.enabled = true;
+                        whiteCube.GetComponent<WhiteCubes>().draging = true;
+                        for (int j = 0; j < whiteCube.GetComponent<WhiteCubes>().imagesLayers.Length; j++)
                         {
-                            whiteCube.GetComponent<WhiteCubes>().transform.SetParent(transform);
-                            whiteCube.GetComponent<WhiteCubes>().greenLight.enabled = false;
-                            whiteCube.GetComponent<WhiteCubes>().redLight.enabled = true;
-                            whiteCube.GetComponent<WhiteCubes>().draging = true;
-                            for (int j = 0; j < whiteCube.GetComponent<WhiteCubes>().imagesLayers.Length; j++)
+                            whiteCube.GetComponent<WhiteCubes>().imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
+                        }
+                        foreach (GameObject slot in emptySlot)
+                        {
+                            if (Mathf.Abs(whiteCube.GetComponent<WhiteCubes>().transform.position.x - slot.transform.position.x) <= 1f &&
+                                Mathf.Abs(whiteCube.GetComponent<WhiteCubes>().transform.position.y - slot.transform.position.y) <= 1f)
                             {
-                                whiteCube.GetComponent<WhiteCubes>().imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
-                            }
-                            foreach (GameObject slot in emptySlot)
-                            {
-                                if (Mathf.Abs(whiteCube.GetComponent<WhiteCubes>().transform.position.x - slot.transform.position.x) <= 1f &&
-                                    Mathf.Abs(whiteCube.GetComponent<WhiteCubes>().transform.position.y - slot.transform.position.y) <= 1f)
-                                {
-                                    slot.GetComponent<GridTileCubes>().isFull = false;
-                                    break;
-                                }
+                                slot.GetComponent<GridTileCubes>().isFull = false;
+                                break;
                             }
                         }
                     }
+                    if(whiteCubes.Count == 2)
+                    {
+                        dragging = true;
+                        break;
+                    }
                 }
-                dragging = true;
             }
             else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count==2)
             {
@@ -79,7 +78,6 @@ public class Curser : MonoBehaviour
                 {
                     for (int j = 0; j < 2; j++)//--check how much cubes left in list
                     {
-                        
                         foreach (GameObject slot in emptySlot)
                         {
                             if (whiteCubes.Count > 0)

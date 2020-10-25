@@ -7,7 +7,6 @@ public class WhiteCubes : MonoBehaviour
     public enum KindOfCube { Normal,Flip}
     public KindOfCube kindOfCube;
     public bool draging;
-    public GameObject player;
     public SpriteRenderer greenLight;
     public SpriteRenderer redLight;
     public bool inRange;

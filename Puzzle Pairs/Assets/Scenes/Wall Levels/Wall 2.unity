@@ -227,6 +227,7 @@ MonoBehaviour:
   - {fileID: 2081523209}
   cubes: []
   dragging: 0
+  ifWall: 0
 --- !u!50 &73515757
 Rigidbody2D:
   serializedVersion: 4
@@ -2992,7 +2993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &790602831
@@ -3344,7 +3345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 213627492}
   redLight: {fileID: 558344159}
   inRange: 0
@@ -10916,7 +10916,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 115421759}
   redLight: {fileID: 1758213074}
   inRange: 0
@@ -11087,7 +11086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &1648376496
@@ -11772,7 +11771,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 888719186}
   redLight: {fileID: 1380670514}
   inRange: 0
@@ -12117,7 +12115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &1859127446
@@ -13760,7 +13758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &5031417501146745272
@@ -13940,7 +13938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!114 &5806294907476534936
@@ -13957,7 +13955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 73515752}
   greenLight: {fileID: 2071626292}
   redLight: {fileID: 681406753}
   inRange: 0
