@@ -6,6 +6,7 @@ using System;
 public class Curser : MonoBehaviour
 {
     public float rotation;
+    private bool Rotation;
     public List<WhiteCubes> whiteCubes;
     public int howMuchInRange;
     public GameObject[] emptySlot;
@@ -30,14 +31,19 @@ public class Curser : MonoBehaviour
         transform.position = pos;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -13f, 13f), Mathf.Clamp(transform.position.y, -6f, 10f), transform.position.z);
 
-        if (Input.GetMouseButtonDown(1)&&dragging)
+        if (Input.GetMouseButtonDown(1) && dragging && !Rotation)
         {
-            rotation -= 90;
-            transform.rotation = Quaternion.Euler(0, 0, rotation);
+            Rotation = true;
+            iTween.RotateTo(this.gameObject, iTween.Hash(
+                "rotation", new Vector3(0, 0, transform.rotation.eulerAngles.z - 90),
+                "time", 0.2f,
+                "easetype", iTween.EaseType.linear
+                ));
             BlackBoard.soundsManager.SoundsList(3);
+            StartCoroutine(CurserRotation());
         }
 
-        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && !ifWall)
+        if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && !ifWall && !Rotation)
         {
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {
@@ -151,6 +157,11 @@ public class Curser : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         BlackBoard.scenesManager.PlayerMoves();
         dragging = false;
+    }
+    IEnumerator CurserRotation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Rotation = false;
     }
     private void OnTriggerEnter2D(Collider2D col)
     {

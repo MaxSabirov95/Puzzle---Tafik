@@ -69,7 +69,12 @@ public class WhiteCubes : MonoBehaviour
             case KindOfCube.Flip:
                 if (!draging)
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z-90);
+                    //transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z-90);
+                    iTween.RotateTo(this.gameObject, iTween.Hash(
+                          "rotation", new Vector3(0, 0, transform.rotation.eulerAngles.z - 90),
+                          "time", 0.2f,
+                          "easetype", iTween.EaseType.easeInBack
+                ));
                 }
                 break;
         }

@@ -322,15 +322,15 @@ MonoBehaviour:
   emptySlot: []
   greenSlots:
   - {fileID: 185783124}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 90429093}
+  - {fileID: 2081523209}
   - {fileID: 750777047}
   - {fileID: 1980249364}
   - {fileID: 1187167941}
-  - {fileID: 0}
+  - {fileID: 1124821482}
   - {fileID: 56346}
   - {fileID: 1230300205}
-  - {fileID: 0}
+  - {fileID: 923048116}
   cubes: []
   dragging: 0
   ifWall: 0
