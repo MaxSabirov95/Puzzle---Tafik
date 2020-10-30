@@ -95,4 +95,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wall And Flip/WallsAndFlips 4.unity
     guid: d00f8960cec8c7a479581115f43dba97
+  - enabled: 1
+    path: Assets/Scenes/Wall And Flip/WallsAndFlips 5.unity
+    guid: 463b738002f16be41ad49773545d8df8
+  - enabled: 1
+    path: Assets/Scenes/Wall And Flip/WallsAndFlips 6.unity
+    guid: 3b54b77d8612db442b4152cd85c46489
   m_configObjects: {}
