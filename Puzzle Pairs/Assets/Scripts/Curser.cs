@@ -74,7 +74,6 @@ public class Curser : MonoBehaviour
                     if(whiteCubes.Count == 2)
                     {
                         dragging = true;
-                        break;
                     }
                 }
             }
@@ -123,7 +122,7 @@ public class Curser : MonoBehaviour
                                             }
                                         }
                                     }
-                                   //whiteCubes[0].draging = false;
+                                    //whiteCubes[0].draging = false;
                                     whiteCubes[0].transform.parent = null;
                                     whiteCubes.Remove(whiteCubes[0]);
                                     slot.GetComponent<GridTileCubes>().isFull = true;
