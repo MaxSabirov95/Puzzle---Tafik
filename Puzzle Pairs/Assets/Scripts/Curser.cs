@@ -98,10 +98,12 @@ public class Curser : MonoBehaviour
                                     }
                                     
                                     whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
+
                                     for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
                                     {
                                         whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
                                     }
+
                                     foreach (GridTileCubes green in greenSlots)
                                     {
                                         if (whiteCubes[0].transform.position == green.transform.position)
@@ -110,6 +112,7 @@ public class Curser : MonoBehaviour
                                             whiteCubes[0].redLight.enabled = false;
                                         }
                                     }
+
                                     if (whiteCubes.Count == 1)
                                     {
                                         if (cubesOnSamePositions <= 1)
@@ -120,12 +123,16 @@ public class Curser : MonoBehaviour
                                             }
                                         }
                                     }
-                                    whiteCubes[0].draging = false;
+                                   //whiteCubes[0].draging = false;
                                     whiteCubes[0].transform.parent = null;
                                     whiteCubes.Remove(whiteCubes[0]);
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     if (whiteCubes.Count == 0)
                                     {
+                                        foreach (GameObject cube in cubes)
+                                        {
+                                            cube.GetComponent<WhiteCubes>().draging=false;
+                                        }
                                         BlackBoard.soundsManager.SoundsList(1);
                                         StartCoroutine(waitToGrab());
                                         cubesOnSamePositions = 0;
