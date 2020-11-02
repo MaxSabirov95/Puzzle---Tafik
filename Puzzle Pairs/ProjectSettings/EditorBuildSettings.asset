@@ -72,6 +72,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Flips Level/Flip 7.unity
     guid: 2a110a0af153845409b4d3f5dd0e119f
   - enabled: 1
+    path: Assets/Scenes/Flips Level/Flip 8.unity
+    guid: 8868bf58d0d42214493b3a0a9dccbfab
+  - enabled: 1
+    path: Assets/Scenes/Flips Level/Flip 9.unity
+    guid: 02ca668920c70c242a86d9978b56f90c
+  - enabled: 1
+    path: Assets/Scenes/Flips Level/Flip 10.unity
+    guid: 55e3eab9b2241304c90c9ac44262930c
+  - enabled: 1
     path: Assets/Scenes/Wall Levels/Wall 1.unity
     guid: b0c15155d42569a4585b8b668b1affdc
   - enabled: 1
