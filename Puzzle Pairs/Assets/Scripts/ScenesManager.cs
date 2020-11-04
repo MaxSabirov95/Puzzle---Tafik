@@ -1,14 +1,14 @@
-﻿
+﻿using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
     [SerializeField] Text levelNumberText;
     Scene sceneLoaded;
-    int sceneNumber;
-
+    //int sceneNumber;
+    public GameObject[] cubes;
+    public GameObject[] cursers;
     private int playerActions;
     [SerializeField] Text playerActionsText;
 
@@ -21,13 +21,18 @@ public class ScenesManager : MonoBehaviour
     [SerializeField] Text _timerText;
     [SerializeField] Text _actionText;
 
+    public GameObject[] levels;
+    int levelsNow;
+
     private void Start()
     {
+        
+        levelsNow = 0;
         playerActionsText.text = playerActions.ToString();
         sceneLoaded = SceneManager.GetActiveScene();
-        sceneNumber = SceneManager.GetActiveScene().buildIndex;
+        //sceneNumber = SceneManager.GetActiveScene().buildIndex;
         BlackBoard.scenesManager = this;
-        levelNumberText.text = "Level "+ (sceneNumber + 1);
+        levelNumberText.text = "Level "+ (levelsNow + 1);
         winPanel.SetActive(false);
     }
 
@@ -54,7 +59,23 @@ public class ScenesManager : MonoBehaviour
     public void RestartLevel()
     {
         Reset();
-        SceneManager.LoadScene(sceneLoaded.buildIndex);
+        cubes = GameObject.FindGameObjectsWithTag("whiteCube");
+        cursers = GameObject.FindGameObjectsWithTag("Player");
+        //SceneManager.LoadScene(sceneLoaded.buildIndex);
+        foreach (GameObject curser in cursers)
+        {
+            if (curser.activeInHierarchy)
+            {
+                curser.GetComponent<Curser>().RestartLevel();
+            }
+        }
+        foreach (GameObject cube in cubes)
+        {
+            if (cube.activeInHierarchy)
+            {
+                cube.GetComponent<WhiteCubes>().RestartPosition();
+            }
+        }
     }
 
     public void ExitLevel()
@@ -64,16 +85,35 @@ public class ScenesManager : MonoBehaviour
 
     public void NextLevel()
     {
-        Reset();
-        BlackBoard.magnet.Male_And_Female_Reset();
-        SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
+        RestartLevel();
+        //BlackBoard.magnet.Male_And_Female_Reset();
+        levels[levelsNow].SetActive(false);
+        levelsNow++;
+        if (levelsNow+1 > levels.Length)
+        {
+            levelsNow--; 
+        }
+        levels[levelsNow].SetActive(true);
+        levelNumberText.text = "Level " + (levelsNow + 1);
+        winPanel.SetActive(false);
+        ifWin = false;
+        //SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
 
     public void PreviousLevel()
     {
-        Reset();
+        RestartLevel();
         BlackBoard.magnet.Male_And_Female_Reset();
-        SceneManager.LoadScene(sceneLoaded.buildIndex - 1);
+        levels[levelsNow].SetActive(false);
+        levelsNow--;
+        if (levelsNow < 0)
+        {
+            levelsNow = 0;
+            
+        }
+        levels[levelsNow].SetActive(true);
+        levelNumberText.text = "Level " + (levelsNow + 1);
+        // SceneManager.LoadScene(sceneLoaded.buildIndex - 1);
     }
 
     private void Reset()

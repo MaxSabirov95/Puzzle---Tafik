@@ -9,15 +9,26 @@ public class WhiteCubes : MonoBehaviour
     public bool draging;
     public SpriteRenderer greenLight;
     public SpriteRenderer redLight;
+    bool isGreen;
     public bool inRange;
     public bool canBePlaced = false;
     public SpriteRenderer[] imagesLayers;
     public List<GridTileCubes> greenSlots;
     [HideInInspector]
     public Vector3 positionTemp;
+    public Vector3 startPosition;
 
     private void Start()
     {
+        startPosition = transform.position;
+        if (greenLight.enabled)
+        {
+            isGreen = true;
+        }
+        else
+        {
+            isGreen = false;
+        }
         positionTemp = transform.position;
         BlackBoard._whiteCube = this;
 
@@ -77,6 +88,22 @@ public class WhiteCubes : MonoBehaviour
                 ));
                 }
                 break;
+        }
+    }
+
+    public void RestartPosition()
+    {
+        draging = false;
+        transform.position = startPosition;
+        if (isGreen)
+        {
+            greenLight.enabled = true;
+            redLight.enabled = false;
+        }
+        else
+        {
+            greenLight.enabled = false;
+            redLight.enabled = true;
         }
     }
 }

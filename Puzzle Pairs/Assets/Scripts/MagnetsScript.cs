@@ -45,6 +45,7 @@ public class MagnetsScript : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(male + " " + female);
         if ((male >= 1) && (female >= 1))
         {
             maleFemale = true;

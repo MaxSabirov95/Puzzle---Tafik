@@ -15,6 +15,7 @@ public class Curser : MonoBehaviour
     public bool dragging = false;
     public bool ifWall;// bool to walls
     private bool moveDone;
+    public Transform _parent;
 
     int cubesOnSamePositions;
 
@@ -123,7 +124,7 @@ public class Curser : MonoBehaviour
                                         }
                                     }
                                     //whiteCubes[0].draging = false;
-                                    whiteCubes[0].transform.parent = null;
+                                    whiteCubes[0].transform.SetParent(_parent);
                                     whiteCubes.Remove(whiteCubes[0]);
                                     slot.GetComponent<GridTileCubes>().isFull = true;
                                     if (whiteCubes.Count == 0)
@@ -197,6 +198,19 @@ public class Curser : MonoBehaviour
         {
             ifWall = false;
         }
+    }
+
+    public void RestartLevel()
+    {
+        if (whiteCubes.Count == 2)
+        {
+            whiteCubes[1].transform.SetParent(_parent);
+            whiteCubes[0].transform.SetParent(_parent);
+            whiteCubes.Remove(whiteCubes[1]);
+            whiteCubes.Remove(whiteCubes[0]);
+        }
+        dragging = false;
+        ifWall = false;
     }
 }
 

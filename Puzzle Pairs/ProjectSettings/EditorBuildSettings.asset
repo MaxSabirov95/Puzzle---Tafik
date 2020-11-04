@@ -99,30 +99,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Wall Levels/Wall 6.unity
     guid: 12b15e612cd4a5447bdf81b94addea82
   - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 1.unity
+    path: Assets/Scenes/Wall And Flip/WallsAndFlips.unity
     guid: 0e80078a848fbe74cac749adbd7c31e4
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 2.unity
-    guid: 8e8d57b523a18704b90afaa7b71665d2
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 3.unity
-    guid: ec28424705bda134db39a32ffdeb895b
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 4.unity
-    guid: d00f8960cec8c7a479581115f43dba97
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 5.unity
-    guid: 463b738002f16be41ad49773545d8df8
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 6.unity
-    guid: 3b54b77d8612db442b4152cd85c46489
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 7.unity
-    guid: 7db23fb6f9800ef43ae4977d27bd411a
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 8.unity
-    guid: f44d77402c9a26b4da969353f050ea0d
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips 9.unity
-    guid: 9d2a3681126d77a4d91e5529978fbc7d
   m_configObjects: {}
