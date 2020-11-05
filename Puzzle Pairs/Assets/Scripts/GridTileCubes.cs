@@ -11,7 +11,7 @@ public class GridTileCubes : MonoBehaviour
 
     public GameObject[] whiteCubes;
 
-    private void Start()
+    private void OnEnable()
     {
         BlackBoard.gridTileCubes = this;
         whiteCubes = GameObject.FindGameObjectsWithTag("whiteCube");

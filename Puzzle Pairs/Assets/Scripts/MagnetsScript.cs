@@ -28,16 +28,17 @@ public class MagnetsScript : MonoBehaviour
     public bool maleFemale;
     public ParticleSystem effect;
     public GameObject placeEffect;
+    bool firstTime;
 
 
     [SerializeField] bool playerIn;
-
-    void Start()
+    private void Awake()
     {
-        //speedTemp = speed;
-
         startPosition = transform.localPosition;
-
+    }
+    void OnEnable()
+    {
+        
         BlackBoard.magnet = this;
         Physics.IgnoreLayerCollision(11, 9);
         Physics.IgnoreLayerCollision(13, 13);
@@ -160,5 +161,6 @@ public class MagnetsScript : MonoBehaviour
     {
         male = 0;
         female = 0;
+        transform.localPosition = startPosition;
     }
 }

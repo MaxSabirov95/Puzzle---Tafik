@@ -17,10 +17,15 @@ public class WhiteCubes : MonoBehaviour
     [HideInInspector]
     public Vector3 positionTemp;
     public Vector3 startPosition;
+    Quaternion playerRotation;
 
-    private void Start()
+    private void Awake()
     {
+        playerRotation = transform.rotation;
         startPosition = transform.position;
+    }
+    private void OnEnable()
+    {
         if (greenLight.enabled)
         {
             isGreen = true;
@@ -95,6 +100,7 @@ public class WhiteCubes : MonoBehaviour
     {
         draging = false;
         transform.position = startPosition;
+        transform.rotation= playerRotation;
         if (isGreen)
         {
             greenLight.enabled = true;

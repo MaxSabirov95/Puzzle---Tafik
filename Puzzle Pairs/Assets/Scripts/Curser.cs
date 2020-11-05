@@ -19,7 +19,7 @@ public class Curser : MonoBehaviour
 
     int cubesOnSamePositions;
 
-    private void Start()
+    private void OnEnable()
     {
         ifWall = false;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
@@ -202,13 +202,22 @@ public class Curser : MonoBehaviour
 
     public void RestartLevel()
     {
-        if (whiteCubes.Count == 2)
+        try
         {
-            whiteCubes[1].transform.SetParent(_parent);
+            if (whiteCubes.Count == 2)
+            {
+                whiteCubes[1].transform.SetParent(_parent);
+                whiteCubes[0].transform.SetParent(_parent);
+                whiteCubes.Remove(whiteCubes[1]);
+                whiteCubes.Remove(whiteCubes[0]);
+            }
+        }
+        catch (ArgumentNullException x)
+        {
             whiteCubes[0].transform.SetParent(_parent);
-            whiteCubes.Remove(whiteCubes[1]);
             whiteCubes.Remove(whiteCubes[0]);
         }
+        
         dragging = false;
         ifWall = false;
     }

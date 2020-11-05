@@ -26,7 +26,6 @@ public class ScenesManager : MonoBehaviour
 
     private void Start()
     {
-        
         levelsNow = 0;
         playerActionsText.text = playerActions.ToString();
         sceneLoaded = SceneManager.GetActiveScene();
@@ -59,6 +58,7 @@ public class ScenesManager : MonoBehaviour
     public void RestartLevel()
     {
         Reset();
+        BlackBoard.magnet.Male_And_Female_Reset();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         cursers = GameObject.FindGameObjectsWithTag("Player");
         //SceneManager.LoadScene(sceneLoaded.buildIndex);
@@ -86,7 +86,6 @@ public class ScenesManager : MonoBehaviour
     public void NextLevel()
     {
         RestartLevel();
-        //BlackBoard.magnet.Male_And_Female_Reset();
         levels[levelsNow].SetActive(false);
         levelsNow++;
         if (levelsNow+1 > levels.Length)
@@ -96,14 +95,13 @@ public class ScenesManager : MonoBehaviour
         levels[levelsNow].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
         winPanel.SetActive(false);
-        ifWin = false;
         //SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
 
     public void PreviousLevel()
     {
         RestartLevel();
-        BlackBoard.magnet.Male_And_Female_Reset();
+        
         levels[levelsNow].SetActive(false);
         levelsNow--;
         if (levelsNow < 0)
@@ -121,6 +119,7 @@ public class ScenesManager : MonoBehaviour
         playerActions = 0;
         time = 0;
         ifWin = false;
+        playerActionsText.text = playerActions.ToString();
     }
 
     public void PlayerMoves()
