@@ -212,21 +212,15 @@ public class Curser : MonoBehaviour
 
     public void RestartLevel()
     {
-        try
+        if (whiteCubes.Count > 0)
         {
-            if (whiteCubes.Count == 2)
+            do
             {
-                whiteCubes[1].transform.SetParent(_parent);
                 whiteCubes[0].transform.SetParent(_parent);
-                whiteCubes.Remove(whiteCubes[1]);
                 whiteCubes.Remove(whiteCubes[0]);
-            }
+            } while (whiteCubes.Count > 0);
         }
-        catch (ArgumentNullException x)
-        {
-            whiteCubes[0].transform.SetParent(_parent);
-            whiteCubes.Remove(whiteCubes[0]);
-        }
+        
         dragging = false;
         ifWall = false;
     }

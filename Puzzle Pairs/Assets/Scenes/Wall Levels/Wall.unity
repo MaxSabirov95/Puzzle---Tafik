@@ -1641,6 +1641,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1986495445}
+  cubesOnSamePositions: 0
 --- !u!50 &73515757
 Rigidbody2D:
   serializedVersion: 4
@@ -2432,6 +2433,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 2019679402}
   redLight: {fileID: 2069663651}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -2664,6 +2666,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1595813587}
   redLight: {fileID: 2040698440}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -3720,6 +3723,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1280938110}
+  cubesOnSamePositions: 0
 --- !u!1 &173758624
 GameObject:
   m_ObjectHideFlags: 0
@@ -8612,6 +8616,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1262492039}
+  cubesOnSamePositions: 0
 --- !u!1 &341081327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9571,6 +9576,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 988409115}
   redLight: {fileID: 575751476}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -10284,6 +10290,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 24921975}
   redLight: {fileID: 463901153}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -12155,6 +12162,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1285556313}
+  cubesOnSamePositions: 0
 --- !u!1 &470130866
 GameObject:
   m_ObjectHideFlags: 0
@@ -14051,6 +14059,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 344735149}
+  cubesOnSamePositions: 0
 --- !u!1 &536112894
 GameObject:
   m_ObjectHideFlags: 0
@@ -15860,6 +15869,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1033645638}
   redLight: {fileID: 1290179776}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -16484,6 +16494,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 213518064}
   redLight: {fileID: 461731019}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -17238,6 +17249,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1503580627}
   redLight: {fileID: 1143725578}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -18477,6 +18489,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1184246638}
   redLight: {fileID: 1383901710}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -21433,6 +21446,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 213627492}
   redLight: {fileID: 558344159}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -37492,6 +37506,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1615335783}
   redLight: {fileID: 65756007}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -39995,6 +40010,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1532089332}
   redLight: {fileID: 714822810}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -40143,6 +40159,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 133391794}
   redLight: {fileID: 1592521393}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -40289,6 +40306,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 944768616}
   redLight: {fileID: 1827940472}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -40769,7 +40787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1380388197
 Transform:
   m_ObjectHideFlags: 0
@@ -44708,6 +44726,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1396430104}
+  cubesOnSamePositions: 0
 --- !u!1 &1551551284
 GameObject:
   m_ObjectHideFlags: 0
@@ -45290,6 +45309,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 115421759}
   redLight: {fileID: 1758213074}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -48103,6 +48123,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 112578795}
   redLight: {fileID: 483204619}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -48851,6 +48872,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 888719186}
   redLight: {fileID: 1380670514}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -51398,6 +51420,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 2075991261}
   redLight: {fileID: 412357926}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -53402,6 +53425,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 117746492}
   redLight: {fileID: 391277192}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -54647,6 +54671,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 532079820}
   redLight: {fileID: 2006552861}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -58031,6 +58056,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 834488755}
   redLight: {fileID: 519744838}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -58617,6 +58643,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1902612630}
   redLight: {fileID: 1822917830}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -59065,6 +59092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339293086999730275, guid: f869f8167510ff740af084d48606af7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f869f8167510ff740af084d48606af7d, type: 3}
@@ -59858,6 +59890,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 811638484}
   redLight: {fileID: 622194033}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -60356,6 +60389,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 2071626292}
   redLight: {fileID: 681406753}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -60652,6 +60686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ScenesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045055020964800500, guid: ccb14ec027ee740459bcde3285f738f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8541119566052650447, guid: ccb14ec027ee740459bcde3285f738f8,
         type: 3}
