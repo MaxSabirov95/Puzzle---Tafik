@@ -75,11 +75,8 @@ public class WhiteCubes : MonoBehaviour
                 if (!draging)
                 {
                     isFlipSound = true;
-                    iTween.RotateTo(this.gameObject, iTween.Hash(
-                          "rotation", new Vector3(0, 0, transform.rotation.eulerAngles.z - 90),
-                          "time", 0.2f,
-                          "easetype", iTween.EaseType.easeInBack
-                ));
+                    StartCoroutine(delay());
+                    
                 }
                 break;
         }
@@ -102,5 +99,14 @@ public class WhiteCubes : MonoBehaviour
                 break;
             }
         }
+    }
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(0.15f);
+        iTween.RotateTo(this.gameObject, iTween.Hash(
+                          "rotation", new Vector3(0, 0, transform.rotation.eulerAngles.z - 90),
+                          "time", 0.2f,
+                          "easetype", iTween.EaseType.easeInBack
+                ));
     }
 }

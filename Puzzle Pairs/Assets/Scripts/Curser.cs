@@ -136,8 +136,7 @@ public class Curser : MonoBehaviour
                                         BlackBoard.soundsManager.SoundsList(1);
                                         if (WhiteCubes.isFlipSound)
                                         {
-                                            BlackBoard.soundsManager.SoundsList(5);
-                                            WhiteCubes.isFlipSound = false;
+                                            StartCoroutine(redDelay());
                                         }
                                         StartCoroutine(waitToGrab());
                                         cubesOnSamePositions = 0;
@@ -174,6 +173,12 @@ public class Curser : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         Rotation = false;
+    }
+    IEnumerator redDelay()
+    {
+        yield return new WaitForSeconds(0.15f);
+        BlackBoard.soundsManager.SoundsList(5);
+        WhiteCubes.isFlipSound = false;
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
