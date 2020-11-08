@@ -1430,6 +1430,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1541277296}
   redLight: {fileID: 1933853778}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -1554,6 +1555,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1538650219}
   redLight: {fileID: 69773255}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -3513,6 +3515,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1986495445}
+  cubesOnSamePositions: 0
 --- !u!50 &73515757
 Rigidbody2D:
   serializedVersion: 4
@@ -11003,6 +11006,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 480398184}
+  cubesOnSamePositions: 0
 --- !u!1 &255154217
 GameObject:
   m_ObjectHideFlags: 0
@@ -13879,6 +13883,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 814693315}
   redLight: {fileID: 973935881}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -14689,6 +14694,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 901344218}
   redLight: {fileID: 447461673}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -16319,6 +16325,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1335213819}
+  cubesOnSamePositions: 0
 --- !u!1 &385879792
 GameObject:
   m_ObjectHideFlags: 0
@@ -16968,6 +16975,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1424921790}
   redLight: {fileID: 1911350293}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -17476,6 +17484,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 220722448}
+  cubesOnSamePositions: 0
 --- !u!1 &413644696
 GameObject:
   m_ObjectHideFlags: 0
@@ -17575,6 +17584,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 437652812}
   redLight: {fileID: 1392394415}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -18342,6 +18352,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1214983043}
   redLight: {fileID: 1640558847}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -18530,6 +18541,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 928439927}
+  cubesOnSamePositions: 0
 --- !u!1 &434819989
 GameObject:
   m_ObjectHideFlags: 0
@@ -18629,6 +18641,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1879858707}
   redLight: {fileID: 2050105679}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -25008,6 +25021,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1528999118}
   redLight: {fileID: 2116204675}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -26232,6 +26246,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 2131589109}
   redLight: {fileID: 226260922}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -28077,6 +28092,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1595719159}
   redLight: {fileID: 1456455861}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -28874,6 +28890,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1836460214}
   redLight: {fileID: 1373963270}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -29117,6 +29134,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1265504689}
   redLight: {fileID: 1731474351}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -32350,6 +32368,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 81513306}
   redLight: {fileID: 207763641}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -34733,6 +34752,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1748267138}
   redLight: {fileID: 1778031592}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -34939,6 +34959,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1312956517}
   redLight: {fileID: 489415785}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -35786,6 +35807,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1626650560}
   redLight: {fileID: 1916077759}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -37248,6 +37270,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 267758637}
+  cubesOnSamePositions: 0
 --- !u!1 &924846964
 GameObject:
   m_ObjectHideFlags: 0
@@ -38022,6 +38045,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 2093141891}
   redLight: {fileID: 137775845}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -39667,6 +39691,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1536617895}
   redLight: {fileID: 809626317}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -44946,6 +44971,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 842243655}
   redLight: {fileID: 1335281568}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -46660,6 +46686,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1140797990}
   redLight: {fileID: 1329898446}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -51054,6 +51081,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1356084814}
   redLight: {fileID: 1237000988}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -53243,6 +53271,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1434457139}
   redLight: {fileID: 983780702}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -56673,6 +56702,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1675842355}
   redLight: {fileID: 941056921}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -57515,6 +57545,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1348799242}
   redLight: {fileID: 1624220693}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -58697,6 +58728,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1102520735}
+  cubesOnSamePositions: 0
 --- !u!1 &1371285354
 GameObject:
   m_ObjectHideFlags: 0
@@ -62778,6 +62810,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1816534501}
+  cubesOnSamePositions: 0
 --- !u!1 &1487449880
 GameObject:
   m_ObjectHideFlags: 0
@@ -66765,6 +66798,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1213516888}
   redLight: {fileID: 1349461129}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -66956,6 +66990,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 1314419166}
+  cubesOnSamePositions: 0
 --- !u!1001 &1588181955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70552,6 +70587,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1263695617}
   redLight: {fileID: 1222450764}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -71205,6 +71241,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1001756745}
   redLight: {fileID: 646850970}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -72299,6 +72336,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1432903251}
   redLight: {fileID: 1366780287}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -72533,6 +72571,7 @@ MonoBehaviour:
   dragging: 0
   ifWall: 0
   _parent: {fileID: 176846883}
+  cubesOnSamePositions: 0
 --- !u!1 &1743705384
 GameObject:
   m_ObjectHideFlags: 0
@@ -73831,6 +73870,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1934282057}
   redLight: {fileID: 479557643}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -73987,6 +74027,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 549936127}
   redLight: {fileID: 309642373}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -77695,6 +77736,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1662985857}
   redLight: {fileID: 1118265757}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -82408,6 +82450,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1325783365}
   redLight: {fileID: 904484650}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -83260,6 +83303,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 1214454161}
   redLight: {fileID: 1967558336}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -85783,6 +85827,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 353143054}
   redLight: {fileID: 176927414}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -88300,6 +88345,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 811638484}
   redLight: {fileID: 622194033}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -88623,6 +88669,7 @@ MonoBehaviour:
   draging: 0
   greenLight: {fileID: 2071626292}
   redLight: {fileID: 681406753}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:

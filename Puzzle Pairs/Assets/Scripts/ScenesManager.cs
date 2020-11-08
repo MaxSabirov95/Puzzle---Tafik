@@ -58,17 +58,9 @@ public class ScenesManager : MonoBehaviour
     public void RestartLevel()
     {
         Reset();
-        BlackBoard.magnet.Male_And_Female_Reset();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         cursers = GameObject.FindGameObjectsWithTag("Player");
         //SceneManager.LoadScene(sceneLoaded.buildIndex);
-        foreach (GameObject curser in cursers)
-        {
-            if (curser.activeInHierarchy)
-            {
-                curser.GetComponent<Curser>().RestartLevel();
-            }
-        }
         foreach (GameObject cube in cubes)
         {
             if (cube.activeInHierarchy)
@@ -76,6 +68,14 @@ public class ScenesManager : MonoBehaviour
                 cube.GetComponent<WhiteCubes>().RestartPosition();
             }
         }
+        foreach (GameObject curser in cursers)
+        {
+            if (curser.activeInHierarchy)
+            {
+                curser.GetComponent<Curser>().RestartLevel();
+            }
+        }
+        
     }
 
     public void ExitLevel()

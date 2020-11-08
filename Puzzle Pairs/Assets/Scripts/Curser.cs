@@ -17,7 +17,7 @@ public class Curser : MonoBehaviour
     private bool moveDone;
     public Transform _parent;
 
-    int cubesOnSamePositions;
+    public int cubesOnSamePositions;
 
     private void OnEnable()
     {
@@ -134,6 +134,11 @@ public class Curser : MonoBehaviour
                                             cube.GetComponent<WhiteCubes>().draging=false;
                                         }
                                         BlackBoard.soundsManager.SoundsList(1);
+                                        if (WhiteCubes.isFlipSound)
+                                        {
+                                            BlackBoard.soundsManager.SoundsList(5);
+                                            WhiteCubes.isFlipSound = false;
+                                        }
                                         StartCoroutine(waitToGrab());
                                         cubesOnSamePositions = 0;
                                         bool isAllGreenFull = true;
@@ -217,7 +222,6 @@ public class Curser : MonoBehaviour
             whiteCubes[0].transform.SetParent(_parent);
             whiteCubes.Remove(whiteCubes[0]);
         }
-        
         dragging = false;
         ifWall = false;
     }

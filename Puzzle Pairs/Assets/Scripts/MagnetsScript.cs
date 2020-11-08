@@ -38,7 +38,9 @@ public class MagnetsScript : MonoBehaviour
     }
     void OnEnable()
     {
-        
+        male = 0;
+        female = 0;
+        transform.localPosition = startPosition;
         BlackBoard.magnet = this;
         Physics.IgnoreLayerCollision(11, 9);
         Physics.IgnoreLayerCollision(13, 13);
@@ -157,10 +159,10 @@ public class MagnetsScript : MonoBehaviour
         }
     }
 
-    public void Male_And_Female_Reset()
-    {
-        male = 0;
-        female = 0;
-        transform.localPosition = startPosition;
-    }
+    //public void Male_And_Female_Reset()
+    //{
+    //    male = 0;
+    //    female = 0;
+    //    transform.localPosition = startPosition;
+    //}
 }

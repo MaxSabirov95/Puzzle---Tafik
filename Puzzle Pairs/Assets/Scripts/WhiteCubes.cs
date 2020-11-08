@@ -9,7 +9,7 @@ public class WhiteCubes : MonoBehaviour
     public bool draging;
     public SpriteRenderer greenLight;
     public SpriteRenderer redLight;
-    bool isGreen;
+    public bool isGreen;
     public bool inRange;
     public bool canBePlaced = false;
     public SpriteRenderer[] imagesLayers;
@@ -18,38 +18,27 @@ public class WhiteCubes : MonoBehaviour
     public Vector3 positionTemp;
     public Vector3 startPosition;
     Quaternion playerRotation;
+    public static bool isFlipSound;
 
     private void Awake()
     {
         playerRotation = transform.rotation;
         startPosition = transform.position;
     }
+
+    private void Start()
+    {
+        RestartPosition();
+    }
+
     private void OnEnable()
     {
-        if (greenLight.enabled)
-        {
-            isGreen = true;
-        }
-        else
-        {
-            isGreen = false;
-        }
         positionTemp = transform.position;
         BlackBoard._whiteCube = this;
 
         for (int i = 0; i < imagesLayers.Length; i++)
         {
             imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-        }
-
-        foreach (GridTileCubes green in greenSlots)
-        {
-            if (transform.position == green.transform.position)
-            {
-                greenLight.enabled = true;
-                redLight.enabled = false;
-                break;
-            }
         }
     }
 
@@ -85,7 +74,7 @@ public class WhiteCubes : MonoBehaviour
             case KindOfCube.Flip:
                 if (!draging)
                 {
-                    //transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z-90);
+                    isFlipSound = true;
                     iTween.RotateTo(this.gameObject, iTween.Hash(
                           "rotation", new Vector3(0, 0, transform.rotation.eulerAngles.z - 90),
                           "time", 0.2f,
@@ -98,18 +87,20 @@ public class WhiteCubes : MonoBehaviour
 
     public void RestartPosition()
     {
+        positionTemp = startPosition;
         draging = false;
         transform.position = startPosition;
         transform.rotation= playerRotation;
-        if (isGreen)
+        greenLight.enabled = false;
+        redLight.enabled = true;
+        foreach (GridTileCubes green in greenSlots)
         {
-            greenLight.enabled = true;
-            redLight.enabled = false;
-        }
-        else
-        {
-            greenLight.enabled = false;
-            redLight.enabled = true;
+            if (transform.position == green.transform.position)
+            {
+                greenLight.enabled = true;
+                redLight.enabled = false;
+                break;
+            }
         }
     }
 }
