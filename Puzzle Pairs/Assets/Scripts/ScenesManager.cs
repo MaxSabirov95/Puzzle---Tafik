@@ -6,7 +6,7 @@ public class ScenesManager : MonoBehaviour
 {
     [SerializeField] Text levelNumberText;
     Scene sceneLoaded;
-    //int sceneNumber;
+    int sceneNumber;
     public GameObject[] cubes;
     public GameObject[] cursers;
     private int playerActions;
@@ -126,5 +126,16 @@ public class ScenesManager : MonoBehaviour
     {
         playerActions++;
         playerActionsText.text = playerActions.ToString();
+    }
+
+    public void NextSection()
+    {
+        sceneNumber = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneNumber + 1);
+    }
+    public void PreviousSection()
+    {
+        sceneNumber = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneNumber - 1);
     }
 }
