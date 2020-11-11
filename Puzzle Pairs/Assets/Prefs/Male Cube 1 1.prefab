@@ -551,7 +551,7 @@ MonoBehaviour:
   right: {fileID: 2526352045735350227}
   speed: 0.25
   maleFemale: 0
-  effect: {fileID: 0}
+  effect: {fileID: 3838693233759665804, guid: 716c51543393d774ebd4362e6a870025, type: 3}
   placeEffect: {fileID: 1707440508501485949}
   playerIn: 0
 --- !u!212 &1707440509501868948
@@ -1093,9 +1093,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfCube: 0
   draging: 0
-  player: {fileID: 0}
   greenLight: {fileID: 1707440510049196981}
   redLight: {fileID: 1707440509736019984}
+  isGreen: 0
   inRange: 0
   canBePlaced: 0
   imagesLayers:
@@ -1112,6 +1112,7 @@ MonoBehaviour:
   - {fileID: 1707440509432007819}
   greenSlots: []
   positionTemp: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &2526352046019265576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1218,7 +1219,7 @@ MonoBehaviour:
   right: {fileID: 2526352045735350227}
   speed: 0.25
   maleFemale: 0
-  effect: {fileID: 0}
+  effect: {fileID: 3838693233759665804, guid: 716c51543393d774ebd4362e6a870025, type: 3}
   placeEffect: {fileID: 1707440508890471411}
   playerIn: 0
 --- !u!212 &4389432341567312384
