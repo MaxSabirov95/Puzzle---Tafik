@@ -46,9 +46,10 @@ public class Curser : MonoBehaviour
 
         else if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && !ifWall && !Rotation)
         {
-            int a = 0;
+
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {
+                int a = 0;
                 BlackBoard.soundsManager.SoundsList(4);
                 foreach (GameObject whiteCube in cubes)
                 {
@@ -74,11 +75,12 @@ public class Curser : MonoBehaviour
                         }
                         a++;
                     }
-                    if(whiteCubes.Count == 2)
+                    if (whiteCubes.Count == 2)
                     {
                         dragging = true;
                         break;
                     }
+
                 }
             }
             else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count == 2)
@@ -162,7 +164,7 @@ public class Curser : MonoBehaviour
                         }
                     }
                 }
-                
+
             }
         }      
     }
