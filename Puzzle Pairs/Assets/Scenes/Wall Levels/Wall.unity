@@ -10385,7 +10385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1001 &772288314
@@ -25136,7 +25136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1001 &1606368448
@@ -28773,7 +28773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &1845507556
@@ -33267,7 +33267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346a313fa83d104ca420d7bcdb8b0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 1
+  isFull: 0
   whiteCubesInRange: 0
   whiteCubes: []
 --- !u!1 &5031417501146745272

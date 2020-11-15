@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    //[SerializeField] Animator animMale;
-    //[SerializeField] Animator animFemale;
     [SerializeField] Animator anim;
 
     public enum magnetType { male,female};
@@ -22,7 +20,6 @@ public class MagnetsScript : MonoBehaviour
 
     private Vector2 startPosition;
     public float speed;
-    //float speedTemp;
     public static int male;
     public static int female;
     public bool maleFemale;
@@ -48,7 +45,6 @@ public class MagnetsScript : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(male + " " + female);
         if ((male >= 1) && (female >= 1))
         {
             maleFemale = true;
