@@ -56,18 +56,18 @@ public class Curser : MonoBehaviour
                     if (whiteCube.GetComponent<WhiteCubes>().inRange)
                     {
                         whiteCubes.Add(whiteCube.GetComponent<WhiteCubes>());
-                        whiteCubes[0 + a].transform.SetParent(transform);
-                        whiteCubes[0 + a].greenLight.enabled = false;
-                        whiteCubes[0 + a].redLight.enabled = true;
-                        whiteCubes[0 + a].draging = true;
-                        for (int j = 0; j < whiteCubes[0 + a].imagesLayers.Length; j++)
+                        whiteCubes[a].transform.SetParent(transform);
+                        whiteCubes[a].greenLight.enabled = false;
+                        whiteCubes[a].redLight.enabled = true;
+                        whiteCubes[a].draging = true;
+                        for (int j = 0; j < whiteCubes[a].imagesLayers.Length; j++)
                         {
-                            whiteCubes[0 + a].imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
+                            whiteCubes[a].imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
                         }
                         foreach (GameObject slot in emptySlot)
                         {
-                            if (Mathf.Abs(whiteCubes[0 + a].transform.position.x - slot.transform.position.x) <= 1f &&
-                                Mathf.Abs(whiteCubes[0 + a].transform.position.y - slot.transform.position.y) <= 1f)
+                            if (Mathf.Abs(whiteCubes[a].transform.position.x - slot.transform.position.x) <= 1f &&
+                                Mathf.Abs(whiteCubes[a].transform.position.y - slot.transform.position.y) <= 1f)
                             {
                                 slot.GetComponent<GridTileCubes>().isFull = false;
                                 break;
@@ -80,7 +80,41 @@ public class Curser : MonoBehaviour
                         dragging = true;
                         break;
                     }
+                }
 
+                if(whiteCubes.Count < 2)
+                {
+                    Debug.Log("IN");
+                    foreach (GameObject slot in emptySlot)
+                    {
+                        if (Mathf.Abs(whiteCubes[0].transform.position.x - slot.transform.position.x) <= 1f &&
+                                Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
+                        {
+                            whiteCubes[0].transform.position = slot.transform.position;
+
+                            whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
+
+                            for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
+                            {
+                                whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+                            }
+
+                            foreach (GridTileCubes green in greenSlots)
+                            {
+                                if (whiteCubes[0].transform.position == green.transform.position)
+                                {
+                                    whiteCubes[0].greenLight.enabled = true;
+                                    whiteCubes[0].redLight.enabled = false;
+                                    break;
+                                }
+                            }
+                            whiteCubes[0].draging = false;
+                            whiteCubes[0].transform.SetParent(_parent);
+                            slot.GetComponent<GridTileCubes>().isFull = true;
+                            break;
+                        }
+                    }
+                    whiteCubes.Clear();
                 }
             }
             else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count == 2)
