@@ -12,19 +12,21 @@ public class Curser : MonoBehaviour
     public GameObject[] emptySlot;
     public List<GridTileCubes> greenSlots;
     public GameObject[] cubes;
-    public bool dragging = false;
+    public static bool dragging = false;
     public bool ifWall;// bool to walls
     private bool moveDone;
     public Transform _parent;
 
     public int cubesOnSamePositions;
-
+    
+    void Awake()
+    {
+        BlackBoard.curser = this;
+    }
     private void OnEnable()
     {
-        ifWall = false;
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
-        BlackBoard.curser = this;
     }
     void Update()
     {

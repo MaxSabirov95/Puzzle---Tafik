@@ -25,7 +25,6 @@ public class MagnetsScript : MonoBehaviour
     public bool maleFemale;
     public ParticleSystem effect;
     public GameObject placeEffect;
-    bool firstTime;
 
 
     [SerializeField] bool playerIn;
@@ -35,8 +34,6 @@ public class MagnetsScript : MonoBehaviour
     }
     void OnEnable()
     {
-        male = 0;
-        female = 0;
         transform.localPosition = startPosition;
         BlackBoard.magnet = this;
         Physics.IgnoreLayerCollision(11, 9);
@@ -57,7 +54,7 @@ public class MagnetsScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!BlackBoard.curser.dragging && !BlackBoard.scenesManager.ifWin)
+        if (!Curser.dragging && !BlackBoard.scenesManager.ifWin)
         {
             if (playerIn)
             {
@@ -106,7 +103,7 @@ public class MagnetsScript : MonoBehaviour
                 if (collision.CompareTag("blue"))
                 {
                     female++;
-                    if (!BlackBoard.curser.dragging)
+                    if (!Curser.dragging)
                     {
                         if(placeEffect != null)
                         {
@@ -118,7 +115,7 @@ public class MagnetsScript : MonoBehaviour
                 }
                 else if(collision.CompareTag("red"))
                 {
-                    if (!BlackBoard.curser.dragging)
+                    if (!Curser.dragging)
                     {
                         BlackBoard.soundsManager.SoundsList(0);
                     }

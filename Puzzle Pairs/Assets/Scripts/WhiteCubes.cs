@@ -22,6 +22,7 @@ public class WhiteCubes : MonoBehaviour
 
     private void Awake()
     {
+        BlackBoard._whiteCube = this;
         playerRotation = transform.rotation;
         startPosition = transform.position;
     }
@@ -34,7 +35,7 @@ public class WhiteCubes : MonoBehaviour
     private void OnEnable()
     {
         positionTemp = transform.position;
-        BlackBoard._whiteCube = this;
+        
 
         for (int i = 0; i < imagesLayers.Length; i++)
         {

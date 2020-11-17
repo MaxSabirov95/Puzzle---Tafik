@@ -60,7 +60,6 @@ public class ScenesManager : MonoBehaviour
         Reset();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         cursers = GameObject.FindGameObjectsWithTag("Player");
-        //SceneManager.LoadScene(sceneLoaded.buildIndex);
         foreach (GameObject cube in cubes)
         {
             if (cube.activeInHierarchy)
