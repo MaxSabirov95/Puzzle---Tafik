@@ -8,7 +8,6 @@ public class ScenesManager : MonoBehaviour
     Scene sceneLoaded;
     int sceneNumber;
     public GameObject[] cubes;
-    public GameObject[] cursers;
     private int playerActions;
     [SerializeField] Text playerActionsText;
 
@@ -29,7 +28,6 @@ public class ScenesManager : MonoBehaviour
         levelsNow = 0;
         playerActionsText.text = playerActions.ToString();
         sceneLoaded = SceneManager.GetActiveScene();
-        //sceneNumber = SceneManager.GetActiveScene().buildIndex;
         BlackBoard.scenesManager = this;
         levelNumberText.text = "Level "+ (levelsNow + 1);
         winPanel.SetActive(false);
@@ -59,19 +57,11 @@ public class ScenesManager : MonoBehaviour
     {
         Reset();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
-        cursers = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject cube in cubes)
         {
             if (cube.activeInHierarchy)
             {
                 cube.GetComponent<WhiteCubes>().RestartPosition();
-            }
-        }
-        foreach (GameObject curser in cursers)
-        {
-            if (curser.activeInHierarchy)
-            {
-                curser.GetComponent<Curser>().RestartLevel();
             }
         }
         
@@ -94,6 +84,7 @@ public class ScenesManager : MonoBehaviour
         levels[levelsNow].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
         winPanel.SetActive(false);
+        BlackBoard.curser.RestartLevel();
         //SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
 
@@ -110,6 +101,7 @@ public class ScenesManager : MonoBehaviour
         }
         levels[levelsNow].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
+        BlackBoard.curser.RestartLevel();
         // SceneManager.LoadScene(sceneLoaded.buildIndex - 1);
     }
 

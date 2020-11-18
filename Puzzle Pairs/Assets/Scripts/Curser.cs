@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class Curser : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class Curser : MonoBehaviour
     public List<WhiteCubes> whiteCubes;
     public int howMuchInRange;
     public GameObject[] emptySlot;
-    public List<GridTileCubes> greenSlots;
+    public GameObject[] greenSlots;
     public GameObject[] cubes;
     public static bool dragging = false;
     public bool ifWall;// bool to walls
-    private bool moveDone;
-    public Transform _parent;
+    //public Transform _parent;
+    public int totalCubes=2;
 
     public int cubesOnSamePositions;
     
@@ -23,10 +24,11 @@ public class Curser : MonoBehaviour
     {
         BlackBoard.curser = this;
     }
-    private void OnEnable()
+    private void Start()
     {
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
+        greenSlots = GameObject.FindGameObjectsWithTag("Green Slot");
     }
     void Update()
     {
@@ -48,7 +50,6 @@ public class Curser : MonoBehaviour
 
         else if (Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && !ifWall && !Rotation)
         {
-
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {
                 int a = 0;
@@ -77,54 +78,64 @@ public class Curser : MonoBehaviour
                         }
                         a++;
                     }
-                    if (whiteCubes.Count == 2)
+                    if (whiteCubes.Count == totalCubes)
                     {
                         dragging = true;
                         break;
                     }
                 }
 
-                if(whiteCubes.Count < 2)
-                {
-                    Debug.Log("IN");
-                    foreach (GameObject slot in emptySlot)
-                    {
-                        if (Mathf.Abs(whiteCubes[0].transform.position.x - slot.transform.position.x) <= 1f &&
-                                Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
-                        {
-                            whiteCubes[0].transform.position = slot.transform.position;
+                //if(whiteCubes.Count < totalCubes)
+                //{
+                //    Debug.Log("IN");
+                //    foreach (GameObject slot in emptySlot)
+                //    {
+                //        if (Mathf.Abs(whiteCubes[0].transform.position.x - slot.transform.position.x) <= 1f &&
+                //                Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
+                //        {
+                //            whiteCubes[0].transform.position = slot.transform.position;
 
-                            whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
+                //            whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
 
-                            for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
-                            {
-                                whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-                            }
+                //            for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
+                //            {
+                //                whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+                //            }
 
-                            foreach (GridTileCubes green in greenSlots)
-                            {
-                                if (whiteCubes[0].transform.position == green.transform.position)
-                                {
-                                    whiteCubes[0].greenLight.enabled = true;
-                                    whiteCubes[0].redLight.enabled = false;
-                                    break;
-                                }
-                            }
-                            whiteCubes[0].draging = false;
-                            whiteCubes[0].transform.SetParent(_parent);
-                            slot.GetComponent<GridTileCubes>().isFull = true;
-                            break;
-                        }
-                    }
-                    whiteCubes.Clear();
-                }
+                //            foreach (GameObject green in greenSlots)
+                //            {
+                //                if (whiteCubes[0].transform.position == green.transform.position)
+                //                {
+                //                    whiteCubes[0].greenLight.enabled = true;
+                //                    whiteCubes[0].redLight.enabled = false;
+                //                    break;
+                //                }
+                //            }
+                //            whiteCubes[0].draging = false;
+                //            whiteCubes[0].transform.SetParent(_parent);
+                //            slot.GetComponent<GridTileCubes>().isFull = true;
+                //            break;
+                //        }
+                //    }
+                //    whiteCubes.Clear();
+                //}
             }
-            else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count == 2)
+            else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count == totalCubes)
             {
                 if (whiteCubes[0].canBePlaced && whiteCubes[1].canBePlaced)
                 {
                     for (int j = 0; j < 2; j++)//--check how much cubes left in list
                     {
+                        if (whiteCubes.Count == totalCubes)
+                        {
+                            if (cubesOnSamePositions <= 1)
+                            {
+                                foreach (GameObject cube in cubes)
+                                {
+                                    cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
+                                }
+                            }
+                        }//--Cubes action
                         foreach (GameObject slot in emptySlot)
                         {
                             if (Mathf.Abs(whiteCubes[0].transform.position.x - slot.transform.position.x) <= 1f &&
@@ -134,69 +145,70 @@ public class Curser : MonoBehaviour
                                 if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
                                 {
                                     cubesOnSamePositions++;
-                                }
+                                }//--Check if cube land on same position as before
 
                                 whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
 
                                 for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
                                 {
                                     whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-                                }
-
-                                foreach (GridTileCubes green in greenSlots)
-                                {
-                                    if (whiteCubes[0].transform.position == green.transform.position)
-                                    {
-                                        whiteCubes[0].greenLight.enabled = true;
-                                        whiteCubes[0].redLight.enabled = false;
-                                        break;
-                                    }
-                                }
-                                whiteCubes[0].draging = false;
-                                whiteCubes[0].transform.SetParent(_parent);
-                                whiteCubes.Remove(whiteCubes[0]);
+                                }//--Change all sprites from drag to NotDrag  
                                 slot.GetComponent<GridTileCubes>().isFull = true;
+                            }
+                        }
+                        foreach (GameObject green in greenSlots)
+                        {
+                            if (Mathf.Abs(whiteCubes[0].transform.position.x - green.transform.position.x) <= 1f &&
+                                    Mathf.Abs(whiteCubes[0].transform.position.y - green.transform.position.y) <= 1f)
+                            {
+                                whiteCubes[0].transform.position = green.transform.position;
+                                if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
+                                {
+                                    cubesOnSamePositions++;
+                                }//--Check if cube land on same position as before
+
+                                whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
+
+                                for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
+                                {
+                                    whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+                                }//--Change all sprites from drag to NotDrag   
+                                whiteCubes[0].greenLight.enabled = true;
+                                whiteCubes[0].redLight.enabled = false;
+                                green.GetComponent<GridTileCubes>().isFull = true;
+                                //break;
+                            }
+                            
+                        }//--Check if cube land on green slot
+                        
+
+                        whiteCubes[0].draging = false;
+                        whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
+                        whiteCubes.Remove(whiteCubes[0]);
+                        
+                        //break;
+                    }
+                    if (whiteCubes.Count == 0)
+                    {
+                        BlackBoard.soundsManager.SoundsList(1);
+                        if (WhiteCubes.isFlipSound)
+                        {
+                            StartCoroutine(redDelay());
+                        }
+                        StartCoroutine(waitToGrab());
+                        cubesOnSamePositions = 0;
+                        bool isAllGreenFull = true;
+                        foreach (GameObject green in greenSlots)
+                        {
+                            if (!green.GetComponent<GridTileCubes>().isFull)
+                            {
+                                isAllGreenFull = false;
                                 break;
                             }
-                        }
-
-                        if (whiteCubes.Count == 1)
+                        }//--Check if all green slots are full
+                        if (isAllGreenFull)
                         {
-                            if (cubesOnSamePositions <= 1)
-                            {
-                                foreach (GameObject cube in cubes)
-                                {
-                                    cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
-                                }
-                            }
-                        }
-
-                        if (whiteCubes.Count == 0)
-                        {
-                            //foreach (GameObject cube in cubes)
-                            //{
-                            //    cube.GetComponent<WhiteCubes>().draging = false;
-                            //}
-                            BlackBoard.soundsManager.SoundsList(1);
-                            if (WhiteCubes.isFlipSound)
-                            {
-                                StartCoroutine(redDelay());
-                            }
-                            StartCoroutine(waitToGrab());
-                            cubesOnSamePositions = 0;
-                            bool isAllGreenFull = true;
-                            foreach (GridTileCubes green in greenSlots)
-                            {
-                                if (!green.isFull)
-                                {
-                                    isAllGreenFull = false;
-                                    break;
-                                }
-                            }
-                            if (isAllGreenFull)
-                            {
-                                BlackBoard.scenesManager.ifWin = true;
-                            }
+                            BlackBoard.scenesManager.ifWin = true;
                         }
                     }
                 }
@@ -258,11 +270,13 @@ public class Curser : MonoBehaviour
         {
             do
             {
-                whiteCubes[0].transform.SetParent(_parent);
+                whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
                 whiteCubes.Remove(whiteCubes[0]);
             } while (whiteCubes.Count > 0);
         }
-        
+        emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
+        cubes = GameObject.FindGameObjectsWithTag("whiteCube");
+        greenSlots = GameObject.FindGameObjectsWithTag("Green Slot");
         dragging = false;
         ifWall = false;
     }

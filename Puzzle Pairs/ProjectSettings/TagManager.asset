@@ -18,6 +18,8 @@ TagManager:
   - M.R
   - B.R
   - Wall
+  - Green Slot
+  - Parent
   layers:
   - Default
   - TransparentFX

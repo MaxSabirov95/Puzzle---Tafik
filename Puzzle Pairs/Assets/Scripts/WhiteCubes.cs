@@ -19,6 +19,7 @@ public class WhiteCubes : MonoBehaviour
     public Vector3 startPosition;
     Quaternion playerRotation;
     public static bool isFlipSound;
+    public Transform parent;
 
     private void Awake()
     {
@@ -35,7 +36,9 @@ public class WhiteCubes : MonoBehaviour
     private void OnEnable()
     {
         positionTemp = transform.position;
-        
+        parent = GameObject.FindGameObjectWithTag("Parent").transform;
+
+
 
         for (int i = 0; i < imagesLayers.Length; i++)
         {
@@ -50,7 +53,7 @@ public class WhiteCubes : MonoBehaviour
             inRange = true;
         }
 
-        if (col.gameObject.CompareTag("Empty Slot"))
+        if (col.gameObject.CompareTag("Empty Slot")|| col.gameObject.CompareTag("Green Slot"))
         {
             canBePlaced = !col.GetComponent<GridTileCubes>().isFull;
         }
