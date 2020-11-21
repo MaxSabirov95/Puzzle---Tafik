@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 39693020}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1685,7 +1685,7 @@ GameObject:
   - component: {fileID: 65441185}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 84836623}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2262,7 +2262,7 @@ GameObject:
   - component: {fileID: 91226806}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2392,7 +2392,7 @@ GameObject:
   - component: {fileID: 93362415}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3231,7 +3231,7 @@ GameObject:
   - component: {fileID: 118016041}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3364,7 +3364,7 @@ GameObject:
   - component: {fileID: 135613549}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3784,7 +3784,7 @@ GameObject:
   - component: {fileID: 157033901}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4722,7 +4722,7 @@ GameObject:
   - component: {fileID: 190835844}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4977,7 +4977,7 @@ GameObject:
   - component: {fileID: 196469182}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6112,7 +6112,7 @@ GameObject:
   - component: {fileID: 249508686}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6367,7 +6367,7 @@ GameObject:
   - component: {fileID: 253889825}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7557,7 +7557,7 @@ GameObject:
   - component: {fileID: 308204016}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8943,7 +8943,7 @@ GameObject:
   - component: {fileID: 339178253}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9765,7 +9765,7 @@ GameObject:
   - component: {fileID: 375081058}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10267,7 +10267,7 @@ GameObject:
   - component: {fileID: 388192598}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10541,7 +10541,7 @@ GameObject:
   - component: {fileID: 411017234}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10821,7 +10821,7 @@ GameObject:
   - component: {fileID: 422999311}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10951,7 +10951,7 @@ GameObject:
   - component: {fileID: 423249781}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11481,7 +11481,7 @@ GameObject:
   - component: {fileID: 428227614}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11611,7 +11611,7 @@ GameObject:
   - component: {fileID: 429047291}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12557,7 +12557,7 @@ GameObject:
   - component: {fileID: 483933527}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13560,7 +13560,7 @@ GameObject:
   - component: {fileID: 519632259}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13690,7 +13690,7 @@ GameObject:
   - component: {fileID: 522451243}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15984,7 +15984,7 @@ GameObject:
   - component: {fileID: 626331342}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16189,7 +16189,7 @@ GameObject:
   - component: {fileID: 631949744}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (2)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16319,7 +16319,7 @@ GameObject:
   - component: {fileID: 656831314}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16544,7 +16544,7 @@ GameObject:
   - component: {fileID: 657644747}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18637,7 +18637,7 @@ GameObject:
   - component: {fileID: 722425394}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18767,7 +18767,7 @@ GameObject:
   - component: {fileID: 731783053}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (2)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18894,7 +18894,7 @@ GameObject:
   - component: {fileID: 732690961}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19062,7 +19062,7 @@ GameObject:
   - component: {fileID: 738096557}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20095,7 +20095,7 @@ GameObject:
   - component: {fileID: 773845518}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20845,7 +20845,7 @@ GameObject:
   - component: {fileID: 789719424}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21192,7 +21192,7 @@ GameObject:
   - component: {fileID: 800983201}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21522,7 +21522,7 @@ GameObject:
   - component: {fileID: 804924231}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21652,7 +21652,7 @@ GameObject:
   - component: {fileID: 808269918}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22334,7 +22334,7 @@ GameObject:
   - component: {fileID: 842026719}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23166,7 +23166,7 @@ GameObject:
   - component: {fileID: 878228335}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24142,7 +24142,7 @@ GameObject:
   - component: {fileID: 918877775}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25251,7 +25251,7 @@ GameObject:
   - component: {fileID: 941739493}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25453,7 +25453,7 @@ GameObject:
   - component: {fileID: 955098340}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25622,7 +25622,7 @@ GameObject:
   - component: {fileID: 959774285}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25838,7 +25838,7 @@ GameObject:
   - component: {fileID: 968852833}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26205,7 +26205,7 @@ GameObject:
   - component: {fileID: 989727106}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26335,7 +26335,7 @@ GameObject:
   - component: {fileID: 990086530}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33613,7 +33613,7 @@ GameObject:
   - component: {fileID: 1044033454}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33993,7 +33993,7 @@ GameObject:
   - component: {fileID: 1053026027}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34759,7 +34759,7 @@ GameObject:
   - component: {fileID: 1090009956}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36556,7 +36556,7 @@ GameObject:
   - component: {fileID: 1184628419}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36891,7 +36891,7 @@ GameObject:
   - component: {fileID: 1187837488}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37021,7 +37021,7 @@ GameObject:
   - component: {fileID: 1194475012}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37246,7 +37246,7 @@ GameObject:
   - component: {fileID: 1196313335}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37581,7 +37581,7 @@ GameObject:
   - component: {fileID: 1213958232}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37751,7 +37751,7 @@ GameObject:
   - component: {fileID: 1220259357}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38478,7 +38478,7 @@ GameObject:
   - component: {fileID: 1255724243}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38739,7 +38739,7 @@ GameObject:
   - component: {fileID: 1259356137}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39160,7 +39160,7 @@ GameObject:
   - component: {fileID: 1271981113}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (1)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39807,7 +39807,7 @@ GameObject:
   - component: {fileID: 1296902186}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39937,7 +39937,7 @@ GameObject:
   - component: {fileID: 1312507329}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40763,7 +40763,7 @@ GameObject:
   - component: {fileID: 1347075514}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (1)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42057,7 +42057,7 @@ GameObject:
   - component: {fileID: 1405877646}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42187,7 +42187,7 @@ GameObject:
   - component: {fileID: 1409033662}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42524,7 +42524,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1734960ce71260b4abe608c46bccbd45,
+      objectReference: {fileID: 21300000, guid: 8c140e3c6d34ea0468e4a2987013fabb,
         type: 3}
     - target: {fileID: 1333882682447791395, guid: 807c842970a32524996ccc16de84f9bc,
         type: 3}
@@ -42722,7 +42722,7 @@ GameObject:
   - component: {fileID: 1421804674}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43632,7 +43632,7 @@ GameObject:
   - component: {fileID: 1449698016}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43925,7 +43925,7 @@ GameObject:
   - component: {fileID: 1461663159}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44549,7 +44549,7 @@ GameObject:
   - component: {fileID: 1486156609}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44679,7 +44679,7 @@ GameObject:
   - component: {fileID: 1489687538}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44899,7 +44899,7 @@ GameObject:
   - component: {fileID: 1494724861}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45124,7 +45124,7 @@ GameObject:
   - component: {fileID: 1498148391}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45355,7 +45355,7 @@ GameObject:
   - component: {fileID: 1514018881}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45807,7 +45807,7 @@ GameObject:
   - component: {fileID: 1545998724}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46640,7 +46640,7 @@ GameObject:
   - component: {fileID: 1568072121}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47235,7 +47235,7 @@ GameObject:
   - component: {fileID: 1579753479}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47490,7 +47490,7 @@ GameObject:
   - component: {fileID: 1587344329}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48364,7 +48364,7 @@ GameObject:
   - component: {fileID: 1646274569}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49038,7 +49038,7 @@ GameObject:
   - component: {fileID: 1670853068}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49513,7 +49513,7 @@ GameObject:
   - component: {fileID: 1686046858}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49643,7 +49643,7 @@ GameObject:
   - component: {fileID: 1687396544}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50029,7 +50029,7 @@ GameObject:
   - component: {fileID: 1711394953}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50359,7 +50359,7 @@ GameObject:
   - component: {fileID: 1719442537}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50784,7 +50784,7 @@ GameObject:
   - component: {fileID: 1729826282}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51026,7 +51026,7 @@ GameObject:
   - component: {fileID: 1749701759}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51069,7 +51069,7 @@ GameObject:
   - component: {fileID: 1752016727}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (12)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51324,7 +51324,7 @@ GameObject:
   - component: {fileID: 1771347884}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51675,7 +51675,7 @@ GameObject:
   - component: {fileID: 1785914918}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52908,7 +52908,7 @@ GameObject:
   - component: {fileID: 1806940100}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53038,7 +53038,7 @@ GameObject:
   - component: {fileID: 1807142995}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53495,7 +53495,7 @@ GameObject:
   - component: {fileID: 1829762676}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (5)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54629,7 +54629,7 @@ GameObject:
   - component: {fileID: 1857739233}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55140,7 +55140,7 @@ GameObject:
   - component: {fileID: 1886319185}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55520,7 +55520,7 @@ GameObject:
   - component: {fileID: 1894125376}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55725,7 +55725,7 @@ GameObject:
   - component: {fileID: 1908051724}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56173,7 +56173,7 @@ GameObject:
   - component: {fileID: 1922600261}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56428,7 +56428,7 @@ GameObject:
   - component: {fileID: 1927190888}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (9)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57079,7 +57079,7 @@ GameObject:
   - component: {fileID: 1945544445}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (7)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57455,7 +57455,7 @@ GameObject:
   - component: {fileID: 1958248294}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57758,7 +57758,7 @@ GameObject:
   - component: {fileID: 1964362971}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58392,7 +58392,7 @@ GameObject:
   - component: {fileID: 1980902667}
   m_Layer: 0
   m_Name: Cubes
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58945,7 +58945,7 @@ GameObject:
   - component: {fileID: 1997548730}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59150,7 +59150,7 @@ GameObject:
   - component: {fileID: 2014109797}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59695,7 +59695,7 @@ GameObject:
   - component: {fileID: 2032928253}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (1)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59950,7 +59950,7 @@ GameObject:
   - component: {fileID: 2040670317}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (8)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60555,7 +60555,7 @@ GameObject:
   - component: {fileID: 2064340506}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (3)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61824,7 +61824,7 @@ GameObject:
   - component: {fileID: 2086769680}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (10)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63180,7 +63180,7 @@ GameObject:
   - component: {fileID: 2135850274}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (6)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63310,7 +63310,7 @@ GameObject:
   - component: {fileID: 2136032395}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (4)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63565,7 +63565,7 @@ GameObject:
   - component: {fileID: 2145576204}
   m_Layer: 0
   m_Name: "\u05E7\u05D5\u05D1\u05D9\u05D4 2 (11)"
-  m_TagString: Empty Slot
+  m_TagString: Green Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

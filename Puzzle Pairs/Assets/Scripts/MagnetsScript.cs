@@ -23,7 +23,7 @@ public class MagnetsScript : MonoBehaviour
     public static int male;
     public static int female;
     public bool maleFemale;
-    public ParticleSystem effect;
+    //public ParticleSystem effect;
     public GameObject placeEffect;
 
 
@@ -107,8 +107,8 @@ public class MagnetsScript : MonoBehaviour
                     {
                         if(placeEffect != null)
                         {
-                            effect.transform.position = placeEffect.transform.position;
-                            effect.Play();
+                           // effect.transform.position = placeEffect.transform.position;
+                            //effect.Play();
                             BlackBoard.soundsManager.SoundsList(2);
                         }
                     }

@@ -56,6 +56,7 @@ public class ScenesManager : MonoBehaviour
     public void RestartLevel()
     {
         Reset();
+        BlackBoard.curser.RestartLevel();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         foreach (GameObject cube in cubes)
         {
