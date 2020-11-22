@@ -31,14 +31,8 @@ public class WhiteCubes : MonoBehaviour
     private void Start()
     {
         RestartPosition();
-    }
-
-    private void OnEnable()
-    {
         positionTemp = transform.position;
         parent = GameObject.FindGameObjectWithTag("Parent").transform;
-
-
 
         for (int i = 0; i < imagesLayers.Length; i++)
         {

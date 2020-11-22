@@ -187,8 +187,8 @@ public class Curser : MonoBehaviour
                                 whiteCubes.Remove(whiteCubes[0]);
                                 break;
                             }
+                            }//--Check if cube land on brown slot
                         }
-                        }   
                         if (whiteCubes.Count > 0)
                         {
                             foreach (GameObject green in greenSlots)
@@ -219,16 +219,16 @@ public class Curser : MonoBehaviour
 
                             }//--Check if cube land on green slot
                         }
-                    }
 
-                    if (cubesOnSamePositions < totalCubes)
-                    {
-                        foreach (GameObject cube in cubes)
+                        if ((j==totalCubes-1) && (cubesOnSamePositions<=1))
                         {
-                            cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
-                            cube.GetComponent<WhiteCubes>().draging = false;
-                        }
-                    }//--Cubes action
+                            foreach (GameObject cube in cubes)
+                            {
+                                cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
+                                cube.GetComponent<WhiteCubes>().draging = false;
+                            }
+                        }//--Cubes action
+                    }
                     if (whiteCubes.Count == 0)
                     {
                         BlackBoard.soundsManager.SoundsList(1);
