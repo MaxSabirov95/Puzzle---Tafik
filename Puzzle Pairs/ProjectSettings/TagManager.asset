@@ -57,6 +57,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Male
+    uniqueID: 1676439641
+    locked: 0
   - name: NotDrag
     uniqueID: 3746794911
     locked: 0
