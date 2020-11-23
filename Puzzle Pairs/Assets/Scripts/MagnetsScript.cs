@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    [SerializeField] Animator anim;
-
     public enum magnetType { male,female};
     public enum magnetPosition { up, down,right,left,notMovable };
     public magnetType magnet;
     public magnetPosition position;
 
+    private Vector2 startPosition;
+
+    [SerializeField] Animator anim;
+    [SerializeField] bool playerIn;
 
     public GameObject up;
     public GameObject down;
     public GameObject left;
     public GameObject right;
 
-    private Vector2 startPosition;
     public float speed;
     public static int male;
     public static int female;
@@ -26,8 +27,6 @@ public class MagnetsScript : MonoBehaviour
     //public ParticleSystem effect;
     public GameObject placeEffect;
 
-
-    [SerializeField] bool playerIn;
     private void Awake()
     {
         startPosition = transform.localPosition;
@@ -40,7 +39,7 @@ public class MagnetsScript : MonoBehaviour
         Physics.IgnoreLayerCollision(13, 13);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if ((male >= 1) && (female >= 1))
         {
@@ -50,10 +49,6 @@ public class MagnetsScript : MonoBehaviour
         {
             maleFemale = false;
         }
-    }
-
-    private void FixedUpdate()
-    {
         if (!Curser.dragging && !BlackBoard.scenesManager.ifWin)
         {
             if (playerIn)
@@ -151,11 +146,4 @@ public class MagnetsScript : MonoBehaviour
                 break;
         }
     }
-
-    //public void Male_And_Female_Reset()
-    //{
-    //    male = 0;
-    //    female = 0;
-    //    transform.localPosition = startPosition;
-    //}
 }

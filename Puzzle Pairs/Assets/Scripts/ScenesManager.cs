@@ -5,29 +5,27 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     [SerializeField] Text levelNumberText;
-    Scene sceneLoaded;
-    int sceneNumber;
-    public GameObject[] cubes;
-    private int playerActions;
     [SerializeField] Text playerActionsText;
-
-    public bool ifWin;
-    public float time;
-    [SerializeField] Text timerText;
-
-    public GameObject winPanel;
     [SerializeField] Text _levelNumberText;
     [SerializeField] Text _timerText;
     [SerializeField] Text _actionText;
+    [SerializeField] Text timerText;
 
+    private int sceneNumber;
+    private int levelsNow;   
+    private int playerActions;   
+
+    public bool ifWin;
+    public float time;
+    
+    public GameObject winPanel;
+    public GameObject[] cubes;
     public GameObject[] levels;
-    int levelsNow;
-
+    
     private void Start()
     {
         levelsNow = 0;
         playerActionsText.text = playerActions.ToString();
-        sceneLoaded = SceneManager.GetActiveScene();
         BlackBoard.scenesManager = this;
         levelNumberText.text = "Level "+ (levelsNow + 1);
         winPanel.SetActive(false);
@@ -55,7 +53,10 @@ public class ScenesManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        Reset();
+        playerActions = 0;
+        time = 0;
+        ifWin = false;
+        playerActionsText.text = playerActions.ToString();
         BlackBoard.curser.RestartLevel();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         foreach (GameObject cube in cubes)
@@ -64,8 +65,7 @@ public class ScenesManager : MonoBehaviour
             {
                 cube.GetComponent<WhiteCubes>().RestartPosition();
             }
-        }
-        
+        }        
     }
 
     public void ExitLevel()
@@ -86,9 +86,7 @@ public class ScenesManager : MonoBehaviour
         levelNumberText.text = "Level " + (levelsNow + 1);
         winPanel.SetActive(false);
         BlackBoard.curser.RestartLevel();
-        //SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
     }
-
     public void PreviousLevel()
     {
         RestartLevel();
@@ -103,15 +101,6 @@ public class ScenesManager : MonoBehaviour
         levels[levelsNow].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
         BlackBoard.curser.RestartLevel();
-        // SceneManager.LoadScene(sceneLoaded.buildIndex - 1);
-    }
-
-    private void Reset()
-    {
-        playerActions = 0;
-        time = 0;
-        ifWin = false;
-        playerActionsText.text = playerActions.ToString();
     }
 
     public void PlayerMoves()

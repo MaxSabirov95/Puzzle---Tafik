@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class GridTileCubes : MonoBehaviour
 {
+
+    [SerializeField] int whiteCubesInRange;
+
     public bool isFull;
-
-    [SerializeField]
-    private int whiteCubesInRange;
-
-    public GameObject[] whiteCubes;
-
-    private void OnEnable()
-    {
-        BlackBoard.gridTileCubes = this;
-        whiteCubes = GameObject.FindGameObjectsWithTag("whiteCube");
-    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {

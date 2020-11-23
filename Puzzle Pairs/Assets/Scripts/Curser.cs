@@ -6,31 +6,33 @@ using System.Linq;
 
 public class Curser : MonoBehaviour
 {
-    public float rotation;
     private bool Rotation;
+    private float distanse = 1.5f;
+
     public List<WhiteCubes> whiteCubes;
-    public int howMuchInRange;
     public GameObject[] emptySlot;
     public GameObject[] greenSlots;
     public GameObject[] cubes;
-    public static bool dragging = false;
-    public bool ifWall;// bool to walls
-    //public Transform _parent;
-    public int totalCubes=2;
-    float distanse = 1.5f;
 
+    public int howMuchInRange;
+    public bool ifWall;// bool to walls
+    public int totalCubes=2;
     public int cubesOnSamePositions;
-    
+
+    public static bool dragging = false;
+
     void Awake()
     {
         BlackBoard.curser = this;
     }
+
     private void Start()
     {
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         greenSlots = GameObject.FindGameObjectsWithTag("Green Slot");
     }
+
     void Update()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
@@ -102,58 +104,16 @@ public class Curser : MonoBehaviour
                     {
                         foreach (GameObject slot in emptySlot)
                         {
-                            if (Mathf.Abs(whiteCubes[0].transform.position.x - slot.transform.position.x) <= 1f &&
-                                    Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= 1f)
-                            {
-                                whiteCubes[0].transform.position = slot.transform.position;
-                                slot.GetComponent<GridTileCubes>().isFull = true;
-                                if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
-                                {
-                                    cubesOnSamePositions++;
-                                }//--Check if cube land on same position as before
-
-                                whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
-
-                                for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
-                                {
-                                    whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-                                }//--Change all sprites from drag to NotDrag  
-
-                                whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
-                                break;
-                            }
-                        }
+                            ReleaseCubes(slot);
+                        }//--Check if cube land on brown slot
                     }
                     if (whiteCubes.Count > 0)
                     {
                         foreach (GameObject green in greenSlots)
                         {
-                            if (Mathf.Abs(whiteCubes[0].transform.position.x - green.transform.position.x) <= 1f &&
-                                    Mathf.Abs(whiteCubes[0].transform.position.y - green.transform.position.y) <= 1f)
-                            {
-                                whiteCubes[0].transform.position = green.transform.position;
-                                green.GetComponent<GridTileCubes>().isFull = true;
-                                whiteCubes[0].greenLight.enabled = true;
-                                whiteCubes[0].redLight.enabled = false;
-                                if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
-                                {
-                                    cubesOnSamePositions++;
-                                }//--Check if cube land on same position as before
-
-                                whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
-
-                                for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
-                                {
-                                    whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-                                }//--Change all sprites from drag to NotDrag  
-
-                                whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
-                                break;
-                            }
-
+                            ReleaseCubes(green);
                         }//--Check if cube land on green slot
                     }
-                    whiteCubes.Clear();
                 }//--Just in case if curser will grab 1 cube
             }//--Grab cubes
             else if (dragging && BlackBoard.magnet.maleFemale && whiteCubes.Count == totalCubes)
@@ -162,72 +122,22 @@ public class Curser : MonoBehaviour
                 {
                     for (int j = 0; j < totalCubes; j++)//--check how much cubes left in list
                     {
-                        if (whiteCubes.Count > 0)
+                        foreach (GameObject slot in emptySlot)
                         {
-                            foreach (GameObject slot in emptySlot)
-                            {
-                            if (Mathf.Abs(whiteCubes[0].transform.position.x - slot.transform.position.x) <= distanse &&
-                                    Mathf.Abs(whiteCubes[0].transform.position.y - slot.transform.position.y) <= distanse)
-                            {
-                                whiteCubes[0].transform.position = slot.transform.position;
-                                slot.GetComponent<GridTileCubes>().isFull = true;
-                                if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
-                                {
-                                    cubesOnSamePositions++;
-                                }//--Check if cube land on same position as before
-
-                                whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
-
-                                for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
-                                {
-                                    whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-                                }//--Change all sprites from drag to NotDrag  
-
-                                whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
-                                whiteCubes.Remove(whiteCubes[0]);
-                                break;
-                            }
-                            }//--Check if cube land on brown slot
+                            ReleaseCubes(slot);
+                        }//--Check if cube land on brown slot
+                        foreach (GameObject green in greenSlots)
+                        {
+                            ReleaseCubes(green);
+                        }//--Check if cube land on green slot
+                    }
+                    if (cubesOnSamePositions <= 1)
+                    {
+                        foreach (GameObject cube in cubes)
+                        {
+                            cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
+                            cube.GetComponent<WhiteCubes>().draging = false;
                         }
-                        if (whiteCubes.Count > 0)
-                        {
-                            foreach (GameObject green in greenSlots)
-                            {
-                                if (Mathf.Abs(whiteCubes[0].transform.position.x - green.transform.position.x) <= distanse &&
-                                        Mathf.Abs(whiteCubes[0].transform.position.y - green.transform.position.y) <= distanse)
-                                {
-                                    whiteCubes[0].transform.position = green.transform.position;
-                                    green.GetComponent<GridTileCubes>().isFull = true;
-                                    whiteCubes[0].greenLight.enabled = true;
-                                    whiteCubes[0].redLight.enabled = false;
-                                    if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
-                                    {
-                                        cubesOnSamePositions++;
-                                    }//--Check if cube land on same position as before
-
-                                    whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
-
-                                    for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
-                                    {
-                                        whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
-                                    }//--Change all sprites from drag to NotDrag  
-
-                                    whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
-                                    whiteCubes.Remove(whiteCubes[0]);
-                                    break;
-                                }
-
-                            }//--Check if cube land on green slot
-                        }
-
-                        if ((j==totalCubes-1) && (cubesOnSamePositions<=1))
-                        {
-                            foreach (GameObject cube in cubes)
-                            {
-                                cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
-                                cube.GetComponent<WhiteCubes>().draging = false;
-                            }
-                        }//--Cubes action
                     }
                     if (whiteCubes.Count == 0)
                     {
@@ -253,7 +163,6 @@ public class Curser : MonoBehaviour
                         }
                     }
                 }
-
             }//--Put cubes
         }//--Grab and put cubes
     }
@@ -280,10 +189,6 @@ public class Curser : MonoBehaviour
         if (col.CompareTag("whiteCube"))//--connector boxes
         {
             howMuchInRange++;
-        }
-        if (col.CompareTag("Wall"))
-        {
-            ifWall = true;
         }
     }
     private void OnTriggerStay2D(Collider2D col)
@@ -320,6 +225,34 @@ public class Curser : MonoBehaviour
         greenSlots = GameObject.FindGameObjectsWithTag("Green Slot");
         dragging = false;
         ifWall = false;
+    }
+
+    public void ReleaseCubes(GameObject cube)
+    {
+        if (whiteCubes.Count >= 1)
+        {
+            if (Mathf.Abs(whiteCubes[0].transform.position.x - cube.transform.position.x) <= distanse &&
+            Mathf.Abs(whiteCubes[0].transform.position.y - cube.transform.position.y) <= distanse)
+            {
+                whiteCubes[0].transform.position = cube.transform.position;
+                cube.GetComponent<GridTileCubes>().isFull = true;
+                whiteCubes[0].IsGreenLight();
+                if (whiteCubes[0].transform.position == whiteCubes[0].positionTemp)
+                {
+                    cubesOnSamePositions++;
+                }//--Check if cube land on same position as before
+
+                whiteCubes[0].positionTemp = whiteCubes[0].transform.position;
+
+                for (int i = 0; i < whiteCubes[0].imagesLayers.Length; i++)
+                {
+                    whiteCubes[0].imagesLayers[i].GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("NotDrag");
+                }//--Change all sprites from drag to NotDrag  
+
+                whiteCubes[0].transform.SetParent(whiteCubes[0].parent);
+                whiteCubes.Remove(whiteCubes[0]);
+            }
+        }
     }
 }
 

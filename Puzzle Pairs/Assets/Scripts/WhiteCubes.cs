@@ -6,24 +6,27 @@ public class WhiteCubes : MonoBehaviour
 {
     public enum KindOfCube { Normal,Flip}
     public KindOfCube kindOfCube;
-    public bool draging;
+
     public SpriteRenderer greenLight;
     public SpriteRenderer redLight;
+    public SpriteRenderer[] imagesLayers;
+    public List<GridTileCubes> greenSlots;
+
+    public bool draging;
     public bool isGreen;
     public bool inRange;
     public bool canBePlaced = false;
-    public SpriteRenderer[] imagesLayers;
-    public List<GridTileCubes> greenSlots;
+    
     [HideInInspector]
     public Vector3 positionTemp;
     public Vector3 startPosition;
-    Quaternion playerRotation;
-    public static bool isFlipSound;
+    private Quaternion playerRotation;
     public Transform parent;
+
+    public static bool isFlipSound;
 
     private void Awake()
     {
-        BlackBoard._whiteCube = this;
         playerRotation = transform.rotation;
         startPosition = transform.position;
     }
@@ -106,5 +109,18 @@ public class WhiteCubes : MonoBehaviour
                           "time", 0.2f,
                           "easetype", iTween.EaseType.easeInBack
                 ));
+    }
+
+    public void IsGreenLight()
+    {
+        foreach (GridTileCubes green in greenSlots)
+        {
+            if (transform.position == green.transform.position)
+            {
+                greenLight.enabled = true;
+                redLight.enabled = false;
+                break;
+            }
+        }
     }
 }
