@@ -19685,6 +19685,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Male Cube 1 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3215797040097181254, guid: cff4a7e6afdf2c246b2d90c3879d5815,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215797040097181254, guid: cff4a7e6afdf2c246b2d90c3879d5815,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cff4a7e6afdf2c246b2d90c3879d5815, type: 3}
 --- !u!4 &1871711755 stripped

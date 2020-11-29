@@ -14,6 +14,7 @@ public class MagnetsScript : MonoBehaviour
 
     [SerializeField] Animator anim;
     [SerializeField] bool playerIn;
+    [SerializeField] bool isWall;
 
     public GameObject up;
     public GameObject down;
@@ -26,10 +27,26 @@ public class MagnetsScript : MonoBehaviour
     public bool maleFemale;
     //public ParticleSystem effect;
     public GameObject placeEffect;
+    public SpriteRenderer usbIn;
+    public SpriteRenderer usbOut;
 
     private void Awake()
     {
         startPosition = transform.localPosition;
+    }
+    private void Start()
+    {
+        if (usbIn == null && usbOut == null)
+        {
+            usbIn = null;
+            usbOut = null;
+        }
+        else
+        {
+            usbIn.enabled = false;
+            usbOut.enabled = true;
+        }
+        
     }
     void OnEnable()
     {
@@ -51,7 +68,7 @@ public class MagnetsScript : MonoBehaviour
         }
         if (!Curser.dragging && !BlackBoard.scenesManager.ifWin)
         {
-            if (playerIn)
+            if (playerIn && !isWall)
             {
                 anim.SetBool("isOpen", true);
                 anim.SetBool("Close", false);
@@ -98,14 +115,17 @@ public class MagnetsScript : MonoBehaviour
                 if (collision.CompareTag("blue"))
                 {
                     female++;
+                    usbIn.enabled = true;
+                    usbOut.enabled = false;
                     if (!Curser.dragging)
                     {
                         if(placeEffect != null)
                         {
                            // effect.transform.position = placeEffect.transform.position;
                             //effect.Play();
-                            BlackBoard.soundsManager.SoundsList(2);
+                            
                         }
+                        BlackBoard.soundsManager.SoundsList(2);
                     }
                 }
                 else if(collision.CompareTag("red"))
@@ -124,11 +144,22 @@ public class MagnetsScript : MonoBehaviour
                 break;
         }
     }
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Wall"))
+        {
+            isWall = true;
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("B.R"))
         {
             playerIn = false;
+        }
+        if (collision.CompareTag("Wall"))
+        {
+            isWall = false;
         }
         switch (magnet)
         {
@@ -136,6 +167,8 @@ public class MagnetsScript : MonoBehaviour
                 if (collision.CompareTag("blue"))
                 {
                     female--;
+                    usbIn.enabled = false;
+                    usbOut.enabled = true;
                 }
                 break;
             case magnetType.female:
