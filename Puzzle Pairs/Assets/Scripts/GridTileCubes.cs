@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class GridTileCubes : MonoBehaviour
 {
-
     [SerializeField] int whiteCubesInRange;
 
     public bool isFull;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))
         {
             whiteCubesInRange++;
         } 
     }
-   
-    private void OnTriggerExit2D(Collider2D col)
+    void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))
         {

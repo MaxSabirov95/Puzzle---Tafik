@@ -30,11 +30,11 @@ public class MagnetsScript : MonoBehaviour
     public SpriteRenderer usbIn;
     public SpriteRenderer usbOut;
 
-    private void Awake()
+    void Awake()
     {
         startPosition = transform.localPosition;
     }
-    private void Start()
+    void Start()
     {
         if (usbIn == null && usbOut == null)
         {
@@ -55,8 +55,7 @@ public class MagnetsScript : MonoBehaviour
         Physics.IgnoreLayerCollision(11, 9);
         Physics.IgnoreLayerCollision(13, 13);
     }
-
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if ((male >= 1) && (female >= 1))
         {
@@ -102,7 +101,7 @@ public class MagnetsScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -144,14 +143,14 @@ public class MagnetsScript : MonoBehaviour
                 break;
         }
     }
-    private void OnTriggerStay2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Wall"))
         {
             isWall = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("B.R"))
         {

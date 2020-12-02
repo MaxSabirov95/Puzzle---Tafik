@@ -25,14 +25,12 @@ public class Curser : MonoBehaviour
     {
         BlackBoard.curser = this;
     }
-
-    private void Start()
+    void Start()
     {
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         greenSlots = GameObject.FindGameObjectsWithTag("Green Slot");
     }
-
     void Update()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
@@ -184,21 +182,22 @@ public class Curser : MonoBehaviour
         BlackBoard.soundsManager.SoundsList(5);
         WhiteCubes.isFlipSound = false;
     }
-    private void OnTriggerEnter2D(Collider2D col)
+
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))//--connector boxes
         {
             howMuchInRange++;
         }
     }
-    private void OnTriggerStay2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Wall"))
         {
             ifWall = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D col)
+    void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))//--connector boxes
         {

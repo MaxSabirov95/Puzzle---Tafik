@@ -16,22 +16,22 @@ public class WhiteCubes : MonoBehaviour
     public bool isGreen;
     public bool inRange;
     public bool canBePlaced = false;
-    
+
+    private Quaternion playerRotation;
+
     [HideInInspector]
     public Vector3 positionTemp;
     public Vector3 startPosition;
-    private Quaternion playerRotation;
     public Transform parent;
 
     public static bool isFlipSound;
 
-    private void Awake()
+    void Awake()
     {
         playerRotation = transform.rotation;
         startPosition = transform.position;
     }
-
-    private void Start()
+    void Start()
     {
         RestartPosition();
         positionTemp = transform.position;
@@ -43,27 +43,26 @@ public class WhiteCubes : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             inRange = true;
         }
 
-        if (col.gameObject.CompareTag("Empty Slot")|| col.gameObject.CompareTag("Green Slot"))
+        if (col.gameObject.CompareTag("Empty Slot") || col.gameObject.CompareTag("Green Slot"))
         {
             canBePlaced = !col.GetComponent<GridTileCubes>().isFull;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D col)
+    void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             inRange = false;
         }
 
-        if (col.gameObject.CompareTag("Empty Slot"))
+        if (col.gameObject.CompareTag("Empty Slot") || col.gameObject.CompareTag("Green Slot"))
         {
             canBePlaced = false;
         }
@@ -83,24 +82,6 @@ public class WhiteCubes : MonoBehaviour
         }
     }
 
-    public void RestartPosition()
-    {
-        positionTemp = startPosition;
-        draging = false;
-        transform.position = startPosition;
-        transform.rotation= playerRotation;
-        greenLight.enabled = false;
-        redLight.enabled = true;
-        foreach (GridTileCubes green in greenSlots)
-        {
-            if (transform.position == green.transform.position)
-            {
-                greenLight.enabled = true;
-                redLight.enabled = false;
-                break;
-            }
-        }
-    }
     IEnumerator delay()
     {
         yield return new WaitForSeconds(0.15f);
@@ -113,6 +94,24 @@ public class WhiteCubes : MonoBehaviour
 
     public void IsGreenLight()
     {
+        foreach (GridTileCubes green in greenSlots)
+        {
+            if (transform.position == green.transform.position)
+            {
+                greenLight.enabled = true;
+                redLight.enabled = false;
+                break;
+            }
+        }
+    }
+    public void RestartPosition()
+    {
+        positionTemp = startPosition;
+        draging = false;
+        transform.position = startPosition;
+        transform.rotation = playerRotation;
+        greenLight.enabled = false;
+        redLight.enabled = true;
         foreach (GridTileCubes green in greenSlots)
         {
             if (transform.position == green.transform.position)

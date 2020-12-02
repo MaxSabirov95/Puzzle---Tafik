@@ -22,7 +22,7 @@ public class ScenesManager : MonoBehaviour
     public GameObject[] cubes;
     public GameObject[] levels;
     
-    private void Start()
+    void Start()
     {
         levelsNow = 0;
         playerActionsText.text = playerActions.ToString();
@@ -30,8 +30,7 @@ public class ScenesManager : MonoBehaviour
         levelNumberText.text = "Level "+ (levelsNow + 1);
         winPanel.SetActive(false);
     }
-
-    private void Update()
+    void Update()
     {
         if (!ifWin)
         {
@@ -67,12 +66,10 @@ public class ScenesManager : MonoBehaviour
             }
         }        
     }
-
     public void ExitLevel()
     {
         Application.Quit();
     }
-
     public void NextLevel()
     {
         RestartLevel();
@@ -108,7 +105,6 @@ public class ScenesManager : MonoBehaviour
         playerActions++;
         playerActionsText.text = playerActions.ToString();
     }
-
     public void NextSection()
     {
         sceneNumber = SceneManager.GetActiveScene().buildIndex;
