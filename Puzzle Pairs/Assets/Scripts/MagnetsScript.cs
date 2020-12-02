@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    public enum magnetType { male,female};
+    public enum magnetType { male,female,Aux};
     public enum magnetPosition { up, down,right,left,notMovable };
     public magnetType magnet;
     public magnetPosition position;
 
     private Vector2 startPosition;
 
-    [SerializeField] Animator anim;
+    //[SerializeField] Animator anim;
     [SerializeField] bool playerIn;
     [SerializeField] bool isWall;
 
@@ -70,8 +70,8 @@ public class MagnetsScript : MonoBehaviour
         {
             if (playerIn && !isWall)
             {
-                anim.SetBool("isOpen", true);
-                anim.SetBool("Close", false);
+               // anim.SetBool("isOpen", true);
+               // anim.SetBool("Close", false);
                 switch (position)
                 {
                     case magnetPosition.up:
@@ -90,15 +90,15 @@ public class MagnetsScript : MonoBehaviour
             }
             else
             {
-                anim.SetBool("Close", false);
-                anim.SetBool("isOpen", false);
+              // anim.SetBool("Close", false);
+               // anim.SetBool("isOpen", false);
                 transform.localPosition = Vector2.MoveTowards(transform.localPosition, startPosition, speed);
             }
         }
         else
         {
-            anim.SetBool("Close", true);
-            anim.SetBool("isOpen", false);
+           // anim.SetBool("Close", true);
+           // anim.SetBool("isOpen", false);
         }
     }
 

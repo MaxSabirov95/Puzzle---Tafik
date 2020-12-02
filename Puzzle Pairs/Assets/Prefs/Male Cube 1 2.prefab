@@ -131,7 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 1
   position: 2
-  anim: {fileID: 2393305686181599631}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -393,7 +392,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 1
   position: 3
-  anim: {fileID: 5191259638184536910}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -572,7 +570,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 1
   position: 3
-  anim: {fileID: 6868707644769173746}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -915,7 +912,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 1
   position: 2
-  anim: {fileID: 6868707644896387665}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -1236,7 +1232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 1
   position: 1
-  anim: {fileID: 6868707645419478892}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -2088,7 +2083,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 0
   position: 0
-  anim: {fileID: 6868707646309436248}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -2636,7 +2630,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 1
   position: 1
-  anim: {fileID: 6199061924198358371}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
@@ -2897,7 +2890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnet: 0
   position: 0
-  anim: {fileID: 162039643667033716}
   playerIn: 0
   isWall: 0
   up: {fileID: 6868707644899791853}
