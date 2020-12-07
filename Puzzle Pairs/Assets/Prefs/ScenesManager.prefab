@@ -210,7 +210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 438.7539, y: -104.68851}
+  m_AnchoredPosition: {x: 524, y: -265}
   m_SizeDelta: {x: 877.5078, y: 209.37701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6806452839108162928
@@ -243,7 +243,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -659,7 +659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 438.7539, y: 104.68851}
+  m_AnchoredPosition: {x: 524, y: 265}
   m_SizeDelta: {x: 877.5078, y: 209.37701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6555766037517125815
@@ -692,7 +692,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -738,7 +738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 438.7539, y: 0}
+  m_AnchoredPosition: {x: 524, y: 0}
   m_SizeDelta: {x: 877.5078, y: 209.37701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2375461131366687962
@@ -771,7 +771,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -1065,14 +1065,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNumberText: {fileID: 4653168130330485873}
-  cubes: []
-  cursers: []
   playerActionsText: {fileID: 6756768578353899695}
-  ifWin: 0
-  time: 0
-  timerText: {fileID: 204938301978224567}
-  winPanel: {fileID: 730339802261045451}
   _levelNumberText: {fileID: 3454211377526902075}
   _timerText: {fileID: 2181474624464783591}
   _actionText: {fileID: 7155448013917867708}
+  timerText: {fileID: 204938301978224567}
+  ifWin: 0
+  time: 0
+  winPanel: {fileID: 730339802261045451}
+  cubes: []
   levels: []
