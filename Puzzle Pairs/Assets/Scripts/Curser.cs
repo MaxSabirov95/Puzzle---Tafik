@@ -53,25 +53,25 @@ public class Curser : MonoBehaviour
         {
             if (!dragging && BlackBoard.magnet.maleFemale && howMuchInRange == 2)
             {
-                int a = 0;
+                int cubeNumberInList = 0;
                 BlackBoard.soundsManager.SoundsList(4);
                 foreach (GameObject whiteCube in cubes)
                 {
                     if (whiteCube.GetComponent<WhiteCubes>().inRange)
                     {
                         whiteCubes.Add(whiteCube.GetComponent<WhiteCubes>());
-                        whiteCubes[a].transform.SetParent(transform);
-                        whiteCubes[a].greenLight.enabled = false;
-                        whiteCubes[a].redLight.enabled = true;
-                        whiteCubes[a].draging = true;
-                        for (int j = 0; j < whiteCubes[a].imagesLayers.Length; j++)
+                        whiteCubes[cubeNumberInList].transform.SetParent(transform);
+                        whiteCubes[cubeNumberInList].greenLight.enabled = false;
+                        whiteCubes[cubeNumberInList].redLight.enabled = true;
+                        whiteCubes[cubeNumberInList].draging = true;
+                        for (int j = 0; j < whiteCubes[cubeNumberInList].imagesLayers.Length; j++)
                         {
-                            whiteCubes[a].imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
+                            whiteCubes[cubeNumberInList].imagesLayers[j].sortingLayerID = SortingLayer.NameToID("Drag");
                         }
                         foreach (GameObject slot in emptySlot)
                         {
-                            if (Mathf.Abs(whiteCubes[a].transform.position.x - slot.transform.position.x) <= distanse &&
-                                Mathf.Abs(whiteCubes[a].transform.position.y - slot.transform.position.y) <= distanse)
+                            if (Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.x - slot.transform.position.x) <= distanse &&
+                                Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.y - slot.transform.position.y) <= distanse)
                             {
                                 slot.GetComponent<GridTileCubes>().isFull = false;
                                 break;
@@ -79,14 +79,14 @@ public class Curser : MonoBehaviour
                         }
                         foreach (GameObject green in greenSlots)
                         {
-                            if (Mathf.Abs(whiteCubes[a].transform.position.x - green.transform.position.x) <= distanse &&
-                                Mathf.Abs(whiteCubes[a].transform.position.y - green.transform.position.y) <= distanse)
+                            if (Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.x - green.transform.position.x) <= distanse &&
+                                Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.y - green.transform.position.y) <= distanse)
                             {
                                 green.GetComponent<GridTileCubes>().isFull = false;
                                 break;
                             }
                         }
-                        a++;
+                        cubeNumberInList++;
                     }
                     if (whiteCubes.Count == totalCubes)
                     {
