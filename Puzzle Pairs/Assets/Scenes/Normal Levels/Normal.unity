@@ -42053,6 +42053,11 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.x
       value: 1920
       objectReference: {fileID: 0}
+    - target: {fileID: 5307677721894237150, guid: ccb14ec027ee740459bcde3285f738f8,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 6334290223025626538, guid: ccb14ec027ee740459bcde3285f738f8,
         type: 3}
       propertyPath: levels.Array.size
