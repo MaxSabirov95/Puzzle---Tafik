@@ -13,14 +13,13 @@ public class ScenesManager : MonoBehaviour
     [SerializeField] Text _actionText;
     [SerializeField] Text timerText;
 
-    private int sceneNumber;
     private int levelsNow=0;
-    public static int levelNumber=0;//--Only for test
-    public static int[] levelsInSection = new int[4];
     private int playerActions;   
 
     public bool ifWin;
     public float time;
+    public int[] nextSectionLevel;
+    int section;
     
     public GameObject winPanel;
     public GameObject[] cubes;
@@ -30,8 +29,7 @@ public class ScenesManager : MonoBehaviour
     {
         playerActionsText.text = playerActions.ToString();
         BlackBoard.scenesManager = this;
-        //levelNumberText.text = "Level "+ (levelsNow + 1);
-        levelNumberText.text = "Level " + (levelNumber + 1);
+        levelNumberText.text = "Level "+ (levelsNow + 1);
         winPanel.SetActive(false);
     }
     void Update()
@@ -80,14 +78,12 @@ public class ScenesManager : MonoBehaviour
         RestartLevel();
         levels[levelsNow].SetActive(false);
         levelsNow++;
-        levelNumber++;
         if (levelsNow + 1 > levels.Length)
         {
             levelsNow--; 
         }
         levels[levelsNow].SetActive(true);
-        //levelNumberText.text = "Level " + (levelsNow + 1);
-        levelNumberText.text = "Level " + (levelNumber + 1);
+        levelNumberText.text = "Level " + (levelsNow + 1);
         winPanel.SetActive(false);
         BlackBoard.curser.RestartLevel();
     }
@@ -97,15 +93,13 @@ public class ScenesManager : MonoBehaviour
         
         levels[levelsNow].SetActive(false);
         levelsNow--;
-        levelNumber--;
         if (levelsNow < 0)
         {
             levelsNow = 0;
             
         }
         levels[levelsNow].SetActive(true);
-        //levelNumberText.text = "Level " + (levelsNow + 1);
-        levelNumberText.text = "Level " + (levelNumber + 1);
+        levelNumberText.text = "Level " + (levelsNow + 1);
         BlackBoard.curser.RestartLevel();
     }
 
@@ -116,15 +110,36 @@ public class ScenesManager : MonoBehaviour
     }
     public void NextSection()
     {
-        sceneNumber = SceneManager.GetActiveScene().buildIndex;
-        levelsInSection[sceneNumber] = levels.Length;
-        levelNumber += (levels.Length - levelsNow);
-        SceneManager.LoadScene(sceneNumber + 1);
+        section++;
+        if (section >= nextSectionLevel.Length)
+        {
+            section--;
+        }
+        else
+        {
+            RestartLevel();
+            levels[levelsNow].SetActive(false);
+            levelsNow = nextSectionLevel[section] - 1;
+            levels[nextSectionLevel[section]-1].SetActive(true);
+            levelNumberText.text = "Level " + nextSectionLevel[section];
+            BlackBoard.curser.RestartLevel();
+        }
     }
     public void PreviousSection()
     {
-        sceneNumber = SceneManager.GetActiveScene().buildIndex;
-        levelNumber -= (levelsInSection[sceneNumber-1] + (levelsNow));
-        SceneManager.LoadScene(sceneNumber - 1);
+        section--;
+        if (section<0)
+        {
+            section++;
+        }
+        else
+        {
+            RestartLevel();
+            levels[levelsNow].SetActive(false);
+            levelsNow = nextSectionLevel[section] - 1;
+            levels[nextSectionLevel[section]-1].SetActive(true);
+            levelNumberText.text = "Level " + nextSectionLevel[section];
+            BlackBoard.curser.RestartLevel();
+        }
     }
 }

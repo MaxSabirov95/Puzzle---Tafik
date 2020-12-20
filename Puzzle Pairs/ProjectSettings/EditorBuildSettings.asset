@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Normal Levels/Normal.unity
+    path: Assets/Scenes/Puzzle.unity
     guid: 3d9b12bec4178c24f8fe7a4fbf12b411
-  - enabled: 1
-    path: Assets/Scenes/Flips Level/Flip.unity
-    guid: 3d5ed5a31cff9344295c8b0c10ba6359
-  - enabled: 1
-    path: Assets/Scenes/Wall Levels/Wall.unity
-    guid: b0c15155d42569a4585b8b668b1affdc
-  - enabled: 1
-    path: Assets/Scenes/Wall And Flip/WallsAndFlips.unity
-    guid: 0e80078a848fbe74cac749adbd7c31e4
   m_configObjects: {}
