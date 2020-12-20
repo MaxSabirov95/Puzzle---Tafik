@@ -7,7 +7,7 @@ using System.Linq;
 public class Curser : MonoBehaviour
 {
     private bool Rotation;
-    private float distanse = 1.5f;
+    private float distance = 1.5f;
 
     public List<WhiteCubes> whiteCubes;
     public GameObject[] emptySlot;
@@ -70,8 +70,8 @@ public class Curser : MonoBehaviour
                         }
                         foreach (GameObject slot in emptySlot)
                         {
-                            if (Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.x - slot.transform.position.x) <= distanse &&
-                                Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.y - slot.transform.position.y) <= distanse)
+                            if (Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.x - slot.transform.position.x) <= distance &&
+                                Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.y - slot.transform.position.y) <= distance)
                             {
                                 slot.GetComponent<GridTileCubes>().isFull = false;
                                 break;
@@ -79,8 +79,8 @@ public class Curser : MonoBehaviour
                         }
                         foreach (GameObject green in greenSlots)
                         {
-                            if (Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.x - green.transform.position.x) <= distanse &&
-                                Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.y - green.transform.position.y) <= distanse)
+                            if (Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.x - green.transform.position.x) <= distance &&
+                                Mathf.Abs(whiteCubes[cubeNumberInList].transform.position.y - green.transform.position.y) <= distance)
                             {
                                 green.GetComponent<GridTileCubes>().isFull = false;
                                 break;
@@ -230,8 +230,8 @@ public class Curser : MonoBehaviour
     {
         if (whiteCubes.Count >= 1)
         {
-            if (Mathf.Abs(whiteCubes[0].transform.position.x - cube.transform.position.x) <= distanse &&
-            Mathf.Abs(whiteCubes[0].transform.position.y - cube.transform.position.y) <= distanse)
+            if (Mathf.Abs(whiteCubes[0].transform.position.x - cube.transform.position.x) <= distance &&
+            Mathf.Abs(whiteCubes[0].transform.position.y - cube.transform.position.y) <= distance)
             {
                 whiteCubes[0].transform.position = cube.transform.position;
                 cube.GetComponent<GridTileCubes>().isFull = true;
