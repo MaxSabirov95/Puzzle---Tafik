@@ -27,7 +27,7 @@ public class ScenesManager : MonoBehaviour
 
     void Start()
     {
-        playerActionsText.text = playerActions.ToString();
+        playerActionsText.text = "Moves: " + playerActions.ToString();
         BlackBoard.scenesManager = this;
         levelNumberText.text = "Level "+ (levelsNow + 1);
         winPanel.SetActive(false);
@@ -58,7 +58,7 @@ public class ScenesManager : MonoBehaviour
         playerActions = 0;
         time = 0;
         ifWin = false;
-        playerActionsText.text = playerActions.ToString();
+        playerActionsText.text = "Moves: " + playerActions.ToString();
         BlackBoard.curser.RestartLevel();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         foreach (GameObject cube in cubes)
@@ -106,7 +106,7 @@ public class ScenesManager : MonoBehaviour
     public void PlayerMoves()
     {
         playerActions++;
-        playerActionsText.text = playerActions.ToString();
+        playerActionsText.text = "Moves: " + playerActions.ToString();
     }
     public void NextSection()
     {

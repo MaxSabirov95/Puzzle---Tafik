@@ -230,8 +230,7 @@ public class Curser : MonoBehaviour
     {
         if (whiteCubes.Count >= 1)
         {
-            if (Mathf.Abs(whiteCubes[0].transform.position.x - cube.transform.position.x) <= distance &&
-            Mathf.Abs(whiteCubes[0].transform.position.y - cube.transform.position.y) <= distance)
+                if (Vector2.Distance(whiteCubes[0].transform.position, cube.transform.position) <= distance)
             {
                 whiteCubes[0].transform.position = cube.transform.position;
                 cube.GetComponent<GridTileCubes>().isFull = true;
