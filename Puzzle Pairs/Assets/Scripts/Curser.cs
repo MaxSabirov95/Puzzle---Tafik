@@ -164,7 +164,7 @@ public class Curser : MonoBehaviour
             }//--Put cubes
         }//--Grab and put cubes
 
-        else if(Input.GetMouseButtonDown(0) && !BlackBoard.scenesManager.ifWin && ifWall && !Rotation)
+        else if(Input.GetMouseButtonDown(0) && dragging && ifWall)
         {
             BlackBoard.soundsManager.SoundsList(0);
         }
@@ -197,7 +197,7 @@ public class Curser : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag("Wall"))
+        if (col.CompareTag("Wall") && dragging)
         {
             ifWall = true;
             col.GetComponent<Renderer>().material.color = Color.red;
@@ -209,7 +209,7 @@ public class Curser : MonoBehaviour
         {
             howMuchInRange--;
         }
-        if (col.CompareTag("Wall"))
+        if (col.CompareTag("Wall") && dragging)
         {
             ifWall = false;
             col.GetComponent<Renderer>().material.color = Color.white;
