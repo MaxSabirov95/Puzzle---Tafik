@@ -140,6 +140,13 @@ public class MagnetsScript : MonoBehaviour
                 {
                     male++;
                 }
+                else if (collision.CompareTag("blue"))
+                {
+                    if (!Curser.dragging)
+                    {
+                        BlackBoard.soundsManager.SoundsList(0);
+                    }
+                }
                 break;
         }
     }
