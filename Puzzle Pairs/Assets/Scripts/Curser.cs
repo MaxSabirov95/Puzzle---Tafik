@@ -97,7 +97,6 @@ public class Curser : MonoBehaviour
 
                 if (whiteCubes.Count < totalCubes)
                 {
-                    Debug.Log("IN");
                     if (whiteCubes.Count > 0)
                     {
                         foreach (GameObject slot in emptySlot)
@@ -148,6 +147,7 @@ public class Curser : MonoBehaviour
                         StartCoroutine(waitToGrab());
                         cubesOnSamePositions = 0;
                         bool isAllGreenFull = true;
+                        
                         foreach (GameObject green in greenSlots)
                         {
                             if (!green.GetComponent<GridTileCubes>().isFull)

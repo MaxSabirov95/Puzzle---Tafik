@@ -51,7 +51,7 @@ public class WhiteCubes : MonoBehaviour
             inRange = true;
         }
 
-        if (col.gameObject.CompareTag("Empty Slot") || col.gameObject.CompareTag("Green Slot"))
+        if (col.gameObject.CompareTag("Empty Slot") || col.gameObject.CompareTag("Green Slot") && col.gameObject.GetComponent<GridTileCubes>().isAvailable)
         {
             canBePlaced = !col.GetComponent<GridTileCubes>().isFull;
         }

@@ -4,10 +4,40 @@ using UnityEngine;
 
 public class GridTileCubes : MonoBehaviour
 {
+    public enum TargetSlots { Normal, Electro};
+    public TargetSlots targetSlots;
+
     [SerializeField] int whiteCubesInRange;
+    public GameObject triger;
 
     public bool isFull;
+    public bool isAvailable = true;
 
+    private void Start()
+    {
+        if (triger == null)
+        {
+            triger = null;
+        }
+    }
+    void Update()
+    {
+        switch (targetSlots)
+        {
+            case TargetSlots.Electro:
+                if (triger.GetComponent<GridTileCubes>().isFull)
+                {
+                    isAvailable = true;
+                    this.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+                }
+                else
+                {
+                    isAvailable = false;
+                    this.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.gray);
+                }
+                break;
+        } 
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("whiteCube"))
