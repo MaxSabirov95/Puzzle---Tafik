@@ -30,6 +30,8 @@ public class MagnetsScript : MonoBehaviour
     public SpriteRenderer usbIn;
     public SpriteRenderer usbOut;
 
+    public bool ifChipBroken;
+
     void Awake()
     {
         startPosition = transform.localPosition;
@@ -65,7 +67,7 @@ public class MagnetsScript : MonoBehaviour
         {
             maleFemale = false;
         }
-        if (!Curser.dragging && !BlackBoard.scenesManager.ifWin)
+        if (!Curser.dragging && !BlackBoard.scenesManager.ifWin && !ifChipBroken)
         {
             if (playerIn && !isWall)
             {

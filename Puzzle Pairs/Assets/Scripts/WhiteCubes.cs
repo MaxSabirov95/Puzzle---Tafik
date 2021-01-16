@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WhiteCubes : MonoBehaviour
 {
-    public enum KindOfCube { Normal,Flip}
+    public enum KindOfCube { Normal,Flip,Broken}
     public KindOfCube kindOfCube;
 
     public SpriteRenderer greenLight;
@@ -16,6 +16,7 @@ public class WhiteCubes : MonoBehaviour
     public bool isGreen;
     public bool inRange;
     public bool canBePlaced = false;
+    public bool ifChipBroken;
 
     private Quaternion playerRotation;
 
@@ -94,13 +95,16 @@ public class WhiteCubes : MonoBehaviour
 
     public void IsGreenLight()
     {
-        foreach (GridTileCubes green in greenSlots)
+        if (!ifChipBroken)
         {
-            if (transform.position == green.transform.position)
+            foreach (GridTileCubes green in greenSlots)
             {
-                greenLight.enabled = true;
-                redLight.enabled = false;
-                break;
+                if (transform.position == green.transform.position)
+                {
+                    greenLight.enabled = true;
+                    redLight.enabled = false;
+                    break;
+                }
             }
         }
     }
@@ -112,14 +116,6 @@ public class WhiteCubes : MonoBehaviour
         transform.rotation = playerRotation;
         greenLight.enabled = false;
         redLight.enabled = true;
-        foreach (GridTileCubes green in greenSlots)
-        {
-            if (transform.position == green.transform.position)
-            {
-                greenLight.enabled = true;
-                redLight.enabled = false;
-                break;
-            }
-        }
+        IsGreenLight();
     }
 }

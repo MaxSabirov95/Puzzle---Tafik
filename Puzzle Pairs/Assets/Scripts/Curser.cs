@@ -155,6 +155,15 @@ public class Curser : MonoBehaviour
                                 isAllGreenFull = false;
                                 break;
                             }
+
+                            foreach (GameObject cube in cubes)
+                            {
+                                if (cube.transform.position == green.transform.position && cube.GetComponent<WhiteCubes>().ifChipBroken)
+                                {
+                                    isAllGreenFull = false;
+                                    break;
+                                }
+                            }
                         }//--Check if all green slots are full
                         if (isAllGreenFull)
                         {

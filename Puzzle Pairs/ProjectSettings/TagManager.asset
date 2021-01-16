@@ -20,6 +20,7 @@ TagManager:
   - Wall
   - Green Slot
   - Parent
+  - Electronic Slot
   layers:
   - Default
   - TransparentFX
