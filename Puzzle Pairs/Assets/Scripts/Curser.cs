@@ -136,6 +136,7 @@ public class Curser : MonoBehaviour
                             cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
                             cube.GetComponent<WhiteCubes>().draging = false;
                         }
+                        BlackBoard.scenesManager.PlayerMoves();
                     }
                     if (whiteCubes.Count == 0)
                     {
@@ -163,12 +164,16 @@ public class Curser : MonoBehaviour
                 }
             }//--Put cubes
         }//--Grab and put cubes
+
+        else if(Input.GetMouseButtonDown(0) && dragging && ifWall)
+        {
+            BlackBoard.soundsManager.SoundsList(0);
+        }
     }
 
     IEnumerator waitToGrab()
     {
         yield return new WaitForSeconds(0.25f);
-        BlackBoard.scenesManager.PlayerMoves();
         dragging = false;
     }
     IEnumerator CurserRotation()
@@ -192,9 +197,10 @@ public class Curser : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag("Wall"))
+        if (col.CompareTag("Wall") && dragging)
         {
             ifWall = true;
+            col.GetComponent<Renderer>().material.color = Color.red;
         }
     }
     void OnTriggerExit2D(Collider2D col)
@@ -206,6 +212,7 @@ public class Curser : MonoBehaviour
         if (col.CompareTag("Wall"))
         {
             ifWall = false;
+            col.GetComponent<Renderer>().material.color = Color.white;
         }
     }
 
