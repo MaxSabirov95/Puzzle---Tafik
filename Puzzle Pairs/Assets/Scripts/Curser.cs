@@ -13,6 +13,7 @@ public class Curser : MonoBehaviour
     public GameObject[] emptySlot;
     public GameObject[] greenSlots;
     public GameObject[] cubes;
+    public GameObject[] wallFliper;
 
     public int howMuchInRange;
     public bool ifWall;// bool to walls
@@ -30,6 +31,7 @@ public class Curser : MonoBehaviour
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
         greenSlots = GameObject.FindGameObjectsWithTag("Green Slot");
+        wallFliper = GameObject.FindGameObjectsWithTag("Wall Fliper");
     }
     void Update()
     {
@@ -128,12 +130,17 @@ public class Curser : MonoBehaviour
                             ReleaseCubes(green);
                         }//--Check if cube land on green slot
                     }
+                    Debug.Log(cubesOnSamePositions + " Cubes On Same Positions");
                     if (cubesOnSamePositions <= 1)
                     {
                         foreach (GameObject cube in cubes)
                         {
                             cube.GetComponent<WhiteCubes>().CubesActionAfterPlayerAction();
                             cube.GetComponent<WhiteCubes>().draging = false;
+                        }
+                        foreach (GameObject wallFlipers in wallFliper)
+                        {
+                            wallFlipers.GetComponent<WallFliper>().WallsFliperActionAfterPlayerAction();
                         }
                         BlackBoard.scenesManager.PlayerMoves();
                     }

@@ -21,6 +21,7 @@ TagManager:
   - Green Slot
   - Parent
   - Electronic Slot
+  - Wall Fliper
   layers:
   - Default
   - TransparentFX

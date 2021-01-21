@@ -23,6 +23,7 @@ public class ScenesManager : MonoBehaviour
     
     public GameObject winPanel;
     public GameObject[] cubes;
+    public GameObject[] wallFlipers;
     public GameObject[] levels;
 
     void Start()
@@ -61,13 +62,21 @@ public class ScenesManager : MonoBehaviour
         playerActionsText.text = "Moves: " + playerActions.ToString();
         BlackBoard.curser.RestartLevel();
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");
+        wallFlipers = GameObject.FindGameObjectsWithTag("Wall Fliper");
         foreach (GameObject cube in cubes)
         {
             if (cube.activeInHierarchy)
             {
                 cube.GetComponent<WhiteCubes>().RestartPosition();
             }
-        }        
+        }
+        foreach (GameObject wallFliper in wallFlipers)
+        {
+            if (wallFliper.activeInHierarchy)
+            {
+                wallFliper.GetComponent<WallFliper>().RestartPosition();
+            }
+        }
     }
     public void ExitLevel()
     {
