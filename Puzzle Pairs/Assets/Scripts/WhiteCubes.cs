@@ -76,14 +76,14 @@ public class WhiteCubes : MonoBehaviour
                 if (!draging)
                 {
                     isFlipSound = true;
-                    StartCoroutine(delay());
+                    StartCoroutine(FlipDelay());
                     
                 }
                 break;
         }
     }
 
-    IEnumerator delay()
+    IEnumerator FlipDelay()
     {
         yield return new WaitForSeconds(0.15f);
         iTween.RotateTo(this.gameObject, iTween.Hash(
