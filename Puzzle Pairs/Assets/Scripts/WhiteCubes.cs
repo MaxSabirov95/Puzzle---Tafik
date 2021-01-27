@@ -29,6 +29,7 @@ public class WhiteCubes : MonoBehaviour
 
     void Awake()
     {
+        
         playerRotation = transform.rotation;
         startPosition = transform.position;
     }

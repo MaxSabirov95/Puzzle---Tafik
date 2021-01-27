@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MagnetsScript : MonoBehaviour
 {
-    public enum magnetType { male,female,Aux};
+    public enum magnetType { male,female};
     public enum magnetPosition { up, down,right,left,notMovable };
     public magnetType magnet;
     public magnetPosition position;
@@ -26,6 +26,7 @@ public class MagnetsScript : MonoBehaviour
     public static int female;
     public bool maleFemale;
     //public ParticleSystem effect;
+
     public GameObject placeEffect;
     public SpriteRenderer usbIn;
     public SpriteRenderer usbOut;

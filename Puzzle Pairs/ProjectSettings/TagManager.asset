@@ -68,3 +68,6 @@ TagManager:
   - name: Drag
     uniqueID: 3665278139
     locked: 0
+  - name: BrokenChipEffect
+    uniqueID: 1143845165
+    locked: 0
