@@ -13,7 +13,7 @@ public class ScenesManager : MonoBehaviour
     [SerializeField] Text _actionText;
     [SerializeField] Text timerText;
 
-    private int levelsNow=0;
+    public static int levelsNow=0;
     private int playerActions;   
 
     public bool ifWin;
@@ -28,9 +28,11 @@ public class ScenesManager : MonoBehaviour
 
     void Start()
     {
+        levelsNow = LevelButton.levelsNum;
         playerActionsText.text = "Moves: " + playerActions.ToString();
         BlackBoard.scenesManager = this;
-        levelNumberText.text = "Level "+ (levelsNow + 1);
+        levels[levelsNow-1].SetActive(true);
+        levelNumberText.text = "Level "+ (levelsNow);
         winPanel.SetActive(false);
     }
     void Update()
@@ -80,7 +82,8 @@ public class ScenesManager : MonoBehaviour
     }
     public void ExitLevel()
     {
-        Application.Quit();
+        levels[levelsNow - 1].SetActive(false);
+        SceneManager.LoadScene("Main Menu");
     }
     public void NextLevel()
     {
