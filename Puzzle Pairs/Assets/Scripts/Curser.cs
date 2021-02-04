@@ -174,7 +174,14 @@ public class Curser : MonoBehaviour
                         }//--Check if all green slots are full
                         if (isAllGreenFull)
                         {
-                            BlackBoard.scenesManager.ifWin = true;
+                            BlackBoard.scenesManager.ifWin = true;     
+
+                            if(BlackBoard.scenesManager.playerActions < BlackBoard.mainMenu.movesInLevels[LevelButton.levelsNum - 1] ||
+                               BlackBoard.mainMenu.movesInLevels[LevelButton.levelsNum - 1] == 0)
+                            {
+                                BlackBoard.mainMenu.SaveMoves(LevelButton.levelsNum - 1, BlackBoard.scenesManager.playerActions);
+                                BlackBoard.mainMenu.SaveOpenLevel(LevelButton.levelsNum , 1);
+                            }// Save Level Stats
                         }
                     }
                 }
