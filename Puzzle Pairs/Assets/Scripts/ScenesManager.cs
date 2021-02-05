@@ -14,7 +14,7 @@ public class ScenesManager : MonoBehaviour
     //[SerializeField] Text timerText;
 
     public static int levelsNow=0;
-    private int playerActions;   
+    public int playerActions;   
 
     public bool ifWin;
     //public float time;

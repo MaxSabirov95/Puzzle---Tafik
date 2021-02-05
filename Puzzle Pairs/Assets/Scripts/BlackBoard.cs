@@ -6,4 +6,5 @@ public class BlackBoard : MonoBehaviour
     public static Curser curser;
     public static SoundsManager soundsManager;
     public static ScenesManager scenesManager;
+    public static MainMenu mainMenu;
 }
