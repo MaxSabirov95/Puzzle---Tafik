@@ -541,6 +541,7 @@ MonoBehaviour:
   playerActionsText: {fileID: 2238539071845676085}
   _levelNumberText: {fileID: 7871144978849010081}
   _actionText: {fileID: 2421103006467936806}
+  playerActions: 0
   ifWin: 0
   nextSectionLevel: 01000000160000002000000028000000
   winPanel: {fileID: 5257546277430156369}
@@ -2080,15 +2081,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1527799102234132784}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: NextLevel
-        m_Mode: 1
+        m_MethodName: Next_PreviousLevel
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &9078828286007751366
 GameObject:
