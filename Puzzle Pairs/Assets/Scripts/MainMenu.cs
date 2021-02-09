@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
     public int[] movesInLevels;
     public int[] isNextLevelOpen; // 1=ture   0=false
 
+    bool isLevelsOn = false;
+    public Button levels;
     private void Awake()
     {
         BlackBoard.mainMenu = this;
@@ -57,6 +59,8 @@ public class MainMenu : MonoBehaviour
     public void EnterToLevelsPanel()
     {
         LevelsPanelOn();
+        Button btn = levels.GetComponent<Button>();
+        btn.transform.localScale = new Vector3(1, isLevelsOn==false? 1:-1,1);
     }
 
     public void ExitGame()
@@ -66,13 +70,24 @@ public class MainMenu : MonoBehaviour
 
     void MainMenuPanelOn()
     {
-        mainMenuPanel.SetActive(true);
+        //mainMenuPanel.SetActive(true);
         levelsPanel.SetActive(false);
     }
+
     void LevelsPanelOn()
-    {
-        levelsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false);
+    {    
+        isLevelsOn = !isLevelsOn;
+        if (isLevelsOn)
+        {
+            levelsPanel.SetActive(true);
+            isLevelsOn = true;
+        }
+        else
+        {
+            levelsPanel.SetActive(false);
+            isLevelsOn = false;
+        }
+        //mainMenuPanel.SetActive(false);
     }
 
     public void SaveMoves(int level, int moves)
