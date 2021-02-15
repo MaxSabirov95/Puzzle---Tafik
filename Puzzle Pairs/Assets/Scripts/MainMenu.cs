@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
 
     bool isLevelsOn = false;
     public Button levels;
+    public Text stars;
+
     private void Awake()
     {
         BlackBoard.mainMenu = this;
@@ -28,7 +30,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        
         movesInLevels = new int[numberOfLevels];
         isNextLevelOpen = new int[numberOfLevels];
         MainMenuPanelOn();
@@ -54,13 +55,12 @@ public class MainMenu : MonoBehaviour
                 } // first level always open
             }
         }
+        stars.text = BlackBoard.goalsInLevel.stars.ToString();
     }
 
     public void EnterToLevelsPanel()
     {
         LevelsPanelOn();
-        Button btn = levels.GetComponent<Button>();
-        btn.transform.localScale = new Vector3(1, isLevelsOn==false? 1:-1,1);
     }
 
     public void ExitGame()
@@ -105,7 +105,8 @@ public class MainMenu : MonoBehaviour
     public void LoadStats(int level)
     {
         movesInLevels[level] = PlayerPrefs.GetInt("Level" + level);
+        BlackBoard.goalsInLevel.CalculateStars(movesInLevels[level],level);
         isNextLevelOpen[level] = PlayerPrefs.GetInt("Next Level Open?" + level);
-        Debug.Log("Level "+ (level+1) +" Load Moves " + movesInLevels[level]);
+        //Debug.Log("Level "+ (level+1) +" Load Moves " + movesInLevels[level]);
     }// load stats
 }

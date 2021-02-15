@@ -7,4 +7,5 @@ public class BlackBoard : MonoBehaviour
     public static SoundsManager soundsManager;
     public static ScenesManager scenesManager;
     public static MainMenu mainMenu;
+    public static GoalsInLevel goalsInLevel;
 }
