@@ -13,7 +13,7 @@ public class LevelButton : MonoBehaviour
     {
         int levelNum = Convert.ToInt32(this.gameObject.GetComponent<Button>().GetComponentInChildren<Text>().text);
         levelsNum = levelNum;
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "", levelsNum.ToString());
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, " ", levelsNum.ToString());
         SceneManager.LoadScene("Puzzle");
     }
 }
