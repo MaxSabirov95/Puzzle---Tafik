@@ -24,6 +24,7 @@ public class ScenesManager : MonoBehaviour
     public GameObject[] wallFlipers;
     public GameObject[] levels;
 
+    public GameObject board2x2;
     public GameObject board4x5;
     public GameObject board5x5;
     public GameObject board6x5;
@@ -91,7 +92,7 @@ public class ScenesManager : MonoBehaviour
     public void Next_PreviousLevel(bool isNext)
     {
         RestartLevel();
-        //levels[levelsNow].SetActive(false);
+        levels[levelsNow].SetActive(false);
         if (isNext)
         {
             levelsNow++;
@@ -109,8 +110,7 @@ public class ScenesManager : MonoBehaviour
                 levelsNow = 0;
             }
         }
-        //levels[levelsNow].SetActive(true);
-        levels[levelsNow - 1].SetActive(true);
+        levels[levelsNow].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
         BlackBoard.curser.RestartLevel();
     }
