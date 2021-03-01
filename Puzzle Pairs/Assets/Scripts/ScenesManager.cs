@@ -18,20 +18,22 @@ public class ScenesManager : MonoBehaviour
 
     public bool ifWin;
     //public float time;
-    public int[] nextSectionLevel;
-    int section;
     
     public GameObject winPanel;
     public GameObject[] cubes;
     public GameObject[] wallFlipers;
     public GameObject[] levels;
 
+    public GameObject board4x5;
+    public GameObject board5x5;
+    public GameObject board6x5;
+
     void Start()
     {
         levelsNow = LevelButton.levelsNum;
         playerActionsText.text = "Moves: " + playerActions.ToString();
         BlackBoard.scenesManager = this;
-        levels[levelsNow-1].SetActive(true);
+        levels[levelsNow - 1].SetActive(true);
         levelNumberText.text = "Level "+ (levelsNow);
         levelsNow--;
         winPanel.SetActive(false);
@@ -89,7 +91,7 @@ public class ScenesManager : MonoBehaviour
     public void Next_PreviousLevel(bool isNext)
     {
         RestartLevel();
-        levels[levelsNow].SetActive(false);
+        //levels[levelsNow].SetActive(false);
         if (isNext)
         {
             levelsNow++;
@@ -106,8 +108,9 @@ public class ScenesManager : MonoBehaviour
             {
                 levelsNow = 0;
             }
-        }        
-        levels[levelsNow].SetActive(true);
+        }
+        //levels[levelsNow].SetActive(true);
+        levels[levelsNow - 1].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
         BlackBoard.curser.RestartLevel();
     }

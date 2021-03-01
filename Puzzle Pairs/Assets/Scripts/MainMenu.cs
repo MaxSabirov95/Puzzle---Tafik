@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviour
             GameObject go = Instantiate(levelButton, contentToLevelButtons);
             Button myBtn = go.GetComponent<Button>();
             myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
+            myBtn.GetComponent<LevelButton>().levelNum = i + 1;
             if (isNextLevelOpen[i] == 0)
             {
                 if (i != 0)
@@ -71,7 +72,6 @@ public class MainMenu : MonoBehaviour
 
     void MainMenuPanelOn()
     {
-        //mainMenuPanel.SetActive(true);
         levelsPanel.SetActive(false);
     }
 
@@ -80,7 +80,7 @@ public class MainMenu : MonoBehaviour
         isLevelsOn = !isLevelsOn;
         if (isLevelsOn)
         {
-            levelsPanel.SetActive(true);
+            levelsPanel.SetActive(isLevelsOn);
             isLevelsOn = true;
         }
         else
@@ -88,7 +88,6 @@ public class MainMenu : MonoBehaviour
             levelsPanel.SetActive(false);
             isLevelsOn = false;
         }
-        //mainMenuPanel.SetActive(false);
     }
 
     public void SaveMoves(int level, int moves)
@@ -108,6 +107,5 @@ public class MainMenu : MonoBehaviour
         movesInLevels[level] = PlayerPrefs.GetInt("Level" + level);
         BlackBoard.goalsInLevel.CalculateStars(movesInLevels[level],level);
         isNextLevelOpen[level] = PlayerPrefs.GetInt("Next Level Open?" + level);
-        //Debug.Log("Level "+ (level+1) +" Load Moves " + movesInLevels[level]);
     }// load stats
 }
