@@ -1,30 +1,25 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿//using UnityEditor;
+//using UnityEngine;
 
-public class EditorTool : EditorWindow
-{
-    string assetBundleName;
-    Sprite xSprite;
-    Sprite oSprite;
-    Sprite backGround;
+//public class EditorTool : EditorWindow
+//{
+//    [MenuItem("Tools/Editor Tools")]
+//    public static void ShowWindow()
+//    {
+//        GetWindow(typeof(EditorTool));
+//    }
 
-    [MenuItem("Tools/Editor Tools")]
-    public static void ShowWindow()
-    {
-        GetWindow(typeof(EditorTool));
-    }
+//    private void OnGUI()
+//    {
+//        if (GUILayout.Button("Delete Save File"))
+//        {
+//            DeleteSaves();
+//        }
+//    }
 
-    private void OnGUI()
-    {
-        if (GUILayout.Button("Delete Save File"))
-        {
-            DeleteSaves();
-        }
-    }
-
-    void DeleteSaves()
-    {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-    }
-}
+//    void DeleteSaves()
+//    {
+//        PlayerPrefs.DeleteAll();
+//        PlayerPrefs.Save();
+//    }
+//}

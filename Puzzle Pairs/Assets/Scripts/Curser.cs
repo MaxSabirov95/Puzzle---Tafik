@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using GameAnalyticsSDK;
 
 public class Curser : MonoBehaviour
 {
@@ -174,6 +175,7 @@ public class Curser : MonoBehaviour
                         }//--Check if all green slots are full
                         if (isAllGreenFull)
                         {
+                            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "", LevelButton.levelsNum.ToString());
                             BlackBoard.scenesManager.ifWin = true;     
 
                             if(BlackBoard.scenesManager.playerActions < BlackBoard.mainMenu.movesInLevels[LevelButton.levelsNum - 1] ||

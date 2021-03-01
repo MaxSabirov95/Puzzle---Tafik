@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using GameAnalyticsSDK;
 
 
 public class MainMenu : MonoBehaviour
@@ -14,7 +15,6 @@ public class MainMenu : MonoBehaviour
 
     public GameObject levelsPanel;
     public GameObject mainMenuPanel;
-
 
     public int[] movesInLevels;
     public int[] isNextLevelOpen; // 1=ture   0=false
@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        GameAnalytics.Initialize();
         movesInLevels = new int[numberOfLevels];
         isNextLevelOpen = new int[numberOfLevels];
         MainMenuPanelOn();
