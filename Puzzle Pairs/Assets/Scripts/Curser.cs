@@ -183,8 +183,8 @@ public class Curser : MonoBehaviour
                             {
                                 BlackBoard.mainMenu.SaveMoves(LevelButton.levelsNum - 1, BlackBoard.scenesManager.playerActions);
                                 BlackBoard.mainMenu.SaveOpenLevel(LevelButton.levelsNum , 1);
-                                LevelButton.levelsNum++;
                             }// Save Level Stats
+                            LevelButton.levelsNum++;
                         }
                     }
                 }
