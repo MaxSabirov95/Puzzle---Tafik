@@ -408,7 +408,7 @@ MonoBehaviour:
   levelButton: {fileID: 4515472469037306302, guid: 90ce665cc0f6b1d4791c253586b2a83b,
     type: 3}
   contentToLevelButtons: {fileID: 872951062}
-  numberOfLevels: 65
+  numberOfLevels: 40
   levelsPanel: {fileID: 221961408}
   mainMenuPanel: {fileID: 995623526}
   movesInLevels: 
