@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public GameObject levelsPanel;
     public GameObject mainMenuPanel;
+    public GameObject levelsManager;
 
     public int[] movesInLevels;
     public int[] isNextLevelOpen; // 1=ture   0=false
@@ -108,4 +109,17 @@ public class MainMenu : MonoBehaviour
         BlackBoard.goalsInLevel.CalculateStars(movesInLevels[level],level);
         isNextLevelOpen[level] = PlayerPrefs.GetInt("Next Level Open?" + level);
     }// load stats
+
+    public void EnterToLevel()
+    {
+        levelsPanel.SetActive(false);
+        mainMenuPanel.SetActive(false);
+        levelsManager.SetActive(true);
+    }
+
+    public void ToMainMenu()
+    {
+        mainMenuPanel.SetActive(true);
+        levelsManager.SetActive(false);
+    }
 }

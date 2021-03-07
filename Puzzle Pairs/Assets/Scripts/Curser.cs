@@ -27,7 +27,7 @@ public class Curser : MonoBehaviour
     {
         BlackBoard.curser = this;
     }
-    void Start()
+    void OnEnable()
     {
         emptySlot = GameObject.FindGameObjectsWithTag("Empty Slot");
         cubes = GameObject.FindGameObjectsWithTag("whiteCube");

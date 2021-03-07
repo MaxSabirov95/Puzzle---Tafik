@@ -14,6 +14,7 @@ public class LevelButton : MonoBehaviour
     {
         levelsNum = levelNum;
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, " ", levelsNum.ToString());
-        SceneManager.LoadScene("Puzzle");
+        //SceneManager.LoadScene("Puzzle");
+        BlackBoard.mainMenu.EnterToLevel();
     }
 }
