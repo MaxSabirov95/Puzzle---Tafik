@@ -48,14 +48,26 @@ public class MainMenu : MonoBehaviour
             }
             GameObject go = Instantiate(levelButton, contentToLevelButtons);
             Button myBtn = go.GetComponent<Button>();
-            myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
+            
             myBtn.GetComponent<LevelButton>().levelNum = i + 1;
             if (isNextLevelOpen[i] == 0)
             {
                 if (i != 0)
                 {
                     myBtn.interactable = false;
+                    myBtn.GetComponentInChildren<Text>().text = "";
+                    myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().close;
                 } // first level always open
+                else
+                {
+                    myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
+                    myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().available;
+                }
+            }
+            else
+            {
+                myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
+                myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().available;
             }
         }
         stars.text = BlackBoard.goalsInLevel.stars.ToString();

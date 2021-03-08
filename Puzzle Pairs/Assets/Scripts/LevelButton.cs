@@ -10,11 +10,12 @@ public class LevelButton : MonoBehaviour
 {
     public static int levelsNum;
     public int levelNum;
+    public Sprite available;
+    public Sprite close;
     public void LevelButtonPress()
     {
         levelsNum = levelNum;
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, " ", levelsNum.ToString());
-        //SceneManager.LoadScene("Puzzle");
         BlackBoard.mainMenu.EnterToLevel();
     }
 }
