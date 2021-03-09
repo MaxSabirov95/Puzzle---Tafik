@@ -16,11 +16,13 @@ public class MainMenu : MonoBehaviour
     public GameObject levelsPanel;
     public GameObject mainMenuPanel;
     public GameObject levelsManager;
+    public GameObject optionsPanel;
 
     public int[] movesInLevels;
     public int[] isNextLevelOpen; // 1=ture   0=false
 
     bool isLevelsOn = false;
+    bool isOptionsOn = false;
     public Button levels;
     public Text stars;
 
@@ -94,12 +96,28 @@ public class MainMenu : MonoBehaviour
         if (isLevelsOn)
         {
             levelsPanel.SetActive(isLevelsOn);
-            isLevelsOn = true;
+            optionsPanel.SetActive(false);
+            isOptionsOn = false;
         }
         else
         {
             levelsPanel.SetActive(false);
+        }
+    }
+
+    public void OptionsPanelOn()
+    {
+        isOptionsOn = !isOptionsOn;
+        if (isOptionsOn)
+        {
+            optionsPanel.SetActive(isOptionsOn);
+            levelsPanel.SetActive(false);
             isLevelsOn = false;
+        }
+        else
+        {
+            optionsPanel.SetActive(false);
+            
         }
     }
 
