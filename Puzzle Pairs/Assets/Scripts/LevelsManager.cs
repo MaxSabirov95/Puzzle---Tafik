@@ -29,11 +29,15 @@ public class LevelsManager : MonoBehaviour
     public GameObject board5x5;
     public GameObject board6x5;
 
+    private void Awake()
+    {
+        BlackBoard.scenesManager = this;
+    }
+
     void OnEnable()
     {
         levelsNow = LevelButton.levelsNum;
-        playerActionsText.text = "Moves: " + playerActions.ToString();
-        BlackBoard.scenesManager = this;
+        playerActionsText.text = "Moves: " + playerActions.ToString();        
         levels[levelsNow - 1].SetActive(true);
         levelNumberText.text = "Level "+ (levelsNow);
         levelsNow--;
