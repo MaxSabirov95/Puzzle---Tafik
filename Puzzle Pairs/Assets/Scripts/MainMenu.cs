@@ -23,7 +23,6 @@ public class MainMenu : MonoBehaviour
 
     bool isLevelsOn = false;
     bool isOptionsOn = false;
-    public Button levels;
     public Text stars;
 
     private void Awake()
@@ -36,7 +35,7 @@ public class MainMenu : MonoBehaviour
         GameAnalytics.Initialize();
         movesInLevels = new int[numberOfLevels];
         isNextLevelOpen = new int[numberOfLevels];
-        MainMenuPanelOn();
+        levelsPanel.SetActive(false);
         for (int i = 0; i < numberOfLevels; i++)
         {
             try
@@ -66,7 +65,7 @@ public class MainMenu : MonoBehaviour
                     myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().available;
                 }
             }
-            else
+            else 
             {
                 myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
                 myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().available;
@@ -77,48 +76,22 @@ public class MainMenu : MonoBehaviour
 
     public void EnterToLevelsPanel()
     {
-        LevelsPanelOn();
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-
-    void MainMenuPanelOn()
-    {
-        levelsPanel.SetActive(false);
-    }
-
-    void LevelsPanelOn()
-    {    
-        isLevelsOn = !isLevelsOn;
-        if (isLevelsOn)
+        if (isOptionsOn)
         {
-            levelsPanel.SetActive(isLevelsOn);
             optionsPanel.SetActive(false);
             isOptionsOn = false;
         }
-        else
-        {
-            levelsPanel.SetActive(false);
-        }
+        levelsPanel.SetActive(isLevelsOn = !isLevelsOn);
     }
 
     public void OptionsPanelOn()
     {
-        isOptionsOn = !isOptionsOn;
-        if (isOptionsOn)
+        if (isLevelsOn)
         {
-            optionsPanel.SetActive(isOptionsOn);
             levelsPanel.SetActive(false);
             isLevelsOn = false;
         }
-        else
-        {
-            optionsPanel.SetActive(false);
-            
-        }
+        optionsPanel.SetActive(isOptionsOn = !isOptionsOn);
     }
 
     public void SaveMoves(int level, int moves)
@@ -151,5 +124,10 @@ public class MainMenu : MonoBehaviour
     {
         mainMenuPanel.SetActive(true);
         levelsManager.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
