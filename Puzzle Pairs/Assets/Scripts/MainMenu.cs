@@ -21,9 +21,11 @@ public class MainMenu : MonoBehaviour
     public int[] movesInLevels;
     public int[] isNextLevelOpen; // 1=ture   0=false
 
+    Button[] levelButtons;
+
     bool isLevelsOn = false;
     bool isOptionsOn = false;
-    public Text stars;
+    //public Text stars;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class MainMenu : MonoBehaviour
         GameAnalytics.Initialize();
         movesInLevels = new int[numberOfLevels];
         isNextLevelOpen = new int[numberOfLevels];
+        levelButtons = new Button[numberOfLevels];
         levelsPanel.SetActive(false);
         for (int i = 0; i < numberOfLevels; i++)
         {
@@ -49,29 +52,36 @@ public class MainMenu : MonoBehaviour
             }
             GameObject go = Instantiate(levelButton, contentToLevelButtons);
             Button myBtn = go.GetComponent<Button>();
-            
+            levelButtons[i] = myBtn;
             myBtn.GetComponent<LevelButton>().levelNum = i + 1;
-            if (isNextLevelOpen[i] == 0)
+            CheckWichLevelOpen(i);
+        }
+        //stars.text = BlackBoard.goalsInLevel.stars.ToString();
+    }
+
+    void CheckWichLevelOpen(int i)
+    {
+        if (isNextLevelOpen[i] == 0)
+        {
+            if (i != 0)
             {
-                if (i != 0)
-                {
-                    myBtn.interactable = false;
-                    myBtn.GetComponentInChildren<Text>().text = "";
-                    myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().close;
-                } // first level always open
-                else
-                {
-                    myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
-                    myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().available;
-                }
-            }
-            else 
+                levelButtons[i].interactable = false;
+                levelButtons[i].GetComponentInChildren<Text>().text = "";
+                levelButtons[i].GetComponent<Image>().sprite = levelButtons[i].GetComponent<LevelButton>().close;
+            } // first level always open
+            else
             {
-                myBtn.GetComponentInChildren<Text>().text = (i + 1).ToString();
-                myBtn.GetComponent<Image>().sprite = myBtn.GetComponent<LevelButton>().available;
+                levelButtons[i].interactable = true;
+                levelButtons[i].GetComponentInChildren<Text>().text = (i + 1).ToString();
+                levelButtons[i].GetComponent<Image>().sprite = levelButtons[i].GetComponent<LevelButton>().available;
             }
         }
-        stars.text = BlackBoard.goalsInLevel.stars.ToString();
+        else
+        {
+            levelButtons[i].interactable = true;
+            levelButtons[i].GetComponentInChildren<Text>().text = (i + 1).ToString();
+            levelButtons[i].GetComponent<Image>().sprite = levelButtons[i].GetComponent<LevelButton>().available;
+        }
     }
 
     public void EnterToLevelsPanel()
@@ -97,7 +107,7 @@ public class MainMenu : MonoBehaviour
     public void SaveMoves(int level, int moves)
     {
         PlayerPrefs.SetInt("Level" + level, moves);
-        Debug.Log("Save Moves " + moves);
+        //Debug.Log("Save Moves " + moves);
     } // save player moves
 
     public void SaveOpenLevel(int level, int ifOpenNextLevel)
@@ -109,12 +119,13 @@ public class MainMenu : MonoBehaviour
     public void LoadStats(int level)
     {
         movesInLevels[level] = PlayerPrefs.GetInt("Level" + level);
-        BlackBoard.goalsInLevel.CalculateStars(movesInLevels[level],level);
+        //BlackBoard.goalsInLevel.CalculateStars(movesInLevels[level],level);
         isNextLevelOpen[level] = PlayerPrefs.GetInt("Next Level Open?" + level);
     }// load stats
 
     public void EnterToLevel()
     {
+        isLevelsOn = false;
         levelsPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         levelsManager.SetActive(true);
@@ -124,10 +135,19 @@ public class MainMenu : MonoBehaviour
     {
         mainMenuPanel.SetActive(true);
         levelsManager.SetActive(false);
+        for (int i = 0; i < numberOfLevels; i++)
+        {
+            CheckWichLevelOpen(i); 
+        }
     }
 
     public void ExitGame()
     {
         Application.Quit();
     }
+
+    public void DeleteSaveFile()
+    {
+        PlayerPrefs.DeleteAll();
+    }// --For Tests--
 }

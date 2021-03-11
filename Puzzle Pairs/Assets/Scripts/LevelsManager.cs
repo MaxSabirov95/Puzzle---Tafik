@@ -9,15 +9,15 @@ public class LevelsManager : MonoBehaviour
     [SerializeField] Text levelNumberText;
     [SerializeField] Text playerActionsText;
     [SerializeField] Text _levelNumberText;
-    //[SerializeField] Text _timerText;
+    [SerializeField] Text _timerText;
     [SerializeField] Text _actionText;
-    //[SerializeField] Text timerText;
+    string textTime;
 
     public static int levelsNow=0;
     public int playerActions;   
 
     public bool ifWin;
-    //public float time;
+    public float time;
     
     public GameObject winPanel;
     public GameObject[] cubes;
@@ -29,6 +29,9 @@ public class LevelsManager : MonoBehaviour
     public GameObject board5x5;
     public GameObject board6x5;
 
+    public Button nextButton;
+    public Button previousButton;
+
     private void Awake()
     {
         BlackBoard.scenesManager = this;
@@ -36,6 +39,7 @@ public class LevelsManager : MonoBehaviour
 
     void OnEnable()
     {
+        Next_PreviousButtons();
         levelsNow = LevelButton.levelsNum;
         playerActionsText.text = "Moves: " + playerActions.ToString();        
         levels[levelsNow - 1].SetActive(true);
@@ -47,18 +51,17 @@ public class LevelsManager : MonoBehaviour
     {
         if (!ifWin)
         {
-            //time = time + Time.deltaTime;
-            //int minutes = Mathf.FloorToInt(time / 60);
-            //int seconds = Mathf.FloorToInt(time - minutes * 60f);
-            //string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
-            //timerText.text = textTime;
+            time = time + Time.deltaTime;
+            int minutes = Mathf.FloorToInt(time / 60);
+            int seconds = Mathf.FloorToInt(time - minutes * 60f);
+            textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         }
         else
         {
             winPanel.SetActive(true);
             _levelNumberText.text = levelNumberText.text+ " Completed";
             _actionText.text = "You Did "+ playerActionsText.text + " Moves";
-            //_timerText.text = "Your Time "+timerText.text;
+            _timerText.text = "Your Time " + textTime;
 
         }
     }
@@ -66,7 +69,7 @@ public class LevelsManager : MonoBehaviour
     public void RestartLevel()
     {
         playerActions = 0;
-        //time = 0;
+        time = 0;
         ifWin = false;
         playerActionsText.text = "Moves: " + playerActions.ToString();
         BlackBoard.curser.RestartLevel();
@@ -91,10 +94,8 @@ public class LevelsManager : MonoBehaviour
     {
         RestartLevel();
         levels[levelsNow].SetActive(false);
-        BlackBoard.curser.RestartLevel();
         BlackBoard.mainMenu.ToMainMenu();
     }
-
 
     public void Next_PreviousLevel(bool isNext)
     {
@@ -120,6 +121,7 @@ public class LevelsManager : MonoBehaviour
         levels[levelsNow].SetActive(true);
         levelNumberText.text = "Level " + (levelsNow + 1);
         BlackBoard.curser.RestartLevel();
+        Next_PreviousButtons();
     }
 
     public void PlayerMoves()
@@ -128,66 +130,25 @@ public class LevelsManager : MonoBehaviour
         playerActionsText.text = "Moves: " + playerActions.ToString();
     }
 
-    //public void NextLevel()
-    //{
-    //    RestartLevel();
-    //    levels[levelsNow].SetActive(false);
-    //    levelsNow++;
-    //    if (levelsNow + 1 > levels.Length)
-    //    {
-    //        levelsNow--; 
-    //    }
-    //    levels[levelsNow].SetActive(true);
-    //    levelNumberText.text = "Level " + (levelsNow + 1);
-    //    winPanel.SetActive(false);
-    //    BlackBoard.curser.RestartLevel();
-    //}
-    //public void PreviousLevel()
-    //{
-    //    RestartLevel();
-    //    levels[levelsNow].SetActive(false);
-    //    levelsNow--;
-    //    if (levelsNow < 0)
-    //    {
-    //        levelsNow = 0;
+    public void Next_PreviousButtons()
+    {
+        
+        if (levelsNow == 0)
+        {
+            previousButton.interactable=false;
+        }
+        else
+        {
+            previousButton.interactable = true;
+        }
 
-    //    }
-    //    levels[levelsNow].SetActive(true);
-    //    levelNumberText.text = "Level " + (levelsNow + 1);
-    //    BlackBoard.curser.RestartLevel();
-    //}
-    //public void NextSection()
-    //{
-    //    section++;
-    //    if (section >= nextSectionLevel.Length)
-    //    {
-    //        section--;
-    //    }
-    //    else
-    //    {
-    //        RestartLevel();
-    //        levels[levelsNow].SetActive(false);
-    //        levelsNow = nextSectionLevel[section] - 1;
-    //        levels[nextSectionLevel[section]-1].SetActive(true);
-    //        levelNumberText.text = "Level " + nextSectionLevel[section];
-    //        BlackBoard.curser.RestartLevel();
-    //    }
-    //}
-    //public void PreviousSection()
-    //{
-    //    section--;
-    //    if (section<0)
-    //    {
-    //        section++;
-    //    }
-    //    else
-    //    {
-    //        RestartLevel();
-    //        levels[levelsNow].SetActive(false);
-    //        levelsNow = nextSectionLevel[section] - 1;
-    //        levels[nextSectionLevel[section]-1].SetActive(true);
-    //        levelNumberText.text = "Level " + nextSectionLevel[section];
-    //        BlackBoard.curser.RestartLevel();
-    //    }
-    //}
+        if (BlackBoard.mainMenu.isNextLevelOpen[levelsNow+1] == 1)
+        {
+            nextButton.interactable = true;
+        }
+        else
+        {
+            nextButton.interactable = false;
+        }
+    }
 }

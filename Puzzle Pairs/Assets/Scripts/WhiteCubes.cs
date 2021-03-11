@@ -29,7 +29,6 @@ public class WhiteCubes : MonoBehaviour
 
     void Awake()
     {
-        
         playerRotation = transform.rotation;
         startPosition = transform.position;
     }
@@ -52,7 +51,7 @@ public class WhiteCubes : MonoBehaviour
             inRange = true;
         }
 
-        if (col.gameObject.CompareTag("Empty Slot") || col.gameObject.CompareTag("Green Slot") && col.gameObject.GetComponent<GridTileCubes>().isAvailable)
+        if ((col.gameObject.CompareTag("Empty Slot") || col.gameObject.CompareTag("Green Slot")) && col.gameObject.GetComponent<GridTileCubes>().isAvailable)
         {
             canBePlaced = !col.GetComponent<GridTileCubes>().isFull;
         }
@@ -78,7 +77,6 @@ public class WhiteCubes : MonoBehaviour
                 {
                     isFlipSound = true;
                     StartCoroutine(FlipDelay());
-                    
                 }
                 break;
         }
