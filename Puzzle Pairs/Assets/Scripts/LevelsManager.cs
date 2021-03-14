@@ -39,13 +39,14 @@ public class LevelsManager : MonoBehaviour
 
     void OnEnable()
     {
-        Next_PreviousButtons();
         levelsNow = LevelButton.levelsNum;
+        Debug.Log(levelsNow);
         playerActionsText.text = "Moves: " + playerActions.ToString();        
         levels[levelsNow - 1].SetActive(true);
         levelNumberText.text = "Level "+ (levelsNow);
         levelsNow--;
         winPanel.SetActive(false);
+        Next_PreviousButtons();
     }
     void Update()
     {
@@ -132,17 +133,17 @@ public class LevelsManager : MonoBehaviour
 
     public void Next_PreviousButtons()
     {
-        
+
         if (levelsNow == 0)
         {
-            previousButton.interactable=false;
+            previousButton.interactable = false;
         }
         else
         {
             previousButton.interactable = true;
         }
 
-        if (BlackBoard.mainMenu.isNextLevelOpen[levelsNow+1] == 1)
+        if (BlackBoard.mainMenu.isNextLevelOpen[levelsNow + 1] == 1)
         {
             nextButton.interactable = true;
         }
