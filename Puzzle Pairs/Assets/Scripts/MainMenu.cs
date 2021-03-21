@@ -61,6 +61,7 @@ public class MainMenu : MonoBehaviour
 
     void CheckWichLevelOpen(int i)
     {
+        Debug.Log(isNextLevelOpen[i]);
         if (isNextLevelOpen[i] == 0)
         {
             if (i != 0)
@@ -76,10 +77,11 @@ public class MainMenu : MonoBehaviour
                 levelButtons[i].GetComponent<Image>().sprite = levelButtons[i].GetComponent<LevelButton>().available;
             }
         }
-        else
+        
+        else if(isNextLevelOpen[i] == 1)
         {
             levelButtons[i].interactable = true;
-            levelButtons[i].GetComponentInChildren<Text>().text = (i + 1).ToString();
+            levelButtons[i].GetComponentInChildren<Text>().text = (i + 1).ToString();           
             levelButtons[i].GetComponent<Image>().sprite = levelButtons[i].GetComponent<LevelButton>().available;
         }
     }

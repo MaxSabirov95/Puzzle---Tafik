@@ -11,6 +11,7 @@ public class LevelButton : MonoBehaviour
     public static int levelsNum;
     public int levelNum;
     public Sprite available;
+    public Sprite lastAvailable;
     public Sprite close;
     public void LevelButtonPress()
     {
